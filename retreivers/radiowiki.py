@@ -66,5 +66,5 @@ class RadioWikiRetriever:
             wiki_docs = wiki_docs[:top_k]
             radio_docs = radio_docs[:top_k]
 
-        documents = self.text_splitter.split_documents(radio_docs + wiki_docs)
-        return documents
+        # documents = self.text_splitter.split_documents(radio_docs + wiki_docs)
+        return radio_docs + wiki_docs
