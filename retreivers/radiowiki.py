@@ -1,7 +1,6 @@
 import pickle
 import os
 from langchain.document_loaders import WikipediaLoader
-from langchain.text_splitter import TokenTextSplitter
 from cleantext import clean
 from retreivers.loader import RadioWebLoader
 from typing import Optional
@@ -21,7 +20,7 @@ def clean_docs(docs):
     for d in docs:
         d.page_content = clean(
             d.page_content,
-            no_line_breaks=True,
+            # no_line_breaks=True,
         )
     return docs
 
@@ -29,7 +28,6 @@ def clean_docs(docs):
 class RadioWikiRetriever:
     def __init__(self, saving_dir="./documents") -> None:
         self.saving_dir = saving_dir
-        self.text_splitter = TokenTextSplitter(chunk_size=2048, chunk_overlap=24)
 
     def request(self, query: str, top_k: Optional[int] = None):
 
