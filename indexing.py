@@ -16,6 +16,7 @@ import openai
 
 openai.api_key = OPENAI_API_KEY
 
+
 def get_args_parser():
     parser = argparse.ArgumentParser("Indexing script", add_help=False)
     return parser
@@ -250,7 +251,7 @@ class TokenTextSplitter(TextSplitter):
         return split_text_on_tokens(text=text, tokenizer=tokenizer)
 
 
-def split_text_on_tokens(*, text: str, tokenizer: Tokenizer) -> list[str]:
+def split_text_on_tokens(text: str, tokenizer: Tokenizer) -> list[str]:
     """Split incoming text and return chunks using tokenizer."""
     splits: list[str] = []
     input_ids = tokenizer.encode(text)
@@ -284,7 +285,6 @@ def create_text_splitter(
         chunk_overlap=chunk_overlap,
         encoding_name=encoding_name,
     )
-
 
 
 from tenacity import (
@@ -364,8 +364,21 @@ def perform_variable_replacements(
     # }
 
 
+def send_to_open_ai(messages):
+    response = chat_completion_with_backoff(
+        **{
+            "model": "gpt-3.5-turbo",
+            "messages": messages,
+        }
+    )
+
+    output = response.choices[0].message.content
+    return output
+
+
 def execute_llm(
     extraction_prompt,
+    send_to: Callable[[List[Dict[str, str]]], str],
     variables: Dict | None = None,
     history: List | None = None,
 ):
@@ -381,12 +394,7 @@ def execute_llm(
         }
     )
 
-    response = chat_completion_with_backoff(
-        **{
-            "model": "gpt-3.5-turbo",
-            "messages": messages,
-        }
-    )
+    response = send_to(messages) # modify this for other llms.
 
     output = response.choices[0].message.content
 

@@ -34,8 +34,6 @@ class RadioWikiRetriever:
         # check if answer of the queries has been saved beforeF
 
         query = query.lower()
-
-
         wiki_path = os.path.join(self.saving_dir, f"wiki_{query}.pk")
         radio_path = os.path.join(self.saving_dir, f"radio_{query}.pk")
 

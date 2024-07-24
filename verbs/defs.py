@@ -1,18 +1,22 @@
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
+from __future__ import annotations
+from enum import Enum
 
 """Common default configuration values."""
 
-from datashaper import AsyncType
 
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
 
 """A module containing 'PipelineCacheConfig', 'PipelineFileCacheConfig' and 'PipelineMemoryCacheConfig' models."""
 
-from __future__ import annotations
 
-from enum import Enum
+class AsyncType(str, Enum):
+    """Enum for the type of async to use."""
+
+    AsyncIO = "asyncio"
+    Threaded = "threaded"
 
 
 class CacheType(str, Enum):

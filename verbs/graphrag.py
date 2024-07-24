@@ -1,10 +1,18 @@
 from typing import Any, Callable, Iterable
 import pandas as pd
 from dataclasses import dataclass
+from enum import Enum
+from . import defs
+import tiktoken
+from hashlib import md5
+from uuid import uuid4
+
+from functools import partial
 
 
 def cast(typ, val):
     return val
+
 
 def zip_verb(
     input: pd.DataFrame,
@@ -155,7 +163,7 @@ def _get_pandas_agg_operation(agg: Aggregation) -> Any:
     return aggregate_operation_mapping[FieldAggregateOperation(agg.operation)]
 
 
-def aggregate(
+def aggregate_override(
     input: pd.DataFrame,
     aggregations: list[dict[str, Any]],
     groupby: list[str] | None = None,
@@ -183,9 +191,6 @@ def aggregate(
     return output.reset_index()
 
 
-from enum import Enum
-
-
 class ChunkStrategyType(str, Enum):
     """ChunkStrategy class definition."""
 
@@ -208,8 +213,6 @@ class TextChunk:
 
 ChunkStrategy = Callable[[list[str], dict[str, Any]], Iterable[TextChunk]]
 
-from . import defs
-import tiktoken
 
 EncodedText = list[int]
 DecodeFn = Callable[[EncodedText], str]
@@ -230,19 +233,40 @@ class Tokenizer:
     """ Function to encode a string to a list of token ids"""
 
 
-def split_text_on_tokens(*, text: str, tokenizer: Tokenizer) -> list[str]:
-    """Split incoming text and return chunks using tokenizer."""
-    splits: list[str] = []
-    input_ids = tokenizer.encode(text)
+def split_text_on_tokens(
+    texts: list[str],
+    enc: Tokenizer,
+) -> list[TextChunk]:
+    """Split incoming text and return chunks."""
+    result = []
+    mapped_ids = []
+
+    for source_doc_idx, text in enumerate(texts):
+        encoded = enc.encode(text)
+        mapped_ids.append((source_doc_idx, encoded))
+
+    input_ids: list[tuple[int, int]] = [
+        (source_doc_idx, id) for source_doc_idx, ids in mapped_ids for id in ids
+    ]
+
     start_idx = 0
-    cur_idx = min(start_idx + tokenizer.tokens_per_chunk, len(input_ids))
+    cur_idx = min(start_idx + enc.tokens_per_chunk, len(input_ids))
     chunk_ids = input_ids[start_idx:cur_idx]
     while start_idx < len(input_ids):
-        splits.append(tokenizer.decode(chunk_ids))
-        start_idx += tokenizer.tokens_per_chunk - tokenizer.chunk_overlap
-        cur_idx = min(start_idx + tokenizer.tokens_per_chunk, len(input_ids))
+        chunk_text = enc.decode([id for _, id in chunk_ids])
+        doc_indices = list({doc_idx for doc_idx, _ in chunk_ids})
+        result.append(
+            TextChunk(
+                text_chunk=chunk_text,
+                source_doc_indices=doc_indices,
+                n_tokens=len(chunk_ids),
+            )
+        )
+        start_idx += enc.tokens_per_chunk - enc.chunk_overlap
+        cur_idx = min(start_idx + enc.tokens_per_chunk, len(input_ids))
         chunk_ids = input_ids[start_idx:cur_idx]
-    return splits
+
+    return result
 
 
 def run_tokens(
@@ -331,7 +355,7 @@ def run_strategy(
 ) -> list[str | tuple[list[str] | None, str, int]]:
     """Run strategy method definition."""
     if isinstance(input, str):
-        return [item.text_chunk for item in strategy([input], {**strategy_args}, tick)]
+        return [item.text_chunk for item in strategy([input], {**strategy_args})]
 
     # We can work with both just a list of text content
     # or a list of tuples of (document_id, text content)
@@ -421,13 +445,6 @@ def chunk(
     return output
 
 
-
-from collections.abc import Iterable
-from hashlib import md5
-from typing import Any, List, Dict
-import pandas as pd
-
-
 # this is how the id is generated.
 def gen_md5_hash(item: dict[str, Any], hashcode: Iterable[str]):
     """Generate an md5 hash."""
@@ -510,11 +527,13 @@ def copy(
     table[to] = table[column]
     return table
 
+
 class ComparisonStrategy(str, Enum):
     """Filter compare type."""
 
     Value = "value"
     Column = "column"
+
 
 class StringComparisonOperator(str, Enum):
     """String comparison operators."""
@@ -528,6 +547,7 @@ class StringComparisonOperator(str, Enum):
     IsNotEmpty = "is not empty"
     RegularExpression = "regex"
 
+
 class NumericComparisonOperator(str, Enum):
     """Numeric comparison operators."""
 
@@ -540,11 +560,13 @@ class NumericComparisonOperator(str, Enum):
     IsEmpty = "is empty"
     IsNotEmpty = "is not empty"
 
+
 @dataclass
 class InputColumnArgs:
     """Column argument for verbs operating on a single column."""
 
     column: str
+
 
 class BooleanComparisonOperator(str, Enum):
     """Boolean comparison operators."""
@@ -556,6 +578,7 @@ class BooleanComparisonOperator(str, Enum):
     IsEmpty = "is empty"
     IsNotEmpty = "is not empty"
 
+
 @dataclass
 class FilterArgs(InputColumnArgs):
     """Filter criteria for a column."""
@@ -565,19 +588,264 @@ class FilterArgs(InputColumnArgs):
     operator: (
         NumericComparisonOperator | StringComparisonOperator | BooleanComparisonOperator
     )
-    
-async def filter_verb(
+
+
+class VerbError(ValueError):
+    """Exception for invalid verb input."""
+
+    def __init__(self, message: str | None = None):
+        super().__init__(message or "A verb error occurred")
+
+
+class UnsupportedComparisonOperatorError(VerbError):
+    """Exception for unsupported comparison operators."""
+
+    def __init__(self, operator: str):
+        super().__init__(f"{operator} is not a recognized comparison operator")
+
+
+def get_comparison_operator(
+    operator: str,
+) -> StringComparisonOperator | NumericComparisonOperator | BooleanComparisonOperator:
+    """Get a comparison operator based on the input string."""
+    try:
+        return StringComparisonOperator(operator)
+    except Exception:
+        print("%s is not a string comparison operator", operator)
+    try:
+        return NumericComparisonOperator(operator)
+    except Exception:
+        print("%s is not a numeric comparison operator", operator)
+    try:
+        return BooleanComparisonOperator(operator)
+    except Exception:
+        print("%s is not a boolean comparison operator", operator)
+    raise UnsupportedComparisonOperatorError(operator)
+
+
+_empty_comparisons = {
+    StringComparisonOperator.IsEmpty,
+    StringComparisonOperator.IsNotEmpty,
+    NumericComparisonOperator.IsEmpty,
+    NumericComparisonOperator.IsNotEmpty,
+    BooleanComparisonOperator.IsEmpty,
+    BooleanComparisonOperator.IsNotEmpty,
+}
+
+
+def __correct_unknown_value(df: pd.DataFrame, columns: list[str], target: str) -> None:
+    na_index = df[df[columns].isna().any(axis=1)].index
+    df.loc[na_index, target] = None
+
+
+def __equals(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column] == target
+
+
+def __not_equals(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return ~df[column] == target
+
+
+def __is_null(
+    df: pd.DataFrame, column: str, **_kwargs: dict
+) -> pd.DataFrame | pd.Series:
+    return df[column].isna()
+
+
+def __is_not_null(
+    df: pd.DataFrame, column: str, **_kwargs: dict
+) -> pd.DataFrame | pd.Series:
+    return df[column].notna()
+
+
+def __contains(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.DataFrame | pd.Series:
+    return df[column].str.contains(str(target), regex=False)
+
+
+def __startswith(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.DataFrame | pd.Series:
+    return df[column].str.startswith(str(target))
+
+
+def __endswith(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column].str.endswith(str(target))
+
+
+def __regex(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column].str.contains(str(target), regex=True)
+
+
+def __gt(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column] > target
+
+
+def __gte(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column] >= target
+
+
+def __lt(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column] < target
+
+
+def __lte(
+    df: pd.DataFrame,
+    column: str,
+    target: pd.Series | str | float | bool,
+    **_kwargs: dict,
+) -> pd.Series:
+    return df[column] <= target
+
+
+_operator_map: dict[
+    StringComparisonOperator | NumericComparisonOperator | BooleanComparisonOperator,
+    Callable,
+] = {
+    StringComparisonOperator.Contains: __contains,
+    StringComparisonOperator.StartsWith: __startswith,
+    StringComparisonOperator.EndsWith: __endswith,
+    StringComparisonOperator.Equals: __equals,
+    StringComparisonOperator.NotEqual: __not_equals,
+    StringComparisonOperator.IsEmpty: __is_null,
+    StringComparisonOperator.IsNotEmpty: __is_not_null,
+    StringComparisonOperator.RegularExpression: __regex,
+    NumericComparisonOperator.Equals: __equals,
+    NumericComparisonOperator.IsEmpty: __is_null,
+    NumericComparisonOperator.IsNotEmpty: __is_not_null,
+    NumericComparisonOperator.GreaterThan: __gt,
+    NumericComparisonOperator.GreaterThanOrEqual: __gte,
+    NumericComparisonOperator.LessThan: __lt,
+    NumericComparisonOperator.LessThanOrEqual: __lte,
+    BooleanComparisonOperator.Equals: __equals,
+    BooleanComparisonOperator.NotEqual: __not_equals,
+    BooleanComparisonOperator.IsEmpty: __is_null,
+    BooleanComparisonOperator.IsNotEmpty: __is_not_null,
+    BooleanComparisonOperator.IsTrue: partial(__equals, target=True),
+    BooleanComparisonOperator.IsFalse: partial(__equals, target=False),
+}
+
+
+class BooleanLogicalOperator(str, Enum):
+    """Boolean logical operators."""
+
+    OR = "or"
+    AND = "and"
+    NOR = "nor"
+    NAND = "nand"
+    XOR = "xor"
+    XNOR = "xnor"
+
+
+boolean_function_map = {
+    BooleanLogicalOperator.OR: lambda df, columns: (
+        df[columns].any(axis="columns") if columns != "" else df.any(axis="columns")
+    ),
+    BooleanLogicalOperator.AND: lambda df, columns: (
+        df[columns].all(axis="columns") if columns != "" else df.all(axis="columns")
+    ),
+    BooleanLogicalOperator.NOR: lambda df, columns: (
+        ~df[columns].any(axis="columns") if columns != "" else ~df.any(axis="columns")
+    ),
+    BooleanLogicalOperator.NAND: lambda df, columns: (
+        ~df[columns].all(axis="columns") if columns != "" else ~df.all(axis="columns")
+    ),
+    BooleanLogicalOperator.XNOR: lambda df, columns: (
+        df[columns].sum(axis="columns").apply(lambda x: (x % 2) == 0 or x == 0)
+        if columns != ""
+        else df.sum(axis="columns").apply(lambda x: (x % 2) == 0 or x == 0)
+    ),
+    BooleanLogicalOperator.XOR: lambda df, columns: (
+        df[columns].sum(axis="columns").apply(lambda x: (x % 2) != 0 and x != 0)
+        if columns != ""
+        else df.sum(axis="columns").apply(lambda x: (x % 2) != 0 and x != 0)
+    ),
+}
+
+
+def filter_fn(
+    df: pd.DataFrame, args: FilterArgs
+) -> pd.DataFrame | pd.Series:  # noqa A001 - use ds verb name
+    """Filter a DataFrame based on the input criteria."""
+    filters: list[str] = []
+    filtered_df: pd.DataFrame = df.copy()
+
+    filter_name = str(uuid4())
+    filters.append(filter_name)
+    if args.strategy == ComparisonStrategy.Column:
+        filtered_df[filter_name] = _operator_map[args.operator](
+            df=df, column=args.column, target=df[args.value]
+        )
+        if args.operator not in _empty_comparisons:
+            __correct_unknown_value(filtered_df, [args.column, args.value], filter_name)
+    else:
+        filtered_df[filter_name] = _operator_map[args.operator](
+            df=df, column=args.column, target=args.value
+        )
+
+    filtered_df["dwc_filter_result"] = boolean_function_map[BooleanLogicalOperator.OR](
+        filtered_df[filters], ""
+    )
+
+    __correct_unknown_value(filtered_df, filters, "dwc_filter_result")
+
+    return filtered_df["dwc_filter_result"]
+
+
+def filter_verb(
     chunk: pd.DataFrame,
     column: str,
     value: Any,
     strategy: ComparisonStrategy = ComparisonStrategy.Value,
     operator: StringComparisonOperator = StringComparisonOperator.Equals,
     **_kwargs: Any,
-) -> Table:
+) -> pd.DataFrame:
     """Filter verb implementation."""
     input_table = cast(pd.DataFrame, chunk)
 
-    filter_index = filter(
+    filter_index = filter_fn(
         input_table,
         FilterArgs(
             column,
@@ -589,4 +857,582 @@ async def filter_verb(
     sub_idx = filter_index == True  # noqa: E712
     idx = filter_index[sub_idx].index  # type: ignore
     result = input_table[chunk.index.isin(idx)].reset_index(drop=True)
-    return  result
+    return result
+
+
+def unroll(table: pd.DataFrame, column: str) -> pd.DataFrame:
+    """Unroll a column."""
+    return table.explode(column).reset_index(drop=True)
+
+
+class SortDirection(str, Enum):
+    """Sort direction for order by."""
+
+    Ascending = "asc"
+    Descending = "desc"
+
+
+@dataclass
+class OrderByInstruction:
+    """Details regarding how to order a column."""
+
+    column: str
+    direction: SortDirection
+
+
+def orderby(table: pd.DataFrame, orders: list[dict], **_kwargs: Any) -> pd.DataFrame:
+    """Orderby verb implementation."""
+    orders_instructions = [
+        OrderByInstruction(
+            column=order["column"], direction=SortDirection(order["direction"])
+        )
+        for order in orders
+    ]
+
+    columns = [order.column for order in orders_instructions]
+    ascending = [
+        order.direction == SortDirection.Ascending for order in orders_instructions
+    ]
+    return table.sort_values(by=columns, ascending=ascending)
+
+
+def select(table: pd.DataFrame, columns: list[str], **_kwargs: Any) -> pd.DataFrame:
+    """Select verb implementation."""
+    return table[columns]
+
+
+def rename(
+    table: pd.DataFrame, columns: dict[str, str], **_kwargs: Any
+) -> pd.DataFrame:
+    """Rename verb implementation."""
+    return table.rename(columns=columns)
+
+
+async def snapshot(
+    input: pd.DataFrame,
+    name: str,
+    formats: list[str],
+    **_kwargs: dict,
+) -> pd.DataFrame:
+    """Take a entire snapshot of the tabular data."""
+    data = input
+
+    for fmt in formats:
+        if fmt == "parquet":
+            data.to_parquet(name + ".parquet", orient="records", lines=True)
+
+        elif fmt == "json":
+            data.to_json(name + ".json", orient="records", lines=True)
+
+    return data
+
+
+def dedupe(
+    table: pd.DataFrame, columns: list[str] | None = None, **_kwargs: Any
+) -> pd.DataFrame:
+    """Dedupe verb implementation."""
+    return table.drop_duplicates(columns)
+
+
+def text_split_df(
+    input: pd.DataFrame, column: str, to: str, separator: str = ","
+) -> pd.DataFrame:
+    """Split a column into a list of strings."""
+    output = input
+
+    def _apply_split(row):
+        if row[column] is None or isinstance(row[column], list):
+            return row[column]
+        if row[column] == "":
+            return []
+        if not isinstance(row[column], str):
+            message = f"Expected {column} to be a string, but got {type(row[column])}"
+            raise TypeError(message)
+        return row[column].split(separator)
+
+    output[to] = output.apply(_apply_split, axis=1)
+    return output
+
+
+def text_split(
+    input: pd.DataFrame,
+    column: str,
+    to: str,
+    separator: str = ",",
+    **_kwargs: dict,
+) -> pd.DataFrame:
+    """
+    Split a piece of text into a list of strings based on a delimiter. The verb outputs a new column containing a list of strings.
+
+    ## Usage
+
+    ```yaml
+    verb: text_split
+    args:
+        column: text # The name of the column containing the text to split
+        to: split_text # The name of the column to output the split text to
+        separator: "," # The separator to split the text on, defaults to ","
+    ```
+    """
+    output = text_split_df(input, column, to, separator)
+    return output
+
+
+def drop(table: pd.DataFrame, columns: list[str], **_kwargs: Any) -> pd.DataFrame:
+    """Drop verb implementation."""
+    return table.drop(columns=columns)
+
+
+class MergeStrategy(str, Enum):
+    """Merge strategy for merge verb."""
+
+    FirstOneWins = "first one wins"
+    LastOneWins = "last one wins"
+    Concat = "concat"
+    CreateArray = "array"
+
+
+from pandas.api.types import is_bool
+
+
+def _correct_type(value: Any) -> str | int | Any:
+    if is_bool(value):
+        return str(value).lower()
+    try:
+        return int(value) if value.is_integer() else value
+    except AttributeError:
+        return value
+
+
+def _create_array(column: pd.Series, delim: str) -> str:
+    col: pd.DataFrame | pd.Series = column.dropna().apply(lambda x: _correct_type(x))
+    return delim.join(col.astype(str))
+
+
+merge_strategies: dict[MergeStrategy, Callable] = {
+    MergeStrategy.FirstOneWins: lambda values, **_kwargs: values.dropna().apply(
+        lambda x: _correct_type(x)
+    )[0],
+    MergeStrategy.LastOneWins: lambda values, **_kwargs: values.dropna().apply(
+        lambda x: _correct_type(x)
+    )[-1],
+    MergeStrategy.Concat: lambda values, delim, **_kwargs: _create_array(values, delim),
+    MergeStrategy.CreateArray: lambda values, **_kwargs: _create_array(values, ","),
+}
+
+
+def merge(
+    table: pd.DataFrame,
+    to: str,
+    columns: list[str],
+    strategy: str,
+    delimiter: str = "",
+    preserveSource: bool = False,  # noqa: N803
+    **_kwargs: Any,
+) -> pd.DataFrame:
+    """Merge verb implementation."""
+    merge_strategy = MergeStrategy(strategy)
+
+    table[to] = table[columns].apply(
+        partial(merge_strategies[merge_strategy], delim=delimiter), axis=1
+    )
+
+    if not preserveSource:
+        table.drop(columns=columns, inplace=True)
+
+    return table
+
+
+import numpy as np
+
+
+def _convert_int(value: str, radix: int) -> int | float:
+    try:
+        return int(value, radix)
+    except ValueError:
+        return np.nan
+
+
+def _to_int(column: pd.Series, radix: int) -> pd.DataFrame | pd.Series:
+    if radix is None:
+        if column.str.startswith("0x").any() or column.str.startswith("0X").any():
+            radix = 16
+        elif column.str.startswith("0").any():
+            radix = 8
+        else:
+            radix = 10
+    return column.apply(lambda x: _convert_int(x, radix))
+
+
+def _convert_float(value: str) -> float:
+    try:
+        return float(value)
+    except ValueError:
+        return np.nan
+
+
+# todo: our schema TypeHints allows strict definition of what should be allowed for a bool, so we should provide a way to inject these beyond the defaults
+# see https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#boolean-values
+def _convert_bool(value: str) -> bool:
+    return isinstance(value, str) and (value.lower() == "true")
+
+
+from datetime import datetime
+from pandas.api.types import is_bool_dtype, is_datetime64_any_dtype, is_numeric_dtype
+import numbers
+
+
+def _convert_date_to_str(value: datetime, format_pattern: str) -> str | float:
+    try:
+        return datetime.strftime(value, format_pattern)
+    except Exception:
+        return np.nan
+
+
+def _to_str(column: pd.Series, format_pattern: str) -> pd.DataFrame | pd.Series:
+    column_numeric: pd.Series | None = None
+    if is_numeric_dtype(column):
+        column_numeric = cast(pd.Series, pd.to_numeric(column))
+    if column_numeric is not None and is_numeric_dtype(column_numeric):
+        try:
+            return column.apply(lambda x: "" if x is None else str(x))
+        except Exception:  # noqa: S110
+            pass
+
+    try:
+        datetime_column = pd.to_datetime(column)
+    except Exception:
+        datetime_column = column
+    if is_datetime64_any_dtype(datetime_column):
+        return datetime_column.apply(lambda x: _convert_date_to_str(x, format_pattern))
+    if isinstance(column.dtype, pd.ArrowDtype) and "timestamp" in column.dtype.name:
+        return column.apply(lambda x: _convert_date_to_str(x, format_pattern))
+
+    if is_bool_dtype(column):
+        return column.apply(lambda x: "" if pd.isna(x) else str(x).lower())
+    return column.apply(lambda x: "" if pd.isna(x) else str(x))
+
+
+def _to_datetime(column: pd.Series) -> pd.Series:
+    if column.dropna().map(lambda x: isinstance(x, numbers.Number)).all():
+        return pd.to_datetime(column, unit="ms")
+    return pd.to_datetime(column)
+
+
+def _to_array(column: pd.Series, delimiter: str) -> pd.Series | pd.DataFrame:
+    def convert_value(value: Any) -> list:
+        if pd.isna(value):
+            return []
+        if isinstance(value, list):
+            return value
+        if isinstance(value, str):
+            return value.split(delimiter)
+        return [value]
+
+    return column.apply(convert_value)
+
+
+class ParseType(str, Enum):
+    """ParseType is used to specify the type of a column."""
+
+    Boolean = "boolean"
+    Date = "date"
+    Integer = "int"
+    Decimal = "float"
+    String = "string"
+    Array = "array"
+
+
+__type_mapping: dict[ParseType, Callable] = {
+    ParseType.Boolean: lambda column, **_kwargs: column.apply(
+        lambda x: _convert_bool(x)
+    ),
+    ParseType.Date: lambda column, **_kwargs: _to_datetime(column),
+    ParseType.Decimal: lambda column, **_kwargs: column.apply(
+        lambda x: _convert_float(x)
+    ),
+    ParseType.Integer: lambda column, radix, **_kwargs: _to_int(column, radix),
+    ParseType.String: lambda column, format_pattern, **_kwargs: _to_str(
+        column, format_pattern
+    ),
+    ParseType.Array: lambda column, delimiter, **_kwargs: _to_array(column, delimiter),
+}
+
+
+def convert(
+    table: pd.DataFrame,
+    column: str,
+    to: str,
+    type: str,  # noqa: A002
+    radix: int | None = None,
+    delimiter: str | None = ",",
+    formatPattern: str = "%Y-%m-%d",  # noqa: N803
+    **_kwargs: Any,
+) -> pd.DataFrame:
+    """Convert verb implementation."""
+    parse_type = ParseType(type)
+    table[to] = __type_mapping[parse_type](
+        column=table[column],
+        radix=radix,
+        format_pattern=formatPattern,
+        delimiter=delimiter,
+    )
+    return table
+
+
+class JoinStrategy(str, Enum):
+    """Table join strategies."""
+
+    Inner = "inner"
+    LeftOuter = "left outer"
+    RightOuter = "right outer"
+    FullOuter = "full outer"
+    AntiJoin = "anti join"
+    SemiJoin = "semi join"
+    Cross = "cross"
+
+
+__strategy_mapping: dict[JoinStrategy, Any] = {
+    JoinStrategy.Inner: "inner",
+    JoinStrategy.LeftOuter: "left",
+    JoinStrategy.RightOuter: "right",
+    JoinStrategy.FullOuter: "outer",
+    JoinStrategy.Cross: "cross",
+    JoinStrategy.AntiJoin: "outer",
+    JoinStrategy.SemiJoin: "outer",
+}
+
+
+def __clean_result(
+    strategy: JoinStrategy, result: pd.DataFrame, source: pd.DataFrame
+) -> pd.DataFrame:
+    if strategy == JoinStrategy.AntiJoin:
+        return cast(
+            pd.DataFrame, result[result["_merge"] == "left_only"][source.columns]
+        )
+    if strategy == JoinStrategy.SemiJoin:
+        return cast(pd.DataFrame, result[result["_merge"] == "both"][source.columns])
+
+    result = cast(
+        pd.DataFrame,
+        pd.concat(
+            [
+                result[result["_merge"] == "both"],
+                result[result["_merge"] == "left_only"],
+                result[result["_merge"] == "right_only"],
+            ]
+        ),
+    )
+    return result.drop("_merge", axis=1)
+
+
+from typing_extensions import TypeAlias
+
+Suffixes: TypeAlias = tuple[str | None, str | None]
+
+
+def join(
+    table: pd.DataFrame,
+    other: pd.DataFrame,
+    on: list[str] | None = None,
+    strategy: str = "inner",
+    **_kwargs: Any,
+) -> pd.DataFrame:
+    """Join verb implementation."""
+    join_strategy = JoinStrategy(strategy)
+    if on is not None and len(on) > 1:
+        left_column = on[0]
+        right_column = on[1]
+        output = table.merge(
+            other,
+            left_on=left_column,
+            right_on=right_column,
+            how=__strategy_mapping[join_strategy],
+            suffixes=cast(Suffixes, ["_1", "_2"]),
+            indicator=True,
+        )
+    else:
+        output = table.merge(
+            other,
+            on=on,
+            how=__strategy_mapping[join_strategy],
+            suffixes=cast(Suffixes, ["_1", "_2"]),
+            indicator=True,
+        )
+
+    return __clean_result(join_strategy, output, table)
+
+
+def concat(
+    table: pd.DataFrame, others: list[pd.DataFrame], **_kwargs: Any
+) -> pd.DataFrame:
+    """Concat verb implementation."""
+    return pd.concat([table] + others, ignore_index=True)
+
+
+def fill(
+    table: pd.DataFrame, to: str, value: str | float | bool, **_kwargs: Any
+) -> pd.DataFrame:
+    """Fill verb implementation."""
+    table[to] = value
+    return table
+
+
+def compute_edge_combined_degree(
+    input: pd.DataFrame,
+    nodes: pd.DataFrame,
+    to: str = "rank",
+    node_name_column: str = "title",
+    node_degree_column: str = "degree",
+    edge_source_column: str = "source",
+    edge_target_column: str = "target",
+    **_kwargs,
+) -> pd.DataFrame:
+    """
+    Compute the combined degree for each edge in a graph.
+
+    Inputs Tables:
+    - input: The edge table
+    - nodes: The nodes table.
+
+    Args:
+    - to: The name of the column to output the combined degree to. Default="rank"
+    """
+    edge_df: pd.DataFrame = input
+    if to in edge_df.columns:
+        return edge_df
+    node_degree_df = _get_node_degree_table(nodes, node_name_column, node_degree_column)
+
+    def join_to_degree(df: pd.DataFrame, column: str) -> pd.DataFrame:
+        degree_column = _degree_colname(column)
+        result = df.merge(
+            node_degree_df.rename(
+                columns={node_name_column: column, node_degree_column: degree_column}
+            ),
+            on=column,
+            how="left",
+        )
+        result[degree_column] = result[degree_column].fillna(0)
+        return result
+
+    edge_df = join_to_degree(edge_df, edge_source_column)
+    edge_df = join_to_degree(edge_df, edge_target_column)
+    edge_df[to] = (
+        edge_df[_degree_colname(edge_source_column)]
+        + edge_df[_degree_colname(edge_target_column)]
+    )
+
+    return edge_df
+
+
+def _degree_colname(column: str) -> str:
+    return f"{column}_degree"
+
+
+def _get_node_degree_table(
+    nodes: pd.DataFrame, node_name_column: str, node_degree_column: str
+) -> pd.DataFrame:
+    return cast(pd.DataFrame, nodes[[node_name_column, node_degree_column]])
+
+
+# def get_named_input_table(
+#     input: VerbInput, name: str, required: bool = False
+# ) -> TableContainer | None:
+#     """Get an input table from datashaper verb-inputs by name."""
+#     named_inputs = input.named
+#     if named_inputs is None:
+#         if not required:
+#             return None
+#         raise ValueError("Named inputs are required")
+
+#     result = named_inputs.get(name)
+#     if result is None and required:
+#         msg = f"input '${name}' is required"
+#         raise ValueError(msg)
+#     return result
+
+
+# def get_required_input_table(input: VerbInput, name: str) -> TableContainer:
+#     """Get a required input table by name."""
+#     return cast(TableContainer, get_named_input_table(input, name, required=True))
+
+
+class WindowFunction(str, Enum):
+    """Windowing functions for window verb."""
+
+    RowNumber = "row_number"
+    Rank = "rank"
+    PercentRank = "percent_rank"
+    CumulativeDistribution = "cume_dist"
+    FirstValue = "first_value"
+    LastValue = "last_value"
+    FillDown = "fill_down"
+    FillUp = "fill_up"
+    UUID = "uuid"
+
+
+def _get_window_indexer(
+    column: pd.Series, fixed_size: bool = False
+) -> int | pd.api.indexers.BaseIndexer:
+    if fixed_size:
+        return pd.api.indexers.FixedForwardWindowIndexer(window_size=len(column))
+
+    return len(column)
+
+
+__window_function_map = {
+    WindowFunction.RowNumber: lambda column: column.rolling(
+        window=_get_window_indexer(column), min_periods=1
+    ).count(),
+    WindowFunction.Rank: lambda column: column.rolling(
+        window=_get_window_indexer(column), min_periods=1
+    ).count(),
+    WindowFunction.PercentRank: lambda column: (
+        column.rolling(window=_get_window_indexer(column), min_periods=1).count() - 1
+    )
+    / (len(column) - 1),
+    WindowFunction.CumulativeDistribution: lambda column: column.rolling(
+        window=_get_window_indexer(column), min_periods=1
+    ).count()
+    / len(column),
+    WindowFunction.FirstValue: lambda column: column.rolling(
+        window=_get_window_indexer(column), min_periods=1
+    ).apply(lambda x: x.iloc[0]),
+    WindowFunction.LastValue: lambda column: column.rolling(
+        window=_get_window_indexer(column, True),
+        min_periods=1,
+    ).apply(lambda x: x.iloc[-1]),
+    WindowFunction.FillDown: lambda column: column.rolling(
+        window=len(column), min_periods=1
+    ).apply(lambda x: x.dropna().iloc[-1]),
+    WindowFunction.FillUp: lambda column: column.rolling(
+        window=_get_window_indexer(column, True),
+        min_periods=1,
+    ).apply(lambda x: x.dropna().iloc[0] if np.isnan(x.iloc[0]) else x.iloc[0]),
+    WindowFunction.UUID: lambda column: column.apply(lambda _x: str(uuid4())),
+}
+from pandas.core.groupby import DataFrameGroupBy
+
+
+def window(
+    table: pd.DataFrame,
+    column: str,
+    to: str,
+    operation: str,
+    **_kwargs: Any,
+) -> pd.DataFrame:
+    """Apply a window function to a column in a table."""
+    window_operation = WindowFunction(operation)
+    window = __window_function_map[window_operation](table[column])
+
+    if isinstance(table, DataFrameGroupBy):
+        # ungroup table to add new column
+        output = table.obj
+        output[to] = window.reset_index()[column]
+        # group again by original group by
+        output = output.groupby(table.keys)
+    else:
+        output = table
+        output[to] = window
+
+    return output

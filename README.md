@@ -55,3 +55,14 @@ def load_workflows() -> where the workflow graph is created.
 
 - [ ] Run the code line by line to make sure the code doesn't matter.
 - [ ] Put create base text units into the whole function to test. 
+
+
+# actually workflow
+
+
+```
+['create_base_text_units', 'create_base_extracted_entities', 'create_summarized_entities', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 
+'create_final_relationships', 'join_text_units_to_relationship_ids', 
+
+'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+```
