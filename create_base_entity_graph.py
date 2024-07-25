@@ -18,6 +18,7 @@ embed_graph_enabled = False
 
 
 def create_base_entity_graph(dataset):
+    
     dataset = cluster_graph(
         dataset,
         strategy=clustering_config["strategy"],

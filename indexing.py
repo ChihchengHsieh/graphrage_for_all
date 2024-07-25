@@ -394,9 +394,9 @@ def execute_llm(
         }
     )
 
-    response = send_to(messages) # modify this for other llms.
+    response = send_to(messages)  # modify this for other llms.
 
-    output = response.choices[0].message.content
+    output = response
 
     history = [*history, {"role": "system", "content": output}]
 
@@ -408,7 +408,6 @@ def process_document(
 ) -> str:
 
     #  execute_llm(prompt, variables, history: List | None):
-
     results, history = execute_llm(
         extraction_prompt=extraction_prompt,
         variables={
