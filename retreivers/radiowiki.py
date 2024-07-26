@@ -1,28 +1,9 @@
-import pickle
 import os
 from langchain.document_loaders import WikipediaLoader
-from cleantext import clean
-from retreivers.loader import RadioWebLoader
+from retreivers.source import RadioWebLoader
 from typing import Optional
-
-def save_pickle(obj, p):
-    with open(p, "wb") as f:
-        pickle.dump(obj, f)
-
-
-def load_pickle(p):
-    with open(p, "rb") as f:
-        obj = pickle.load(f)
-    return obj
-
-
-def clean_docs(docs):
-    for d in docs:
-        d.page_content = clean(
-            d.page_content,
-            # no_line_breaks=True,
-        )
-    return docs
+from utils.doc import clean_docs
+from utils.pickle import load_pickle, save_pickle
 
 
 class RadioWikiRetriever:
