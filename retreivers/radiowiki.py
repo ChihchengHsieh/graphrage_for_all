@@ -39,7 +39,7 @@ class RadioWikiRetriever:
 
         radio_docs = clean_docs(radio_docs)
 
-        if top_k:
+        if top_k is not None:
             wiki_docs = wiki_docs[:top_k]
             radio_docs = radio_docs[:top_k]
 

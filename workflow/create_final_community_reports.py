@@ -2,7 +2,8 @@ from template.community_report import COMMUNITY_REPORT_PROMPT
 from llm.send import ChatLLM, ModelArgs
 import pandas as pd
 import df_ops
-from utils.save import parquet_table_save
+import os
+from utils.save import parquet_table_load, parquet_table_save
 
 
 def create_final_community_reports(
@@ -12,8 +13,13 @@ def create_final_community_reports(
     community_report_send_to: ChatLLM,
     community_report_llm_args: ModelArgs,
     save: bool = True,
+    try_load: bool = True,
 ):
-
+    fn_name = "create_final_community_reports"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
     nodes = df_ops.prepare_community_reports_nodes(
         final_nodes_output,
     )
@@ -28,7 +34,7 @@ def create_final_community_reports(
         claim_df=None,
     )
     dataset = df_ops.create_community_reports(
-        send_to=community_report_send_to,
+        community_report_send_to=community_report_send_to,
         local_contexts=local_contexts,
         nodes=nodes,
         community_hierarchy=community_hierarchy,
@@ -44,9 +50,5 @@ def create_final_community_reports(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_final_community_reports",
-            dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, dataset)
     return dataset

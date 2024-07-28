@@ -2,6 +2,7 @@ import tiktoken
 
 DEFAULT_ENCODING_NAME = "cl100k_base"
 
+
 def num_tokens_from_string(
     string: str, model: str | None = None, encoding_name: str | None = None
 ) -> int:
@@ -30,3 +31,10 @@ def string_from_tokens(
         msg = "Either model or encoding_name must be specified."
         raise ValueError(msg)
     return encoding.decode(tokens)
+
+
+def num_tokens(text: str, token_encoder: tiktoken.Encoding | None = None) -> int:
+    """Return the number of tokens in the given text."""
+    if token_encoder is None:
+        token_encoder = tiktoken.get_encoding("cl100k_base")
+    return len(token_encoder.encode(text))  # type: ignore

@@ -130,7 +130,7 @@ class SummarizeExtractor:
             send_to=self._send_to,
             template=self._summarization_prompt,
             history=[],
-            variables={
+            replacing_variable={
                 self._entity_name_key: json.dumps(items),
                 self._input_descriptions_key: json.dumps(sorted(descriptions)),
             },

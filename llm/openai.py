@@ -61,11 +61,13 @@ def send_to_openai(messages: Messages, model_args: ModelArgs) -> LLMResponse:
 
     return LLMResponse(
         output=output,
-        history=[*messages, {"role": "system", "content": output}],
+        history=[*messages, {"role": "assistant", "content": output}],
     )
 
 
-def send_to_openai_text_emb(input: List[str], model_args: ModelArgs):
+def send_to_openai_text_emb(
+    input: List[str], model_args: ModelArgs
+) -> List[List[float]]:
     embedding = text_embed_with_backoff(
         input=input,
         model="text-embedding-3-small",

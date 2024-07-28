@@ -3,7 +3,7 @@ from enum import Enum
 from typing import Any, Iterable, cast, Callable
 import nltk
 from dataclasses import dataclass
-import defaults as defs
+import df_ops.defaults as defs
 import tiktoken
 
 

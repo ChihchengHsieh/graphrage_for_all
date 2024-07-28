@@ -8,6 +8,8 @@ from typing import Any, Callable
 from llm.send import ChatLLM, ModelArgs
 from typing_extensions import TypedDict
 from generators.community_reports_extractor import CommunityReportsExtractor
+from .select import select
+from .join import join
 
 COMMUNITY_REPORT_MAX_INPUT_LENGTH = 8000
 
@@ -69,27 +71,27 @@ def _run_extractor(
         llm_args=llm_args,
     )
 
-    try:
-        results = extractor({"input_text": input})
-        report = results.structured_output
-        if report is None or len(report.keys()) == 0:
-            print("No report found for community: %s", community)
-            return None
-
-        return CommunityReport(
-            community=community,
-            full_content=results.output,
-            level=level,
-            rank=_parse_rank(report),
-            title=report.get("title", f"Community Report: {community}"),
-            rank_explanation=report.get("rating_explanation", ""),
-            summary=report.get("summary", ""),
-            findings=report.get("findings", []),
-            full_content_json=json.dumps(report, indent=4),
-        )
-    except Exception as e:
-        print("Error processing community: %s", community)
+    # try:
+    results = extractor({"input_text": input})
+    report = results.structured_output
+    if report is None or len(report.keys()) == 0:
+        print("No report found for community: %s", community)
         return None
+
+    return CommunityReport(
+        community=community,
+        full_content=results.output,
+        level=level,
+        rank=_parse_rank(report),
+        title=report.get("title", f"Community Report: {community}"),
+        rank_explanation=report.get("rating_explanation", ""),
+        summary=report.get("summary", ""),
+        findings=report.get("findings", []),
+        full_content_json=json.dumps(report, indent=4),
+    )
+    # except Exception as e:
+    #     print("Error processing community: %s", community)
+    #     return None
 
 
 def where_column_equals(df: pd.DataFrame, column: str, value: Any) -> pd.DataFrame:
@@ -335,18 +337,6 @@ def _drop_community_level(df: pd.DataFrame) -> pd.DataFrame:
     return drop_columns(df, schemas.COMMUNITY_LEVEL)
 
 
-def select(df: pd.DataFrame, *columns: str) -> pd.DataFrame:
-    """Select columns from a dataframe."""
-    return df[list(columns)]
-
-
-def join(
-    left: pd.DataFrame, right: pd.DataFrame, key: str, strategy="left"
-) -> pd.DataFrame:
-    """Perform a table join."""
-    return left.merge(right, on=key, how=strategy)
-
-
 def build_mixed_context(context: list[dict], max_tokens: int) -> str:
     """
     Build parent context by concatenating all sub-communities' contexts.
@@ -525,24 +515,24 @@ def prep_community_report_context(
     return result
 
 
-def _generate_report(
-    send_to: Callable,
-    # cache: PipelineCache,
-    # callbacks: VerbCallbacks,
-    strategy: dict,
-    community_id: int | str,
-    community_level: int,
-    community_context: str,
-) -> CommunityReport | None:
-    """Generate a report for a single community."""
+# def _generate_report(
+#     send_to: Callable,
+#     # cache: PipelineCache,
+#     # callbacks: VerbCallbacks,
+#     strategy: dict,
+#     community_id: int | str,
+#     community_level: int,
+#     community_context: str,
+# ) -> CommunityReport | None:
+#     """Generate a report for a single community."""
 
-    return _run_extractor(
-        send_to,
-        community_id,
-        community_context,
-        community_level,
-        strategy,
-    )
+#     return _run_extractor(
+#         send_to,
+#         community_id,
+#         community_context,
+#         community_level,
+#         strategy,
+#     )
 
 
 def create_community_reports(
@@ -588,9 +578,9 @@ def create_community_reports(
             # )
             result = _run_extractor(
                 community_report_send_to,
-                community_id=record[schemas.NODE_COMMUNITY],
-                community_level=record[schemas.COMMUNITY_LEVEL],
-                community_context=record[schemas.CONTEXT_STRING],
+                community=record[schemas.NODE_COMMUNITY],
+                level=record[schemas.COMMUNITY_LEVEL],
+                input=record[schemas.CONTEXT_STRING],
                 args=strategy,
                 llm_args=community_report_llm_args,
             )

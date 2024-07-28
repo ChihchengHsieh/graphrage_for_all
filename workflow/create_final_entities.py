@@ -3,7 +3,8 @@ import pandas as pd
 
 import df_ops
 from llm.send import EmbLLM
-from utils.save import parquet_table_save
+import os
+from utils.save import parquet_table_load, parquet_table_save
 
 text_emb_strategy = {
     "batch_size": 16,
@@ -17,7 +18,14 @@ def create_final_entities(
     text_emb_llm_send_to: EmbLLM,
     text_emb_llm_args: Dict = {},
     save: bool = True,
+    try_load: bool = True,
 ):
+
+    fn_name = "create_final_entities"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
     dataset = df_ops.unpack_graph(
         dataset,
         column="clustered_graph",
@@ -98,9 +106,5 @@ def create_final_entities(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_final_entities",
-            dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, dataset)
     return dataset

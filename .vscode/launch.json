@@ -5,13 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Huggingface Atelectasis indexing",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--output_dir ./index_results --query atelectasis --doc_top_k 1 --llm huggingface --hf_checkpoint meta-llama/Meta-Llama-3.1-8B-Instruct",
+        },
+        {
             "name": "Atelectasis indexing",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": "--output_dir ./index_results --query atelectasis"
-
+            "args": "--output_dir ./index_results --query atelectasis --doc_top_k 1"
+        },
+        {
+            "name": "Atelectasis searching",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--input_dir ./index_results/atelectasis --query 'what causes atelectasis?' "
         },
         {
             "name": "Python Debugger: Current File",

@@ -1,7 +1,8 @@
+import os
 import df_ops
 import pandas as pd
 
-from utils.save import parquet_table_save
+from utils.save import parquet_table_load, parquet_table_save
 
 
 def create_final_relationships(
@@ -9,7 +10,13 @@ def create_final_relationships(
     final_nodes_output: pd.DataFrame,
     query_output_dir: str,
     save: bool = True,
+    try_load: bool = True,
 ):
+    fn_name = "create_final_relationships"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
 
     dataset = df_ops.unpack_graph(
         base_entity_graph_output,
@@ -70,10 +77,6 @@ def create_final_relationships(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_final_relationships",
-            dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, dataset)
 
     return dataset

@@ -1,13 +1,21 @@
-from utils.save import parquet_table_save
 import pandas as pd
 import df_ops
+import os
+from utils.save import parquet_table_load, parquet_table_save
 
 
 def create_base_documents(
     final_text_units_output: pd.DataFrame,
     query_output_dir: str | None = None,
     save: bool = True,
+    try_load: bool = True,
 ):
+
+    fn_name = "create_base_documents"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
 
     dataset = df_ops.unroll(final_text_units_output, **{"column": "document_ids"})
     dataset = df_ops.select(dataset, columns=["id", "document_ids", "text"])
@@ -60,10 +68,6 @@ def create_base_documents(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_base_documents",
-            base_documents_output,
-        )
+        parquet_table_save(query_output_dir, fn_name, base_documents_output)
 
     return base_documents_output

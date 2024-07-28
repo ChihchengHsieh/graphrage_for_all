@@ -1,7 +1,7 @@
 import pandas as pd
 from llm.send import ChatLLM
 from template.graph_extract import GRAPH_EXTRACTION_PROMPT
-import defaults as defs
+from . import defaults as defs
 from dataclasses import dataclass
 from generators.graph_extactor import GraphExtractor
 from typing import Any, Dict
@@ -69,15 +69,15 @@ def run_extract_entities(
 
     results = extractor(
         texts=list(text_list),
-        send_to=send_to,
+        # send_to=send_to,
         prompt_variables={
             "entity_types": entity_types,
             "tuple_delimiter": tuple_delimiter,
             "record_delimiter": record_delimiter,
             "completion_delimiter": completion_delimiter,
         },
-        extraction_prompt=extraction_prompt,
-        max_gleaning=max_gleanings,
+        # extraction_prompt=extraction_prompt,
+        # max_gleaning=max_gleanings,
     )
 
     graph = results.output
@@ -126,8 +126,8 @@ def entity_extract(
         text = row[column]
         id = row[id_column]
         result = run_extract_entities(  # calling run_gi in graph intelligence.
-            [Document(text=text, id=id)],
-            entity_types,
+            docs=[Document(text=text, id=id)],
+            entity_types=entity_types,
             # callbacks,
             # cache,
             send_to=send_to,

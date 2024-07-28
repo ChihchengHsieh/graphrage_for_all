@@ -66,12 +66,13 @@ def summarize_descriptions(
     column: str,
     to: str,
     send_to: ChatLLM,
-    strategy: dict[str, Any] | None = None,
+    max_summary_length: int = 500,
+    # strategy: dict[str, Any] | None = None,
     llm_args: Dict | None = None,
 ) -> pd.DataFrame:
     output = input
-    strategy = strategy or {}
-    strategy_config = {**strategy}
+    # strategy = strategy or {}
+    # strategy_config = {**strategy}
 
     def get_resolved_entities(
         row,
@@ -117,10 +118,10 @@ def summarize_descriptions(
         # semaphore: asyncio.Semaphore,
     ):
         results = run_summarize_descriptions(
+            max_summary_length=max_summary_length,
             send_to=send_to,
             items=graph_item,
             descriptions=descriptions,
-            args=strategy_config,
             llm_args=llm_args,
         )
         return results

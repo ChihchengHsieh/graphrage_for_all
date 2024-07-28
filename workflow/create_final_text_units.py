@@ -1,7 +1,8 @@
 import df_ops
 import pandas as pd
+import os
 
-from utils.save import parquet_table_save
+from utils.save import parquet_table_load, parquet_table_save
 
 
 def create_final_text_units(
@@ -10,7 +11,14 @@ def create_final_text_units(
     join_text_unit_id_to_relationship_ids_output: pd.DataFrame,
     query_output_dir: str = None,
     save: bool = True,
+    try_load: bool = True,
 ):
+
+    fn_name = "create_final_text_units"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
     dataset = df_ops.select(
         base_text_units_output,
         **{"columns": ["id", "chunk", "document_ids", "n_tokens"]},
@@ -91,10 +99,6 @@ def create_final_text_units(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_final_text_units",
-            dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, final_text_units_output)
 
     return final_text_units_output

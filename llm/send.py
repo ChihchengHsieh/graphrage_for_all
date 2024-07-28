@@ -2,6 +2,7 @@ from typing import Any, Callable, List, Dict
 from dataclasses import dataclass, field
 
 
+
 @dataclass
 class LLMResponse:
     output: str
@@ -65,13 +66,11 @@ def replace_and_send(
     llm_args: Dict | None = None,
 ):
     history = history or []
-
-    if replacing_variable is not None:
-        input_message = perform_variable_replacements(
-            template=template,
-            history=history,
-            variables=replacing_variable or {},
-        )
+    input_message = perform_variable_replacements(
+        template=template,
+        history=history,
+        variables=replacing_variable or {},
+    )
     messages = create_messages(input_message, history)
     response = send_to(messages, llm_args or {})
     return response

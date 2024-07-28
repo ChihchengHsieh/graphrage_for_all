@@ -1,7 +1,8 @@
 from typing import List
 import df_ops
 import pandas as pd
-from utils.save import parquet_table_save
+import os
+from utils.save import parquet_table_load, parquet_table_save
 
 
 def create_base_text_units(
@@ -11,7 +12,14 @@ def create_base_text_units(
     chunk_by_columns: List[str] = ["id"],
     n_tokens_column_name: str = "n_tokens",
     save: bool = True,
+    try_load: bool = True,
 ):
+    fn_name = "create_base_text_units"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
+
     dataset = df_ops.orderby(dataset, [{"column": "id", "direction": "asc"}])
     dataset = df_ops.zip_verb(dataset, columns=["id", "text"], to="text_with_ids")
     dataset = df_ops.aggregate_override(
@@ -82,10 +90,6 @@ def create_base_text_units(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_base_text_units",
-            dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, dataset)
 
     return dataset

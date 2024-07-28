@@ -1,5 +1,6 @@
 import df_ops
-from utils.save import parquet_table_save
+import os
+from utils.save import parquet_table_load, parquet_table_save
 import pandas as pd
 
 
@@ -7,8 +8,13 @@ def create_final_communities(
     base_entity_graph_output: pd.DataFrame,
     query_output_dir: str | None = None,
     save=True,
+    try_load: bool = True,
 ):
-
+    fn_name = "create_final_communities"
+    if try_load and os.path.exists(
+        os.path.join(query_output_dir, f"{fn_name}.parquet")
+    ):
+        return parquet_table_load(query_output_dir, fn_name)
     graph_nodes_output = df_ops.unpack_graph(
         base_entity_graph_output,
         **{
@@ -138,10 +144,6 @@ def create_final_communities(
     )
 
     if save:
-        parquet_table_save(
-            query_output_dir,
-            "create_final_communities",
-            joined_dataset,
-        )
+        parquet_table_save(query_output_dir, fn_name, joined_dataset)
 
     return joined_dataset

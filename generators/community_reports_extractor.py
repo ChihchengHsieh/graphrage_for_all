@@ -112,7 +112,7 @@ class CommunityReportsExtractor:
                             "max_tokens": self._max_report_length,
                         },
                     )
-                    or {},
+                    or {}
                 )
 
                 json_response = try_parse_json_object(response.output)

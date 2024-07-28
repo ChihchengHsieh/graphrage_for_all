@@ -1,12 +1,14 @@
 from pathlib import Path
 from typing import Any, cast
+import pandas as pd
+import os
 
 _encoding = "utf-8"
+
 
 def join_path(file_path: str, file_name: str) -> Path:
     """Join a path and a file. Independent of the OS."""
     return Path(file_path) / Path(file_name).parent / Path(file_name).name
-
 
 
 def file_pipeline_storage_set(
@@ -18,6 +20,7 @@ def file_pipeline_storage_set(
     encoding = None if is_bytes else encoding or _encoding
     with open(join_path(root, key), cast(Any, write_type), encoding=encoding) as f:
         f.write(value)
+
 
 def read_file(
     path: str | Path,
@@ -49,6 +52,11 @@ def parquet_table_save(root, name, df):
     file_pipeline_storage_set(root, filename, df.to_parquet())
 
 
-def parquet_table_load(root, name, as_byte: bool = True):
+def parquet_table_load(
+    root,
+    name,
+):
     filename = f"{name}.parquet"
-    file_pipeline_storage_get(root, filename, as_byte)
+    return pd.read_parquet(
+        os.path.join(root, filename)
+    )  # file_pipeline_storage_get(root, filename, as_byte)

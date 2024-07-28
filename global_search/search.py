@@ -2,12 +2,6 @@ from typing import Any
 from .community_context import ConversationHistory
 import tiktoken
 import time
-from verbs.template import (
-    MAP_SYSTEM_PROMPT,
-    REDUCE_SYSTEM_PROMPT,
-    GENERAL_KNOWLEDGE_INSTRUCTION,
-    NO_DATA_ANSWER,
-)
 import pandas as pd
 from dataclasses import dataclass
 import json
