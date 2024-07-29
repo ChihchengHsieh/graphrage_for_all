@@ -1,5 +1,5 @@
 from typing import List
-from .send import Messages, ModelArgs, LLMResponse
+from .send import ChatLLM, Messages, ModelArgs, LLMResponse
 import openai
 import secret
 from tenacity import (
@@ -46,6 +46,44 @@ def text_embed_with_backoff(**kwargs):
 )
 def chat_completion_with_backoff(**kwargs):
     return openai.chat.completions.create(**kwargs)
+
+
+def get_openai_send_fn(
+    model_name: str = "gpt-3.5-turbo",
+) -> ChatLLM:
+
+    def send_to(messages: Messages, model_args: ModelArgs) -> LLMResponse:
+        response = chat_completion_with_backoff(
+            **{
+                "model": model_name,
+                "messages": messages,
+            },
+            **model_args,
+        )
+
+        output = response.choices[0].message.content
+
+        return LLMResponse(
+            output=output,
+            history=[*messages, {"role": "assistant", "content": output}],
+        )
+
+    return send_to
+
+
+def get_openai_text_emb_send_fn(
+    model_name: str = "text-embedding-3-small",
+) -> ChatLLM:
+
+    def send_to(input: List[str], model_args: ModelArgs) -> LLMResponse:
+        embedding = text_embed_with_backoff(
+            input=input,
+            model=model_name,
+            **model_args,
+        )
+        return [d.embedding for d in embedding.data]
+
+    return send_to
 
 
 def send_to_openai(messages: Messages, model_args: ModelArgs) -> LLMResponse:

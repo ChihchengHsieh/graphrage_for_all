@@ -1,32 +1,22 @@
-from .openai import send_to_openai, send_to_openai_text_emb
+from .openai import get_openai_send_fn, send_to_openai, send_to_openai_text_emb
 from .huggingface import get_huggingface_send_fn, get_huggingface_text_emb_send_fn
 
 
-def get_send_fn(llm: str, checkpoint: str):
-    match llm:
+def get_send_fn(source: str, model_name: str):
+    match source:
         case "openai":
-            return send_to_openai
+            return get_openai_send_fn(model_name)
         case "huggingface":
-            return get_huggingface_send_fn(checkpoint)
+            return get_huggingface_send_fn(model_name)
         case _:
-            raise NotImplementedError(f"LLM: [{llm}] is not implemented.")
+            raise NotImplementedError(f"LLM: [{source}] is not implemented.")
 
 
-def get_text_emb_send_fn(llm: str, checkpoint: str):
-    match llm:
+def get_text_emb_send_fn(source: str, model_name: str):
+    match source:
         case "openai":
-            return send_to_openai_text_emb
+            return send_to_openai_text_emb(model_name)
         case "huggingface":
-            return get_huggingface_text_emb_send_fn(checkpoint)
+            return get_huggingface_text_emb_send_fn(model_name)
         case _:
-            raise NotImplementedError(f"LLM: [{llm}] is not implemented.")
-
-
-def get_default_llm_args(llm: str):
-    match llm:
-        case "openai":
-            return 
-        case "huggingface":
-            return 
-        case _:
-            raise NotImplementedError(f"LLM: [{llm}] is not implemented.")
+            raise NotImplementedError(f"LLM: [{source}] is not implemented.")

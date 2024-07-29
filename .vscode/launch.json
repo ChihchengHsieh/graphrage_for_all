@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": "--output_dir ./index_results --query atelectasis --doc_top_k 1 --llm huggingface --hf_checkpoint meta-llama/Meta-Llama-3.1-8B-Instruct",
+            "args": "--output_dir ./index_results --query atelectasis --doc_top_k 1 --source huggingface --model_name meta-llama/Meta-Llama-3.1-8B-Instruct",
         },
         {
             "name": "Atelectasis indexing",

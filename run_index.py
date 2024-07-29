@@ -12,9 +12,11 @@ def get_args_parser():
     parser.add_argument("--doc_dir", default="./documents", type=str, help="Directory for saving retrieved documents.")
     parser.add_argument("--doc_top_k", default=10, type=int, help="Directory for saving retrieved documents.")
     parser.add_argument("--force", action="store_true", help="Run the index without local results (.parquets)." )
-    parser.add_argument("--llm", default="openai", type=str, help="LLM to use: [openai, huggingface]",)
-    parser.add_argument("--hf_checkpoint", default="meta-llama/Meta-Llama-3.1-8B-Instruct", help="Checkpoint to load from huggingface.")
+    parser.add_argument("--source", default="openai", type=str, help="Source of the LLM: [openai, huggingface]",)
+    parser.add_argument("--model_name", default="gpt-3.5-turbo", help="Model to load for generation.")
+    parser.add_argument("--text_emb_model_name", default="text-embedding-3-small", help="Model to load for text embedding.")
     return parser
+
 # fmt: on
 
 
@@ -30,8 +32,8 @@ def main(args):
         level=logging.INFO,
     )
 
-    send_to = get_send_fn(args.llm, args.hf_checkpoint)
-    text_emb_send_to = get_text_emb_send_fn(args.llm, args.hf_checkpoint)
+    send_to = get_send_fn(args.source, args.model_name)
+    text_emb_send_to = get_text_emb_send_fn(args.source, args.model_name)
 
     indexer = Indexer(
         doc_top_k=args.doc_top_k,

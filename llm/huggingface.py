@@ -17,6 +17,8 @@ def init_pipe(checkpoint):
             device_map="auto",
             max_new_tokens=12_000,
         )
+        pipe.tokenizer.pad_token = pipe.tokenizer.eos_token
+        pipe.tokenizer.pad_token_id = pipe.tokenizer.eos_token_id
 
 
 def parse_to_huggingface_args(args: ModelArgs):
@@ -36,7 +38,7 @@ def parse_to_huggingface_args(args: ModelArgs):
 
 
 def get_huggingface_send_fn(
-    checkpoint: str = "mistralai/Mistral-7B-Instruct-v0.1",
+    checkpoint: str = "meta-llama/Meta-Llama-3.1-8B-Instruct",
 ) -> ChatLLM:
     init_pipe(checkpoint)
 
@@ -59,15 +61,14 @@ def get_huggingface_send_fn(
 
 
 def get_huggingface_text_emb_send_fn(
-    checkpoint: str = "mistralai/Mistral-7B-Instruct-v0.1",
+    checkpoint: str = "meta-llama/Meta-Llama-3.1-8B-Instruct",
 ) -> ChatLLM:
     init_pipe(checkpoint)
 
     global pipe
     model = pipe.model
     tokenizer = pipe.tokenizer
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.pad_token_id = tokenizer.eos_token_id
+
     # tokenizer = AutoTokenizer.from_pretrained(checkpoint, token=HUGGINGFACE_TOKEN)
     # model = AutoModel.from_pretrained(checkpoint, token=HUGGINGFACE_TOKEN)
 
@@ -79,7 +80,9 @@ def get_huggingface_text_emb_send_fn(
                 output_hidden_states=True,
                 # max_new_tokens=0,
             )
-            embeddings = outputs.hidden_states[-1].mean(dim=1).tolist() # (B, L, D).mean(dim=1) => (B, D)
+            embeddings = (
+                outputs.hidden_states[-1].mean(dim=1).tolist()
+            )  # (B, L, D).mean(dim=1) => (B, D)
         return embeddings
 
     return text_emnb_send_to
