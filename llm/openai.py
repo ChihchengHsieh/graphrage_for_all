@@ -104,7 +104,7 @@ def send_to_openai(messages: Messages, model_args: ModelArgs) -> LLMResponse:
 
 
 def send_to_openai_text_emb(
-    input: List[str], model_args: ModelArgs
+    input: List[str], model_args: ModelArgs = {}
 ) -> List[List[float]]:
     embedding = text_embed_with_backoff(
         input=input,

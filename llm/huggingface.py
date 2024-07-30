@@ -1,4 +1,4 @@
-from .send import Messages, ModelArgs, LLMResponse, ChatLLM
+from .send import Messages, ModelArgs, LLMResponse, ChatLLM, EmbLLM
 from transformers import pipeline
 import torch
 from secret import HUGGINGFACE_TOKEN
@@ -62,7 +62,7 @@ def get_huggingface_send_fn(
 
 def get_huggingface_text_emb_send_fn(
     checkpoint: str = "meta-llama/Meta-Llama-3.1-8B-Instruct",
-) -> ChatLLM:
+) -> EmbLLM:
     init_pipe(checkpoint)
 
     global pipe

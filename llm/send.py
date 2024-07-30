@@ -2,7 +2,6 @@ from typing import Any, Callable, List, Dict
 from dataclasses import dataclass, field
 
 
-
 @dataclass
 class LLMResponse:
     output: str
@@ -18,7 +17,7 @@ EmbLLM = Callable[[List[str], ModelArgs], List[List[float]]]
 
 @dataclass
 class LLMSendToConfig:
-    llm_send_to: ChatLLM
+    llm_send_to: ChatLLM | EmbLLM
     llm_model_args: Dict = field(default_factory=lambda x: {})
 
 

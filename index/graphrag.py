@@ -11,7 +11,7 @@ from retreivers.radiowiki import RadioWikiRetriever
 from llm.send import LLMSendToConfig
 
 
-class Indexer:
+class GraphRAGIndexer:
     def __init__(
         self,
         output_dir: str,
@@ -23,7 +23,7 @@ class Indexer:
         doc_top_k: int | None = None,
     ) -> None:
         self.output_dir = output_dir
-        self.retriever = RadioWikiRetriever(
+        self.doc_retriever = RadioWikiRetriever(
             saving_dir=doc_saving_dir,
         )
 
@@ -181,7 +181,7 @@ class Indexer:
         )
 
     def get_documents(self, query: str, top_k: int = None) -> pd.DataFrame:
-        docs = self.retriever.request(
+        docs = self.doc_retriever.request(
             query=query,
             top_k=top_k,
         )
