@@ -3,6 +3,16 @@
 
 ## Get started
 
+First to install the dependency:
+
+If pipreqs hasn't been installed yet : `pip install pipreqs`
+
+Then run:
+```
+pip install -r requirements.txt
+```
+
+
 To use GraphRAG, following two steps are required:
 
 1. Generating the knowledge graph using `run_index.py`. For example:
@@ -15,7 +25,7 @@ python3 run_index.py \
 ```
 The Examples for using huggingface model is shown in `index_llama3v1_atelectasis.sh`, where llama 3.1 is used. To change the entity types for LLMs to capture, change `DEFAULT_ENTITY_TYPES` in `./df_ops/defaults`, which is set as `["disease", "symptoms", "cause"]` by default.
 
-2. Querying the knoweledge graph (communities). Notebook `run_search.ipynb` provide an example of querying using llama 3.1.
+1. Querying the knoweledge graph (communities). Notebook `run_search.ipynb` provide an example of querying using llama 3.1.
 
 
 
