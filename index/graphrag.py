@@ -189,6 +189,7 @@ class GraphRAGIndexer:
         return dataset
 
     def init_query_dir(self, query: str) -> str:
-        query_output_dir = os.path.join(self.output_dir, query)
+        top_k_str = f"top_{self.doc_top_k}" if self.doc_top_k else ""
+        query_output_dir = os.path.join(self.output_dir, f"{query}_{top_k_str}")
         Path(query_output_dir).mkdir(parents=True, exist_ok=True)
         return query_output_dir

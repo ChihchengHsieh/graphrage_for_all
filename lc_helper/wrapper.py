@@ -1,16 +1,21 @@
 from langchain_core.runnables import Runnable
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
-from llm.send import Messages
+from llm.send import Messages, ModelArgs
 
 
 class LcChatWrapper(Runnable):
     def __init__(self, send_fn) -> None:
         self.send_fn = send_fn
+        self.last_messages = None
 
-    def invoke(self, input, config):
+    def invoke(
+        self,
+        input,
+        config,
+    ):
         messages = self.to_messages(input)
+        self.last_messages = messages
         output = self.send_fn(messages, {}).output
-        print(config)
 
         return HumanMessage(
             content=output,
@@ -39,11 +44,17 @@ class LcChatWrapper(Runnable):
         return messages
 
 
+from llm.create import get_send_fn, get_text_emb_send_fn
+
+
 class LcTextEmbWrapper:
     def __init__(self, text_emb_send_fn) -> None:
         self.text_emb_send_fn = text_emb_send_fn
 
-    def embed_documents(self, texts: list[str]) -> list[list[float]]:
+    def embed_documents(
+        self,
+        texts: list[str],
+    ) -> list[list[float]]:
         """Embed search docs.
 
         Args:
@@ -52,8 +63,10 @@ class LcTextEmbWrapper:
         Returns:
             List of embeddings.
         """
-        return self.text_emb_send_fn(texts)
+
+        emb_out = self.text_emb_send_fn(texts, {})
+        return emb_out
 
     def embed_query(self, text: str) -> list[float]:
 
-        return self.text_emb_send_fn([text])[0]
+        return self.text_emb_send_fn([text], {})[0]

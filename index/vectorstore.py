@@ -43,11 +43,13 @@ class VectorStoreIndexer:
             embedding=LcTextEmbWrapper(
                 text_emb_send_fn=self.emb_llm_config.llm_send_to
             ),
-            persist_directory=query_output_dir,
+            persist_directory=query_output_dir if save else None,
         )
 
+        return query_output_dir
+
     def init_query_dir(self, query: str) -> str:
-        top_k_str = f"top_{self.top_k}" if self.doc_top_k else ""
+        top_k_str = f"top_{self.doc_top_k}" if self.doc_top_k else ""
         query_output_dir = os.path.join(self.output_dir, f"{query}_{top_k_str}")
         Path(query_output_dir).mkdir(parents=True, exist_ok=True)
         return query_output_dir
@@ -59,23 +61,24 @@ class VectorStoreIndexer:
         )
         return docs
 
-    def save_emb_llm_info(self, source: str, model_name: str):
-        with open(os.path.join(self.output_dir, "emb_llm.json"), "w"):
+    def save_emb_llm_info(self, query_output_dir, source: str, model_name: str):
+        with open(os.path.join(query_output_dir, "emb_llm.json"), "w") as f:
             json.dump(
                 {
                     "source": source,
                     "model_name": model_name,
-                }
+                },
+                f,
             )
 
     @staticmethod
     def load_db(path: str):
-        with open(os.path.join(path, "emb_llm.json"), "w"):
-            spec_dict = json.load()
+        with open(os.path.join(path, "emb_llm.json"), "r") as f:
+            spec_dict = json.load(f)
         emb_fn = get_text_emb_send_fn(**spec_dict)
         return Chroma(
             persist_directory=path,
-            embedding=LcTextEmbWrapper(
+            embedding_function=LcTextEmbWrapper(
                 text_emb_send_fn=emb_fn,
             ),
         )

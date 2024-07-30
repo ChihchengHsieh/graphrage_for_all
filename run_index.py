@@ -19,9 +19,7 @@ def get_args_parser():
     parser.add_argument("--model_name", default="gpt-3.5-turbo", help="Model to load for generation.")
     parser.add_argument("--text_emb_model_name", default="text-embedding-3-small", help="Model to load for text embedding.")
     parser.add_argument("--store_type", default="graphrag", help="Model to load for text embedding. Options: [graphrag,  ]")
-    
     return parser
-
 # fmt: on
 
 
@@ -79,12 +77,13 @@ def main(args):
             doc_saving_dir=args.doc_dir,
             doc_top_k=args.doc_top_k,
         )
-        indexer.generate(
+        query_output_dir = indexer.generate(
             query=args.query,
             save=True,
         )
 
         indexer.save_emb_llm_info(
+            query_output_dir=query_output_dir,
             source=args.text_emb_source,
             model_name=args.text_emb_model_name,
         )
