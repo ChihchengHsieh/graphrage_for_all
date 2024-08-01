@@ -3,3 +3,4 @@ secret.py
 /documents
 /deprecated
 /chroma_db
+*.pyc
