@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="graphrag_for_all",
-    version="0.1.0",
+    version="0.1.1",
     description="Graphrag and vectorstore for all LLMs",
     url="https://github.com/ChihchengHsieh/rag-aug",
     author="Chihcheng Hsieh",
