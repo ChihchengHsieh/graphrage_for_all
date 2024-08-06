@@ -1,4 +1,4 @@
-from secret import OPENAI_API_KEY
+from graphrag_for_all.secret import OPENAI_API_KEY
 from openai import OpenAI
 from dataclasses import dataclass
 from abc import ABC, abstractmethod

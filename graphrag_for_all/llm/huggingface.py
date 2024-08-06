@@ -1,10 +1,9 @@
 from .send import Messages, ModelArgs, LLMResponse, ChatLLM, EmbLLM
 from transformers import pipeline
 import torch
-from secret import HUGGINGFACE_TOKEN
+from graphrag_for_all.secret import HUGGINGFACE_TOKEN
 
 pipe = None
-
 
 def init_pipe(checkpoint):
     global pipe

@@ -3,4 +3,7 @@ secret.py
 /documents
 /deprecated
 /chroma_db
+/dist
+/graphrag_for_all.egg-info
+/build
 *.pyc

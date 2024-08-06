@@ -1,7 +1,7 @@
 from typing import List
 from .send import ChatLLM, Messages, ModelArgs, LLMResponse
 import openai
-import secret
+import graphrag_for_all.secret as secret
 from tenacity import (
     retry,
     stop_after_attempt,
@@ -10,7 +10,6 @@ from tenacity import (
 )
 
 openai.api_key = secret.OPENAI_API_KEY
-
 
 @retry(
     retry=retry_if_exception_type(

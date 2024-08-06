@@ -11,7 +11,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from llm.create import get_send_fn, get_text_emb_send_fn
-from secret import OPENAI_API_KEY
+from graphrag_for_all.secret import OPENAI_API_KEY
 from retreivers.radiowiki import RadioWikiRetriever
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 

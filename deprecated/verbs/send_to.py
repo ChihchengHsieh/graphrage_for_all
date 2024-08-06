@@ -6,7 +6,7 @@ from tenacity import (
 )  # for exponential backoff
 
 import openai
-from secret import OPENAI_API_KEY
+from graphrag_for_all.secret import OPENAI_API_KEY
 
 openai.api_key = OPENAI_API_KEY
 
