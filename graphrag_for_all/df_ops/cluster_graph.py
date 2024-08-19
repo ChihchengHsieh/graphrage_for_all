@@ -3,8 +3,8 @@ import pandas as pd
 import html
 
 from typing import Any
-from utils.graph import load_graph
-from utils.hash import gen_uuid
+from graphrag_for_all.utils.graph import load_graph
+from graphrag_for_all.utils.hash import gen_uuid
 from enum import Enum
 from random import Random
 

@@ -1,11 +1,11 @@
 import pandas as pd
-from llm.send import ChatLLM
-from template.graph_extract import GRAPH_EXTRACTION_PROMPT
+from graphrag_for_all.llm.send import ChatLLM
+from graphrag_for_all.template.graph_extract import GRAPH_EXTRACTION_PROMPT
+from graphrag_for_all.text.text_splitter import create_text_splitter
 from . import defaults as defs
 from dataclasses import dataclass
-from generators.graph_extactor import GraphExtractor
+from graphrag_for_all.generators.graph_extactor import GraphExtractor
 from typing import Any, Dict
-from text.text_splitter import create_text_splitter
 import networkx as nx
 
 

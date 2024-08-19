@@ -1,9 +1,9 @@
 import os
 from langchain.document_loaders import WikipediaLoader
-from retreivers.source import RadioWebLoader
+from graphrag_for_all.retreivers.source import RadioWebLoader
 from typing import Optional
-from utils.doc import clean_docs
-from utils.pickle import load_pickle, save_pickle
+from graphrag_for_all.utils.doc import clean_docs
+from graphrag_for_all.utils.pickle import load_pickle, save_pickle
 
 
 class RadioWikiRetriever:

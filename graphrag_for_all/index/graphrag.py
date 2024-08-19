@@ -6,9 +6,9 @@ import workflow.create_final_communities
 
 from pathlib import Path
 from copy import deepcopy
-from utils.doc import langhchain_doc_to_df
+from graphrag_for_all.utils.doc import langhchain_doc_to_df
 from retreivers.radiowiki import RadioWikiRetriever
-from llm.send import LLMSendToConfig
+from graphrag_for_all.llm.send import LLMSendToConfig
 
 
 class GraphRAGIndexer:

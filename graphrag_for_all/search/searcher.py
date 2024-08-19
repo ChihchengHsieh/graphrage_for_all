@@ -3,7 +3,7 @@ import pandas as pd
 import tiktoken
 from .community_context import GlobalCommunityContext
 from .read import read_indexer_entities, read_indexer_reports
-from llm.send import ChatLLM
+from graphrag_for_all.llm.send import ChatLLM
 
 COMMUNITY_REPORT_TABLE = "create_final_community_reports"
 ENTITY_TABLE = "create_final_nodes"

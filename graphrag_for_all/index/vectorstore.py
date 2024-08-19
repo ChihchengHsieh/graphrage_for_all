@@ -1,13 +1,13 @@
 from retreivers.radiowiki import RadioWikiRetriever
-from llm.send import LLMSendToConfig
+from graphrag_for_all.llm.send import LLMSendToConfig
 from pathlib import Path
 from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from lc_helper.wrapper import LcTextEmbWrapper
-import df_ops.defaults as dfs
+import graphrag_for_all.df_ops.defaults as dfs
 import os
 import json
-from llm.create import get_text_emb_send_fn
+from graphrag_for_all.llm.create import get_text_emb_send_fn
 
 
 class VectorStoreIndexer:

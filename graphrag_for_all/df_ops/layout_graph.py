@@ -3,7 +3,7 @@ from typing import Any, cast
 import networkx as nx
 import pandas as pd
 from dataclasses import dataclass
-from utils.graph import load_graph
+from graphrag_for_all.utils.graph import load_graph
 import umap
 import numpy as np
 

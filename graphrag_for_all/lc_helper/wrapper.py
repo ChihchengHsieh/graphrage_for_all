@@ -1,6 +1,6 @@
 from langchain_core.runnables import Runnable
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
-from llm.send import Messages, ModelArgs
+from graphrag_for_all.llm.send import Messages, ModelArgs
 
 
 class LcChatWrapper(Runnable):
@@ -44,7 +44,7 @@ class LcChatWrapper(Runnable):
         return messages
 
 
-from llm.create import get_send_fn, get_text_emb_send_fn
+from graphrag_for_all.llm.create import get_send_fn, get_text_emb_send_fn
 
 
 class LcTextEmbWrapper:

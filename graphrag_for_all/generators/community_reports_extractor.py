@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from llm.send import ChatLLM, ModelArgs, replace_and_send
-from template.community_report import COMMUNITY_REPORT_PROMPT
+from graphrag_for_all.llm.send import ChatLLM, ModelArgs, replace_and_send
+from graphrag_for_all.template.community_report import COMMUNITY_REPORT_PROMPT
 from typing import Any
-from utils.json import try_parse_json_object
+from graphrag_for_all.utils.json import try_parse_json_object
 
 
 @dataclass

@@ -1,9 +1,9 @@
-import df_ops
+from graphrag_for_all import df_ops
 import pandas as pd
 from copy import deepcopy
 
 import os
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 
 layout_graph_config = {"strategy": {"type": "zero"}}

@@ -1,9 +1,9 @@
 from typing import Dict
 import pandas as pd
-from llm.send import ChatLLM
-import df_ops
+from graphrag_for_all.llm.send import ChatLLM
+from graphrag_for_all import df_ops
 import os
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 
 def create_summarized_entities(

@@ -1,10 +1,10 @@
 from index.graphrag import GraphRAGIndexer
 from index.vectorstore import VectorStoreIndexer
-from llm.send import LLMSendToConfig
+from graphrag_for_all.llm.send import LLMSendToConfig
 import argparse
 import logging
 import os
-from llm.create import get_send_fn, get_text_emb_send_fn
+from graphrag_for_all.llm.create import get_send_fn, get_text_emb_send_fn
 
 # fmt: off
 def get_args_parser():

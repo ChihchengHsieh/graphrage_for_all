@@ -1,8 +1,8 @@
-import df_ops
+from graphrag_for_all import df_ops
 import pandas as pd
 import os
 
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 
 def create_final_text_units(

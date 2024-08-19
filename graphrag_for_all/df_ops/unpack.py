@@ -2,7 +2,7 @@ from typing import Any, cast
 
 import networkx as nx
 import pandas as pd
-from utils.graph import load_graph
+from graphrag_for_all.utils.graph import load_graph
 
 default_copy = ["level"]
 

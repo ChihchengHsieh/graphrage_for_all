@@ -1,10 +1,10 @@
 from typing import Dict
 import pandas as pd
 
-import df_ops
-from llm.send import EmbLLM
+from graphrag_for_all import df_ops
+from graphrag_for_all.llm.send import EmbLLM
 import os
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 text_emb_strategy = {
     "batch_size": 16,

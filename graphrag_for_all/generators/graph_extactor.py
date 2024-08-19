@@ -1,15 +1,15 @@
 from typing import Any
-from llm.send import ChatLLM, ModelArgs
-from template.graph_extract import GRAPH_EXTRACTION_PROMPT, CONTINUE_PROMPT, LOOP_PROMPT
-import df_ops.defaults as defs
+from graphrag_for_all.llm.send import ChatLLM, ModelArgs
+from graphrag_for_all.template.graph_extract import GRAPH_EXTRACTION_PROMPT, CONTINUE_PROMPT, LOOP_PROMPT
+import graphrag_for_all.df_ops.defaults as defs
 import tiktoken
 import networkx as nx
 from dataclasses import dataclass
 import re
-from utils.str import clean_str
+from graphrag_for_all.utils.str import clean_str
 import numbers
 from collections.abc import Mapping
-from llm.send import replace_and_send
+from graphrag_for_all.llm.send import replace_and_send
 
 
 @dataclass

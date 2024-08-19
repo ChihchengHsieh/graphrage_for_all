@@ -1,5 +1,4 @@
 import pandas as pd
-
 from dataclasses import dataclass
 from typing import Any, cast
 from enum import Enum

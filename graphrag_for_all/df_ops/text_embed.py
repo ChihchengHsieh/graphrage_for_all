@@ -13,8 +13,8 @@ import pandas as pd
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from . import defs
-from text.text_splitter import TokenTextSplitter
-from llm.send import EmbLLM, ModelArgs
+from graphrag_for_all.text.text_splitter import TokenTextSplitter
+from graphrag_for_all.llm.send import EmbLLM, ModelArgs
 
 log = logging.getLogger(__name__)
 

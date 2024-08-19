@@ -1,10 +1,10 @@
 import json
 
-from llm.send import ChatLLM, ModelArgs
-from template.summarize import SUMMARIZE_PROMPT
+from graphrag_for_all.llm.send import ChatLLM, ModelArgs
+from graphrag_for_all.template.summarize import SUMMARIZE_PROMPT
 from dataclasses import dataclass
-from utils.token import num_tokens_from_string
-from llm.send import replace_and_send
+from graphrag_for_all.utils.token import num_tokens_from_string
+from graphrag_for_all.llm.send import replace_and_send
 
 # Max token size for input prompts
 DEFAULT_MAX_INPUT_TOKENS = 4_000

@@ -1,9 +1,9 @@
-from template.community_report import COMMUNITY_REPORT_PROMPT
-from llm.send import ChatLLM, ModelArgs
+from graphrag_for_all.template.community_report import COMMUNITY_REPORT_PROMPT
+from graphrag_for_all.llm.send import ChatLLM, ModelArgs
 import pandas as pd
-import df_ops
+from graphrag_for_all import df_ops
 import os
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 
 def create_final_community_reports(

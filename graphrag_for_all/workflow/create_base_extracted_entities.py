@@ -1,12 +1,12 @@
 import os
 
 from typing import Dict
-from llm.send import ChatLLM
+from graphrag_for_all.llm.send import ChatLLM
 from df_ops.entity_extract import entity_extract
 from df_ops.merge_graphs import merge_graphs
 import pandas as pd
-from template.graph_extract import GRAPH_EXTRACTION_PROMPT
-from utils.save import parquet_table_load, parquet_table_save
+from graphrag_for_all.template.graph_extract import GRAPH_EXTRACTION_PROMPT
+from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
 
 
 def create_base_extracted_entities(

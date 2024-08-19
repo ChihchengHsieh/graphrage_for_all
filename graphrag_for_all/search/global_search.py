@@ -1,4 +1,4 @@
-from template.search import (
+from graphrag_for_all.template.search import (
     MAP_SYSTEM_PROMPT,
     REDUCE_SYSTEM_PROMPT,
     GENERAL_KNOWLEDGE_INSTRUCTION,
@@ -10,8 +10,8 @@ import pandas as pd
 import tiktoken
 import time
 from .community_context import ConversationHistory, GlobalCommunityContext
-from llm.send import ChatLLM
-from utils.token import num_tokens
+from graphrag_for_all.llm.send import ChatLLM
+from graphrag_for_all.utils.token import num_tokens
 import json
 
 DEFAULT_MAP_LLM_PARAMS = {
