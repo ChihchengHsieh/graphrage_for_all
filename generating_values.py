@@ -4,12 +4,12 @@ import secret
 import pickle
 import os
 
-from query import get_questions_by_lesion
+from utils.query import get_questions_by_lesion
 from graphrag_for_all.llm.openai import set_openai_api_key
 from graphrag_for_all.llm.huggingface import set_hugging_face_token
 from graphrag_for_all.llm.create import get_send_fn
 from graphrag_for_all.index.generate import IndexGenerator
-from keywords import responses_to_keywords
+from utils.keywords import responses_to_keywords
 from graphrag_for_all.search.searcher import Searcher
 from dataclasses import dataclass
 
