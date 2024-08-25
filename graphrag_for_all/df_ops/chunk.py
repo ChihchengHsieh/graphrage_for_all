@@ -3,7 +3,7 @@ from enum import Enum
 from typing import Any, Iterable, cast, Callable
 import nltk
 from dataclasses import dataclass
-import graphrag_for_all.df_ops.defaults as defs
+from . import defaults as defs
 import tiktoken
 
 

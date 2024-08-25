@@ -72,6 +72,10 @@ def window(
 ) -> pd.DataFrame:
     """Apply a window function to a column in a table."""
     window_operation = WindowFunction(operation)
+
+    '''
+    This section contain the error of 
+    '''
     window = __window_function_map[window_operation](table[column])
 
     if isinstance(table, DataFrameGroupBy):
@@ -80,7 +84,7 @@ def window(
         output[to] = window.reset_index()[column]
         # group again by original group by
         output = output.groupby(table.keys)
-    else:
+    else:   
         output = table
         output[to] = window
 

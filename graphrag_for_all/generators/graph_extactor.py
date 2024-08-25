@@ -1,15 +1,20 @@
 from typing import Any
-from graphrag_for_all.llm.send import ChatLLM, ModelArgs
-from graphrag_for_all.template.graph_extract import GRAPH_EXTRACTION_PROMPT, CONTINUE_PROMPT, LOOP_PROMPT
-import graphrag_for_all.df_ops.defaults as defs
 import tiktoken
 import networkx as nx
 from dataclasses import dataclass
 import re
-from graphrag_for_all.utils.str import clean_str
 import numbers
 from collections.abc import Mapping
-from graphrag_for_all.llm.send import replace_and_send
+
+from ..llm.send import ChatLLM, ModelArgs
+from ..template.graph_extract import (
+    GRAPH_EXTRACTION_PROMPT,
+    CONTINUE_PROMPT,
+    LOOP_PROMPT,
+)
+from ..df_ops import defaults as defs
+from ..utils.str import clean_str
+from ..llm.send import replace_and_send
 
 
 @dataclass
@@ -18,6 +23,7 @@ class GraphExtractionResult:
 
     output: nx.Graph
     source_docs: dict[Any, Any]
+    all_records: list[str]
 
 
 class GraphExtractor:
@@ -103,13 +109,13 @@ class GraphExtractor:
         }
 
         for doc_index, text in enumerate(texts):
-            try:
-                # Invoke the entity extraction
-                result = self._process_document(text, prompt_variables)
-                source_doc_map[doc_index] = text
-                all_records[doc_index] = result
-            except Exception as e:
-                print("error extracting graph")
+            # try:
+            # Invoke the entity extraction
+            result = self._process_document(text, prompt_variables)
+            source_doc_map[doc_index] = text
+            all_records[doc_index] = result
+            # except Exception as e:
+            #     print("error extracting graph")
 
         output = self._process_results(
             all_records,
@@ -124,6 +130,7 @@ class GraphExtractor:
         return GraphExtractionResult(
             output=output,
             source_docs=source_doc_map,
+            all_records=all_records,
         )
 
     def _process_document(self, text: str, prompt_variables: dict[str, str]) -> str:
@@ -134,7 +141,7 @@ class GraphExtractor:
             history=[],
             replacing_variable={
                 **prompt_variables,
-                self._input_text_key: text,
+                self._input_text_key: re.sub(r"[^a-zA-Z0-9\s]", "", text),
             },
             llm_args=self._llm_args,
         )
@@ -204,7 +211,7 @@ class GraphExtractor:
         for source_doc_id, extracted_data in results.items():
             records = [r.strip() for r in extracted_data.split(record_delimiter)]
 
-            for record in records:
+            for i, record in enumerate(records):
                 record = re.sub(r"^\(|\)$", "", record.strip())
                 record_attributes = record.split(tuple_delimiter)
 
@@ -247,55 +254,55 @@ class GraphExtractor:
                             source_id=str(source_doc_id),
                         )
 
-                if (
-                    record_attributes[0] == '"relationship"'
-                    and len(record_attributes) >= 5
-                ):
-                    # add this record as edge
-                    source = clean_str(record_attributes[1].upper())
-                    target = clean_str(record_attributes[2].upper())
-                    edge_description = clean_str(record_attributes[3])
-                    edge_source_id = clean_str(str(source_doc_id))
-                    weight = (
-                        float(record_attributes[-1])
-                        if isinstance(record_attributes[-1], numbers.Number)
-                        else 1.0
-                    )
-                    if source not in graph.nodes():
-                        graph.add_node(
-                            source,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
+                if record_attributes[0] == '"relationship"':
+                    if len(record_attributes) >= 4:
+                        if len(record_attributes) == 4:
+                            record_attributes.append(1.0)
+                        # add this record as edge
+                        source = clean_str(record_attributes[1].upper())
+                        target = clean_str(record_attributes[2].upper())
+                        edge_description = clean_str(record_attributes[3])
+                        edge_source_id = clean_str(str(source_doc_id))
+                        weight = (
+                            float(record_attributes[-1])
+                            if isinstance(record_attributes[-1], numbers.Number)
+                            else 1.0
                         )
-                    if target not in graph.nodes():
-                        graph.add_node(
-                            target,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
-                        )
-                    if graph.has_edge(source, target):
-                        edge_data = graph.get_edge_data(source, target)
-                        if edge_data is not None:
-                            weight += edge_data["weight"]
-                            if self._join_descriptions:
-                                edge_description = "\n".join(
+                        if source not in graph.nodes():
+                            graph.add_node(
+                                source,
+                                type="",
+                                description="",
+                                source_id=edge_source_id,
+                            )
+                        if target not in graph.nodes():
+                            graph.add_node(
+                                target,
+                                type="",
+                                description="",
+                                source_id=edge_source_id,
+                            )
+                        if graph.has_edge(source, target):
+                            edge_data = graph.get_edge_data(source, target)
+                            if edge_data is not None:
+                                weight += edge_data["weight"]
+                                if self._join_descriptions:
+                                    edge_description = "\n".join(
+                                        list(
+                                            {
+                                                *_unpack_descriptions(edge_data),
+                                                edge_description,
+                                            }
+                                        )
+                                    )
+                                edge_source_id = ", ".join(
                                     list(
                                         {
-                                            *_unpack_descriptions(edge_data),
-                                            edge_description,
+                                            *_unpack_source_ids(edge_data),
+                                            str(source_doc_id),
                                         }
                                     )
                                 )
-                            edge_source_id = ", ".join(
-                                list(
-                                    {
-                                        *_unpack_source_ids(edge_data),
-                                        str(source_doc_id),
-                                    }
-                                )
-                            )
                     graph.add_edge(
                         source,
                         target,

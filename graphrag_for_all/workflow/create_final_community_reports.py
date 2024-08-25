@@ -1,9 +1,11 @@
-from graphrag_for_all.template.community_report import COMMUNITY_REPORT_PROMPT
-from graphrag_for_all.llm.send import ChatLLM, ModelArgs
-import pandas as pd
-from graphrag_for_all import df_ops
 import os
-from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
+import pandas as pd
+
+from ..template.community_report import COMMUNITY_REPORT_PROMPT
+from ..llm.send import ChatLLM, ModelArgs
+from . import df_ops
+from ..utils.save import parquet_table_load, parquet_table_save
+import pickle
 
 
 def create_final_community_reports(
@@ -23,6 +25,7 @@ def create_final_community_reports(
     nodes = df_ops.prepare_community_reports_nodes(
         final_nodes_output,
     )
+
     edges = df_ops.prepare_community_reports_edges(
         final_relationship_output,
     )
@@ -33,6 +36,7 @@ def create_final_community_reports(
         edge_df=edges,
         claim_df=None,
     )
+
     dataset = df_ops.create_community_reports(
         community_report_send_to=community_report_send_to,
         local_contexts=local_contexts,
@@ -45,6 +49,10 @@ def create_final_community_reports(
         },
         community_report_llm_args=community_report_llm_args,
     )
+    
+    """
+    Causing error:    
+    """
     dataset = df_ops.window(
         dataset, **{"to": "id", "operation": "uuid", "column": "community"}
     )

@@ -1,12 +1,12 @@
 from typing import Any, Dict, NamedTuple
-from graphrag_for_all.llm.send import ChatLLM
+from ..llm.send import ChatLLM
 
 import pandas as pd
 import networkx as nx
 
 from dataclasses import dataclass
-from graphrag_for_all.utils.graph import load_graph
-from graphrag_for_all.generators.summarize_extractor import SummarizeExtractor
+from ..utils.graph import load_graph
+from ..generators.summarize_extractor import SummarizeExtractor
 
 
 class DescriptionSummarizeRow(NamedTuple):

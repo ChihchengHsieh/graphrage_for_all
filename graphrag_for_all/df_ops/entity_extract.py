@@ -1,12 +1,13 @@
 import pandas as pd
-from graphrag_for_all.llm.send import ChatLLM
-from graphrag_for_all.template.graph_extract import GRAPH_EXTRACTION_PROMPT
-from graphrag_for_all.text.text_splitter import create_text_splitter
-from . import defaults as defs
 from dataclasses import dataclass
-from graphrag_for_all.generators.graph_extactor import GraphExtractor
 from typing import Any, Dict
 import networkx as nx
+
+from ..llm.send import ChatLLM
+from ..template.graph_extract import GRAPH_EXTRACTION_PROMPT
+from ..text.text_splitter import create_text_splitter
+from ..generators.graph_extactor import GraphExtractor
+from . import defaults as defs
 
 
 @dataclass
@@ -81,6 +82,13 @@ def run_extract_entities(
     )
 
     graph = results.output
+
+    if len(graph.nodes) == 0:
+        raise ValueError("Graph has no nodes")
+    
+    if len(graph.edges) == 0:
+        raise ValueError("Graph has no edges")
+
     # Map the "source_id" back to the "id" field
     for _, node in graph.nodes(data=True):  # type: ignore
         if node is not None:

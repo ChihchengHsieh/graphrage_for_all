@@ -29,6 +29,7 @@ def init_pipe(checkpoint):
         )
         pipe.tokenizer.pad_token = pipe.tokenizer.eos_token
         pipe.tokenizer.pad_token_id = pipe.tokenizer.eos_token_id
+        pipe.model.generation_config.pad_token_id = pipe.tokenizer.eos_token_id
 
 
 def parse_to_huggingface_args(args: ModelArgs):
@@ -51,7 +52,6 @@ def get_huggingface_send_fn(
     checkpoint: str = "meta-llama/Meta-Llama-3.1-8B-Instruct",
 ) -> ChatLLM:
     init_pipe(checkpoint)
-
     def send_to(messages: Messages, model_args: ModelArgs) -> LLMResponse:
         global pipe
         model_args = parse_to_huggingface_args(model_args)

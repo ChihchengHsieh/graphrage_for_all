@@ -5,8 +5,8 @@ import pandas as pd
 
 from . import schemas
 from typing import Any, Callable
-from graphrag_for_all.llm.send import ChatLLM, ModelArgs
-from graphrag_for_all.generators.community_reports_extractor import CommunityReportsExtractor
+from ..llm.send import ChatLLM, ModelArgs
+from ..generators.community_reports_extractor import CommunityReportsExtractor
 from typing_extensions import TypedDict
 from .select import select
 from .join import join

@@ -1,4 +1,4 @@
-from graphrag_for_all.utils.hash import gen_md5_hash
+from ..utils.hash import gen_md5_hash
 import pandas as pd
 
 

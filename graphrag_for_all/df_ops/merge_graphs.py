@@ -3,7 +3,7 @@ from typing import Any, cast
 from enum import Enum
 from dataclasses import dataclass
 import networkx as nx
-from graphrag_for_all.utils.graph import load_graph
+from ..utils.graph import load_graph
 
 
 DEFAULT_CONCAT_SEPARATOR = ","

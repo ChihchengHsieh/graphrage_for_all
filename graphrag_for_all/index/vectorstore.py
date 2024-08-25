@@ -1,14 +1,14 @@
-from retreivers.radiowiki import RadioWikiRetriever
-from graphrag_for_all.llm.send import LLMSendToConfig
+import os
+import json
 from pathlib import Path
 from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from lc_helper.wrapper import LcTextEmbWrapper
-import graphrag_for_all.df_ops.defaults as dfs
-import os
-import json
-from graphrag_for_all.llm.create import get_text_emb_send_fn
 
+from ..retrievers.radiowiki import RadioWikiRetriever
+from ..llm.send import LLMSendToConfig
+from ..lc_helper.wrapper import LcTextEmbWrapper
+from ..df_ops import defaults as defs
+from ..llm.create import get_text_emb_send_fn
 
 class VectorStoreIndexer:
     def __init__(
@@ -34,8 +34,8 @@ class VectorStoreIndexer:
         )
 
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=dfs.CHUNK_SIZE,
-            chunk_overlap=dfs.CHUNK_OVERLAP,
+            chunk_size=defs.CHUNK_SIZE,
+            chunk_overlap=defs.CHUNK_OVERLAP,
         )
         splits = text_splitter.split_documents(docs)
         vectorstore = Chroma.from_documents(

@@ -1,8 +1,9 @@
-from index.graphrag import GraphRAGIndexer
-from index.vectorstore import VectorStoreIndexer
-from graphrag_for_all.llm.send import LLMSendToConfig
 import os
-from graphrag_for_all.llm.create import get_send_fn, get_text_emb_send_fn
+
+from ..index.graphrag import GraphRAGIndexer
+from ..index.vectorstore import VectorStoreIndexer
+from ..llm.send import LLMSendToConfig
+from ..llm.create import get_send_fn, get_text_emb_send_fn
 
 DEFAULT_LLM_ARGS = {
     "temperature": 0.0,
@@ -10,7 +11,7 @@ DEFAULT_LLM_ARGS = {
 }  # This setup for reproducibility.
 
 
-class IndexGenerator():
+class IndexGenerator:
     def __init__(
         self,
         source: str = "openai",
@@ -37,7 +38,7 @@ class IndexGenerator():
         self,
         query,
         store_type="graphrag",
-        graphrag_force="true",
+        graphrag_force=False,
     ):
 
         send_to = get_send_fn(self.source, self.model_name)
@@ -54,15 +55,15 @@ class IndexGenerator():
                 ),
                 graph_extractor_llm_config=LLMSendToConfig(
                     llm_send_to=send_to,
-                    llm_model_args=DEFAULT_LLM_ARGS,
+                    llm_model_args=self.llm_arg,
                 ),
                 summarize_extractor_llm_config=LLMSendToConfig(
                     llm_send_to=send_to,
-                    llm_model_args=DEFAULT_LLM_ARGS,
+                    llm_model_args=self.llm_arg,
                 ),
                 community_report_llm_config=LLMSendToConfig(
                     llm_send_to=send_to,
-                    llm_model_args=DEFAULT_LLM_ARGS,
+                    llm_model_args=self.llm_arg,
                 ),
                 output_dir=os.path.join(self.output_dir, "graphrag"),
                 doc_saving_dir=self.doc_dir,

@@ -6,4 +6,9 @@ secret.py
 /dist
 /graphrag_for_all.egg-info
 /build
+/spreadsheets
+/deprecated_scripts
+*index_results*
+test.ipynb
+test.py
 *.pyc

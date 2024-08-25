@@ -1,18 +1,19 @@
-from graphrag_for_all.template.search import (
+import json
+import time
+import tiktoken
+import pandas as pd
+from dataclasses import dataclass
+from typing import Any, Dict
+
+from ..template.search import (
     MAP_SYSTEM_PROMPT,
     REDUCE_SYSTEM_PROMPT,
     GENERAL_KNOWLEDGE_INSTRUCTION,
     NO_DATA_ANSWER,
 )
-from dataclasses import dataclass
-from typing import Any, Dict
-import pandas as pd
-import tiktoken
-import time
 from .community_context import ConversationHistory, GlobalCommunityContext
-from graphrag_for_all.llm.send import ChatLLM
-from graphrag_for_all.utils.token import num_tokens
-import json
+from ..llm.send import ChatLLM
+from ..utils.token import num_tokens
 
 DEFAULT_MAP_LLM_PARAMS = {
     "max_tokens": 1000,
@@ -186,7 +187,7 @@ class GlobalSearch:
                 messages=search_messages,
                 model_args=llm_args,
             )
-            print("Map response: %s", search_response)
+            # print("Map response: %s", search_response)
 
             try:
                 # parse search response json

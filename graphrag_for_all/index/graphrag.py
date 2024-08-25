@@ -1,14 +1,14 @@
 import os
 import logging
-import workflow
 import pandas as pd
-import workflow.create_final_communities
 
 from pathlib import Path
 from copy import deepcopy
-from graphrag_for_all.utils.doc import langhchain_doc_to_df
-from retreivers.radiowiki import RadioWikiRetriever
-from graphrag_for_all.llm.send import LLMSendToConfig
+from .. import workflow
+from ..retrievers.radiowiki import RadioWikiRetriever
+from ..llm.send import LLMSendToConfig
+from ..utils.doc import langhchain_doc_to_df
+import networkx
 
 
 class GraphRAGIndexer:
@@ -73,6 +73,7 @@ class GraphRAGIndexer:
         )
 
         logging.info("Step: create_summarized_entities")
+        # do you expect to get edges from here?
         create_summarized_entities_output = workflow.create_summarized_entities(
             dataset=create_base_extracted_entities_output,
             query_output_dir=query_output_dir,
@@ -80,7 +81,7 @@ class GraphRAGIndexer:
             send_to=self.summarize_extractor_llm_config.llm_send_to,
             save=save,
             try_load=try_load,
-        )
+        )   
 
         logging.info("Step: create_base_entity_graph")
         create_base_entity_graph_output = workflow.create_base_entity_graph(
@@ -144,6 +145,10 @@ class GraphRAGIndexer:
         )
 
         logging.info("Step: create_final_community_reports")
+
+        """
+        Causing error when using llama3.1 sometimes.. 
+        """
         create_final_community_reports_output = workflow.create_final_community_reports(
             final_nodes_output=create_final_nodes_output,
             final_relationship_output=create_final_relationships_output,
@@ -151,7 +156,7 @@ class GraphRAGIndexer:
             community_report_llm_args=self.community_report_llm_config.llm_model_args,
             query_output_dir=query_output_dir,
             save=save,
-            try_load=try_load,
+            try_load=try_load,  # set to false to test out what's happening.
         )
 
         logging.info("Step: create_final_text_units")

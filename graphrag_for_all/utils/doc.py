@@ -1,10 +1,8 @@
 import pandas as pd
-
 from cleantext import clean
 from langchain_core.documents.base import Document as LC_doc
 from typing import List
-from graphrag_for_all.utils.hash import gen_md5_hash
-
+from ..utils.hash import gen_md5_hash
 
 def clean_docs(docs):
     for d in docs:

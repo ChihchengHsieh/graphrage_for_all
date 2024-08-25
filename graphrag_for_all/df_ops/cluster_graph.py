@@ -3,8 +3,8 @@ import pandas as pd
 import html
 
 from typing import Any
-from graphrag_for_all.utils.graph import load_graph
-from graphrag_for_all.utils.hash import gen_uuid
+from ..utils.graph import load_graph
+from ..utils.hash import gen_uuid
 from enum import Enum
 from random import Random
 
@@ -93,7 +93,7 @@ def run_leiden(
 ) -> dict[int, dict[str, list[str]]]:
     """Run method definition."""
     max_cluster_size = args.get("max_cluster_size", 10)
-    use_lcc = args.get("use_lcc", True)
+    use_lcc = args.get("use_lcc", True)  # True)
     if args.get("verbose", False):
         print(
             "Running leiden with max_cluster_size=%s, lcc=%s", max_cluster_size, use_lcc

@@ -1,7 +1,8 @@
-import pandas as pd
-from graphrag_for_all import df_ops
 import os
-from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
+import pandas as pd
+
+from . import df_ops
+from ..utils.save import parquet_table_load, parquet_table_save
 
 
 def join_text_units_to_entity_ids(

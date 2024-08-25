@@ -3,7 +3,7 @@ import pandas as pd
 import tiktoken
 from .community_context import GlobalCommunityContext
 from .read import read_indexer_entities, read_indexer_reports
-from graphrag_for_all.llm.send import ChatLLM
+from ..llm.send import ChatLLM
 
 COMMUNITY_REPORT_TABLE = "create_final_community_reports"
 ENTITY_TABLE = "create_final_nodes"
@@ -65,9 +65,6 @@ class Searcher:
         entities = read_indexer_entities(
             entity_df, entity_embedding_df, community_level
         )
-        print(f"Report records: {len(report_df)}")
-        print(report_df.head())
-
         context_builder = GlobalCommunityContext(
             community_reports=reports,
             entities=entities,  # default to None if you don't want to use community weights for ranking

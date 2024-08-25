@@ -1,8 +1,7 @@
 import pandas as pd
-from graphrag_for_all import df_ops
+from . import df_ops
 import os
-from graphrag_for_all.utils.save import parquet_table_load, parquet_table_save
-
+from ..utils.save import parquet_table_load, parquet_table_save
 
 def create_base_documents(
     final_text_units_output: pd.DataFrame,

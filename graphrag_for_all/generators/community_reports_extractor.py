@@ -1,8 +1,16 @@
-from dataclasses import dataclass
-from graphrag_for_all.llm.send import ChatLLM, ModelArgs, replace_and_send
-from graphrag_for_all.template.community_report import COMMUNITY_REPORT_PROMPT
+from ..llm.send import ChatLLM, ModelArgs, replace_and_send
+from ..template.community_report import COMMUNITY_REPORT_PROMPT
+from ..utils.json import try_parse_json_object
+
 from typing import Any
-from graphrag_for_all.utils.json import try_parse_json_object
+from dataclasses import dataclass
+import re
+
+
+def clean_json_response(json_res):
+    cleaned_string = re.sub(r"```[a-zA-Z]*\n", "", json_res)
+    json_string = re.search(r"{.*}", cleaned_string, re.DOTALL).group(0)
+    return json_string
 
 
 @dataclass
@@ -115,7 +123,9 @@ class CommunityReportsExtractor:
                     or {}
                 )
 
-                json_response = try_parse_json_object(response.output)
+                json_response = try_parse_json_object(
+                    clean_json_response(response.output)
+                )
                 response_is_valid = is_response_valid(json_response)
 
             if not response_is_valid:
@@ -124,6 +134,7 @@ class CommunityReportsExtractor:
                 )
 
             output = json_response or {}
+
         except Exception as e:
             print("error generating community report")
             output = {}
