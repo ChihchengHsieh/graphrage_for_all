@@ -8,8 +8,21 @@ from typing import Any, Callable
 from ..llm.send import ChatLLM, ModelArgs
 from ..generators.community_reports_extractor import CommunityReportsExtractor
 from typing_extensions import TypedDict
-from .select import select
-from .join import join
+# from .select import select
+# from .join import join
+from typing import cast
+
+def join_one_key(
+    left: pd.DataFrame, right: pd.DataFrame, key: str, strategy: str = "left"
+) -> pd.DataFrame:
+    """Perform a table join."""
+    return left.merge(right, on=key, how=strategy)
+
+
+def select_inline_columns(df: pd.DataFrame, *columns: str) -> pd.DataFrame:
+    """Select columns from a dataframe."""
+    return cast(pd.DataFrame, df[list(columns)])
+
 
 COMMUNITY_REPORT_MAX_INPUT_LENGTH = 8000
 
@@ -75,6 +88,7 @@ def _run_extractor(
     results = extractor({"input_text": input})
     report = results.structured_output
     if report is None or len(report.keys()) == 0:
+        raise ValueError("No report found for community")
         print("No report found for community: %s", community)
         return None
 
@@ -320,7 +334,7 @@ def _get_subcontext_df(
     """Get sub-community context for each community."""
     sub_report_df = _drop_community_level(_at_level(level, report_df))
     sub_context_df = _at_level(level, local_context_df)
-    sub_context_df = join(sub_context_df, sub_report_df, schemas.NODE_COMMUNITY)
+    sub_context_df = join_one_key(sub_context_df, sub_report_df, schemas.NODE_COMMUNITY)
     sub_context_df.rename(
         columns={schemas.NODE_COMMUNITY: schemas.SUB_COMMUNITY}, inplace=True
     )
@@ -422,8 +436,8 @@ def _get_community_df(
     """Get community context for each community."""
     # collect all sub communities' contexts for each community
     community_df = _drop_community_level(_at_level(level, community_hierarchy_df))
-    invalid_community_ids = select(invalid_context_df, schemas.NODE_COMMUNITY)
-    subcontext_selection = select(
+    invalid_community_ids = select_inline_columns(invalid_context_df, schemas.NODE_COMMUNITY)
+    subcontext_selection = select_inline_columns(
         sub_context_df,
         schemas.SUB_COMMUNITY,
         schemas.FULL_CONTENT,
@@ -431,10 +445,10 @@ def _get_community_df(
         schemas.CONTEXT_SIZE,
     )
 
-    invalid_communities = join(
+    invalid_communities = join_one_key(
         community_df, invalid_community_ids, schemas.NODE_COMMUNITY, "inner"
     )
-    community_df = join(
+    community_df = join_one_key(
         invalid_communities, subcontext_selection, schemas.SUB_COMMUNITY
     )
     community_df[schemas.ALL_CONTEXT] = community_df.apply(

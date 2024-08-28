@@ -67,7 +67,7 @@ def main(args):
             output_dir=os.path.join(args.output_dir, "graphrag"),
             doc_saving_dir=args.doc_dir,
         )
-        indexer.generate(
+        indexer.generate(   
             query=args.query,
             save=True,
             try_load=not args.force,

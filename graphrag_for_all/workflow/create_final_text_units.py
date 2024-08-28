@@ -4,7 +4,6 @@ import os
 from . import df_ops
 from ..utils.save import parquet_table_load, parquet_table_save
 
-
 def create_final_text_units(
     base_text_units_output: pd.DataFrame,
     join_text_units_to_entity_ids_output: pd.DataFrame,
@@ -21,7 +20,7 @@ def create_final_text_units(
         return parquet_table_load(query_output_dir, fn_name)
     dataset = df_ops.select(
         base_text_units_output,
-        **{"columns": ["id", "chunk", "document_ids", "n_tokens"]},
+        columns=["id", "chunk", "document_ids", "n_tokens"],
     )
 
     pre_entity_join = df_ops.rename(

@@ -10,6 +10,9 @@ import re
 def clean_json_response(json_res):
     cleaned_string = re.sub(r"```[a-zA-Z]*\n", "", json_res)
     json_string = re.search(r"{.*}", cleaned_string, re.DOTALL).group(0)
+    json_string = json_string.replace(']\n  ]\n}', '}\n  ]\n}')
+    json_string = json_string.replace("\"\n  ]\n}", "\"\n    }\n  ]\n}")
+    # json_string = json_string.replace('\n', '').replace(',}', '}').replace(',]', ']') # form to one line.
     return json_string
 
 
@@ -136,6 +139,7 @@ class CommunityReportsExtractor:
             output = json_response or {}
 
         except Exception as e:
+            raise ValueError("error generating community report")
             print("error generating community report")
             output = {}
 
