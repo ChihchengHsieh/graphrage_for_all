@@ -1,5 +1,6 @@
 import json
 import time
+import re
 import tiktoken
 import pandas as pd
 from dataclasses import dataclass
@@ -16,7 +17,8 @@ from ..llm.send import ChatLLM
 from ..utils.token import num_tokens
 
 DEFAULT_MAP_LLM_PARAMS = {
-    "max_tokens": 1000,
+    # "max_tokens": 1000, # original
+    "max_tokens": 5000,
     "temperature": 0.0,
 }
 
@@ -37,6 +39,16 @@ def clean_up_json(json_str: str):
         .replace("\\", "")
         .strip()
     )
+
+
+def extract_json_string(text):
+    # Check if "{" and "}" each occur exactly once
+    # Extract the content between "{" and "}" (including braces)
+    json_match = re.search(r"\{.*\}", text, re.DOTALL)
+    if json_match:
+        json_str = json_match.group(0)
+        return json_str
+    return None
 
 
 @dataclass
@@ -183,11 +195,21 @@ class GlobalSearch:
                 {"role": "user", "content": query},
             ]
 
+            # print(f"Searching message [{len(search_messages[0]['content'])}]:")
+            # print(search_messages[0])
+            # print(f"Query [{len(search_messages[1]['content'])}]:")
+            print(search_messages[1])
+
+            total_input_len = sum([len(m["content"]) for m in search_messages])
+            print(f"Total Input: [{total_input_len}]:")
+
             search_response = self.send_to(
                 messages=search_messages,
                 model_args=llm_args,
             )
-            # print("Map response: %s", search_response)
+
+            print(f"Map response: {search_response.output}")
+            # raise StopIteration()
 
             try:
                 # parse search response json
@@ -235,7 +257,8 @@ class GlobalSearch:
         list[dict[str, Any]]
             A list of key points, each key point is a dictionary with "answer" and "score" keys
         """
-        parsed_elements = json.loads(search_response)["points"]
+        extacted_json = extract_json_string(search_response)
+        parsed_elements = json.loads(extacted_json)["points"]
         return [
             {
                 "answer": element["description"],

@@ -52,16 +52,34 @@ def get_huggingface_send_fn(
     checkpoint: str = "meta-llama/Meta-Llama-3.1-8B-Instruct",
 ) -> ChatLLM:
     init_pipe(checkpoint)
+
     def send_to(messages: Messages, model_args: ModelArgs) -> LLMResponse:
         global pipe
         model_args = parse_to_huggingface_args(model_args)
+
+        if pipe.model.config.name_or_path == "google/gemma-2-2b-it":
+            messages = [
+                {
+                    "role": "user",
+                    "content": messages[0]["content"] + "\n\n" + messages[1]["content"],
+                }
+            ] + messages[
+                2:
+            ]  # Combine the first two messages into user message for gemma, since it doesn't support system message.
 
         res = pipe(
             messages,
             **model_args,
         )
 
-        output = res[0]["generated_text"][-1]["content"]
+        if pipe.model.config.name_or_path in [
+            "meta-llama/Llama-3.2-1B-Instruct",
+            "meta-llama/Llama-3.2-3B-Instruct",
+            "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        ]:
+            output = res[0]["generated_text"][-1]["content"]
+        else:
+            output = res[0]["generated_text"]
         return LLMResponse(
             output=output,
             history=[*messages, {"role": "assistant", "content": output}],

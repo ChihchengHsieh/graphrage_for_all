@@ -22,12 +22,14 @@ DEFAULT_CONTEXT_BUILDER_PARAMS = {
     "context_name": "Reports",
 }
 DEFAULT_MAP_LLM_PARAMS = {
-    "max_tokens": 1000,
+    # "max_tokens": 1000,
+    "max_tokens": 5000,
     "temperature": 0.0,
     "response_format": {"type": "json_object"},
 }
 DEFAULT_REDUCE_LLM_PARAMS = {
-    "max_tokens": 2000,  # change this based on the token limit you have on your model (if you are using a model with 8k limit, a good setting could be 1000-1500)
+    # "max_tokens": 2000,  # change this based on the token limit you have on your model (if you are using a model with 8k limit, a good setting could be 1000-1500)
+    "max_tokens": 5000,  # change this based on the token limit you have on your model (if you are using a model with 8k limit, a good setting could be 1000-1500)
     "temperature": 0.0,
 }
 
@@ -85,5 +87,8 @@ class Searcher:
             response_type="multiple paragraphs",  # free form text describing the response type and format, can be anything, e.g. prioritized list, single paragraph, multiple paragraphs, multiple-page report
         )
 
-    def search(self, query: str):
-        return self.search_engine.search(query)
+    def search(self, query: str, conversation_history=None):
+        return self.search_engine.search(
+            query,
+            conversation_history=conversation_history,
+        )

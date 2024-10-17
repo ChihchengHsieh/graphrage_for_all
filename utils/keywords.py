@@ -13,6 +13,9 @@ from typing import Callable, Any
 def clean_str(input: Any) -> str:
     """Clean an input string by removing HTML escapes, control characters, and other unwanted characters."""
     # If we get non-string input, just give it back
+
+    input = re.search(r"{.*}", input, re.DOTALL).group(0)
+
     if not isinstance(input, str):
         return input
 
