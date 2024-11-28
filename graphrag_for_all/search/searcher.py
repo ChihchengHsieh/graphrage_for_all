@@ -47,6 +47,7 @@ class Searcher:
         context_builder_params=DEFAULT_CONTEXT_BUILDER_PARAMS,
         map_llm_params=DEFAULT_MAP_LLM_PARAMS,
         reduce_llm_params=DEFAULT_REDUCE_LLM_PARAMS,
+        max_data_tokens=12_000,
     ) -> None:
         # self.community_report_table = community_report_table
         # self.entity_table = entity_table
@@ -77,7 +78,7 @@ class Searcher:
             send_to=send_to,
             context_builder=context_builder,
             token_encoder=token_encoder,
-            max_data_tokens=12_000,  # change this based on the token limit you have on your model (if you are using a model with 8k limit, a good setting could be 5000)
+            max_data_tokens=max_data_tokens,  # change this based on the token limit you have on your model (if you are using a model with 8k limit, a good setting could be 5000)
             map_llm_params=map_llm_params,
             reduce_llm_params=reduce_llm_params,
             allow_general_knowledge=False,  # set this to True will add instruction to encourage the LLM to incorporate general knowledge in the response, which may increase hallucinations, but could be useful in some use cases.

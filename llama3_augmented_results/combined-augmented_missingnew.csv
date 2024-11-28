@@ -1,0 +1,1228 @@
+,Unnamed: 0,id,dicom_id,subject_id,stay_id,study_id,split,eye_tracking_data_discarded,gender,anchor_age,anchor_year,dod,StudyDate,StudyDateTime,StudyTime,in_eye_gaze,in_reflacx,image,image_size_x,image_size_y,ViewPosition,Airway wall thickening,Atelectasis,Consolidation,Enlarged cardiac silhouette,Fibrosis,Fracture,Groundglass opacity,Other,Pneumothorax,Pulmonary edema,Quality issue,Support devices,Wide mediastinum,Abnormal mediastinal contour,Acute fracture,Enlarged hilum,Hiatal hernia,High lung volume / emphysema,Interstitial lung disease,Lung nodule or mass,Pleural abnormality,Atelectasis_negbio,Cardiomegaly_negbio,Consolidation_negbio,Edema_negbio,Enlarged Cardiomediastinum_negbio,Fracture_negbio,Lung Lesion_negbio,Lung Opacity_negbio,No Finding_negbio,Pleural Effusion_negbio,Pleural Other_negbio,Pneumonia_negbio,Pneumothorax_negbio,Support Devices_negbio,Atelectasis_chexpert,Cardiomegaly_chexpert,Consolidation_chexpert,Edema_chexpert,Enlarged Cardiomediastinum_chexpert,Fracture_chexpert,Lung Lesion_chexpert,Lung Opacity_chexpert,No Finding_chexpert,Pleural Effusion_chexpert,Pleural Other_chexpert,Pneumonia_chexpert,Pneumothorax_chexpert,Support Devices_chexpert,temperature,heartrate,resprate,o2sat,sbp,dbp,pain,acuity,chiefcomplaint,age,Augmented_Shortness of breath,Augmented_Fatigue,Augmented_Swelling in the legs and feet,Augmented_Chest pain,Augmented_Palpitations,Augmented_Coughing up blood,Augmented_Fluid buildup in the lungs,Augmented_Confusion,Augmented_Loss of appetite,Augmented_Pericardial effusion,Augmented_Cardiomegaly,Augmented_Increased cardiothoracic ratio,Augmented_Anterior mediastinal mass,Augmented_Prominent epicardial fat pad,Augmented_Elevated pericardial fluid levels (mL),Augmented_Increased pericardial fluid protein levels (mg/dL),Augmented_Presence of pericardial fluid cells,Augmented_Radiographic images showing an increased cardiothoracic ratio,Augmented_Measurements of cardiac diameter and thoracic diameter (cm),Augmented_Echocardiographic images showing an enlarged heart,Augmented_Measurements of cardiac dimensions (cm),Augmented_Imaging studies showing a mass in the anterior mediastinum,Augmented_Biopsy results showing the type of tumor or mass,Augmented_History of pericardial effusion and cardiomegaly,Augmented_History of anterior mediastinal mass and prominent epicardial fat pad,Augmented_History of fluid accumulation,Augmented_History of air accumulation,Augmented_History of interstitial lung disease,Augmented_Smoking History,Augmented_COPD,Augmented_Chronic Obstructive Pulmonary Disease,Augmented_Medical History,Augmented_Cardiovascular Conditions,Augmented_Family History,Augmented_Blood from Bronchial Tree,Augmented_Hemorrhage from Pulmonary Artery,Augmented_Pulmonary Edema,Augmented_Pus,Augmented_Pulmonary Infiltrate,Augmented_Infection,Augmented_Inflammation,Augmented_Underlying Medical Conditions,Augmented_White Blood Cell Count (cells/μL),Augmented_C-Reactive Protein (CRP) levels (mg/L),Augmented_Procalcitonin levels (ng/mL),Augmented_Lung Volume (L),Augmented_Diffusing Capacity (mL/min/mmHg),Augmented_Gas Exchange (mL/min/mmHg),Augmented_Arterial Blood Gas (ABG) analysis,Augmented_Complete Blood Count (CBC),Augmented_Electrolyte Panel,Augmented_Breath Sounds and Crackles,Augmented_Cough,Augmented_Fever,Augmented_Difficulty breathing,Augmented_Wheezing,Augmented_Coughing up mucus,Augmented_Difficulty swallowing,Augmented_Age (years),Augmented_Oxygen levels (mmHg),Augmented_Body Temperature (°C),Augmented_Respiratory Symptoms,Augmented_Coughing,Augmented_Pleuritic chest pain,Augmented_Respiratory failure,Augmented_Breathing Rate (breaths/min),Augmented_Previous Surgical History,Augmented_Respiratory Conditions,Augmented_Infant Respiratory Distress Syndrome,Augmented_Pneumothorax,Augmented_Pleural Effusion,Augmented_Lung Cancer,Augmented_Pulmonary Tuberculosis,Augmented_Postsurgical Atelectasis,Augmented_Surfactant Deficiency,Augmented_Cardiothoracic ratio,Augmented_Lung expansion,Augmented_Smoking history,Augmented_Other Malignancies,Augmented_Previous surgeries,Augmented_Infections,Augmented_Trauma,Augmented_Rheumatoid arthritis,Augmented_Asbestos exposure,Augmented_Occupational exposure,Augmented_Environmental exposure,Augmented_Chronic respiratory conditions,Augmented_Asthma,Augmented_Pleural effusion,Augmented_Pneumoperitoneum,Augmented_Atelectasis,Augmented_Symptomatic pneumothorax,Augmented_Tension pneumothorax,Augmented_Weight loss,Augmented_Decreased lung expansion,Augmented_Pleural friction rub,Augmented_Pleural fluid analysis,Augmented_Blood tests,Augmented_Chest radiography,Augmented_Computed tomography (CT) scans,Augmented_Pulmonary function tests,Augmented_Heart failure,Augmented_Perforation of the intestine,Augmented_Surgical procedure,Augmented_Pleural effusion risk factors (1-5),Augmented_Pleural disease risk factors (1-10),augmenting_query,augmenting_output
+0,30,P128R475542,15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98,18441078,31517804.0,58044074,train,False,F,33,2138,,21441126,21441126123546.44,123546.437,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18441078/s58044074/15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98.dcm,2544,3056,PA,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,98.5,79.0,18.0,100.0,121.0,69.0,9,4.0,Back pain,39,False,False,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,40,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+INDICATION:F with no PMHx here with back pain tenderness of thoracic spine betweenscapulae with palpation and deep breathing evaluate for any bony abnormalityof the thoracic spine.
+COMPARISON:  Chest radiograph from .TECHNIQUEFrontal and lateral view of the chest.
+FINDINGS: 
+The cardiomediastinal silhouette is within normal limits. There is no pleuraleffusion or pneumothorax. There is no focal lung consolidation. There is nodisplaced rib fracture seen.  Visualized thoracic vertebral body  and discspace heights are maintained.
+IMPRESSION: 
+No evidence of abnormality of the visualized thoracic spine.  No evidence ofpneumonia.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 39.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.5.
+HEART RATE PER MINUTE: 79.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 121.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 69.0.
+Pain 010: 69.0.
+Acuity 1highest priority  5lowest priority: 4.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Fatigue"": false, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 40, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+1,31,P128R557151,15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98,18441078,31517804.0,58044074,val,False,F,33,2138,,21441126,21441126123546.44,123546.437,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18441078/s58044074/15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98.dcm,2544,3056,PA,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,98.5,79.0,18.0,100.0,121.0,69.0,9,4.0,Back pain,39,False,False,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,40,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+INDICATION:F with no PMHx here with back pain tenderness of thoracic spine betweenscapulae with palpation and deep breathing evaluate for any bony abnormalityof the thoracic spine.
+COMPARISON:  Chest radiograph from .TECHNIQUEFrontal and lateral view of the chest.
+FINDINGS: 
+The cardiomediastinal silhouette is within normal limits. There is no pleuraleffusion or pneumothorax. There is no focal lung consolidation. There is nodisplaced rib fracture seen.  Visualized thoracic vertebral body  and discspace heights are maintained.
+IMPRESSION: 
+No evidence of abnormality of the visualized thoracic spine.  No evidence ofpneumonia.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 39.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.5.
+HEART RATE PER MINUTE: 79.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 121.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 69.0.
+Pain 010: 69.0.
+Acuity 1highest priority  5lowest priority: 4.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Fatigue"": false, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 40, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+2,32,P128R617851,15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98,18441078,31517804.0,58044074,train,False,F,33,2138,,21441126,21441126123546.44,123546.437,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18441078/s58044074/15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98.dcm,2544,3056,PA,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,98.5,79.0,18.0,100.0,121.0,69.0,9,4.0,Back pain,39,False,False,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,40,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+INDICATION:F with no PMHx here with back pain tenderness of thoracic spine betweenscapulae with palpation and deep breathing evaluate for any bony abnormalityof the thoracic spine.
+COMPARISON:  Chest radiograph from .TECHNIQUEFrontal and lateral view of the chest.
+FINDINGS: 
+The cardiomediastinal silhouette is within normal limits. There is no pleuraleffusion or pneumothorax. There is no focal lung consolidation. There is nodisplaced rib fracture seen.  Visualized thoracic vertebral body  and discspace heights are maintained.
+IMPRESSION: 
+No evidence of abnormality of the visualized thoracic spine.  No evidence ofpneumonia.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 39.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.5.
+HEART RATE PER MINUTE: 79.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 121.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 69.0.
+Pain 010: 69.0.
+Acuity 1highest priority  5lowest priority: 4.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Fatigue"": false, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 40, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+3,33,P128R747789,15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98,18441078,31517804.0,58044074,train,False,F,33,2138,,21441126,21441126123546.44,123546.437,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18441078/s58044074/15e60dc7-6493889f-d2cb9dba-2c860709-f171bc98.dcm,2544,3056,PA,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,98.5,79.0,18.0,100.0,121.0,69.0,9,4.0,Back pain,39,False,False,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,40,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+INDICATION:F with no PMHx here with back pain tenderness of thoracic spine betweenscapulae with palpation and deep breathing evaluate for any bony abnormalityof the thoracic spine.
+COMPARISON:  Chest radiograph from .TECHNIQUEFrontal and lateral view of the chest.
+FINDINGS: 
+The cardiomediastinal silhouette is within normal limits. There is no pleuraleffusion or pneumothorax. There is no focal lung consolidation. There is nodisplaced rib fracture seen.  Visualized thoracic vertebral body  and discspace heights are maintained.
+IMPRESSION: 
+No evidence of abnormality of the visualized thoracic spine.  No evidence ofpneumonia.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 39.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.5.
+HEART RATE PER MINUTE: 79.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 121.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 69.0.
+Pain 010: 69.0.
+Acuity 1highest priority  5lowest priority: 4.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Fatigue"": false, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 40, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+4,34,P129R174851,3db10b12-1c0c2273-0eb4d5ba-ea1331d9-aa0d7d3d,14057989,31913163.0,53827893,test,False,M,91,2158,2160-12-06,21601105,21601105113653.75,113653.75,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14057989/s53827893/3db10b12-1c0c2273-0eb4d5ba-ea1331d9-aa0d7d3d.dcm,3056,2544,AP,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,0.0,96.7,85.0,19.0,97.0,155.0,82.0,0,1.0,"R Weakness, Altered mental status",93,True,True,False,True,True,True,True,False,False,True,True,True,False,False,150,3,True,True,20,True,15,False,False,True,False,True,False,False,True,True,True,True,True,True,False,False,True,False,True,True,True,True,8000,5,0.2,4,30,15,True,True,True,True,True,True,True,True,True,False,85,95,37.5,True,True,True,True,25,True,True,False,False,True,False,False,False,False,0.5,5,True,False,True,True,False,False,False,False,False,True,False,True,False,True,False,False,True,True,False,True,True,True,True,True,True,False,True,4,8,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+EXAMINATION:  PA AND LATERAL CHEST RADIOGRAPHS
+INDICATION:  yearold male with weakness. Evaluate for pneumonia.
+TECHNIQUE:  PA and lateral chest radiographs
+COMPARISON:  Multiple prior chest radiographs most recent on .
+FINDINGS: 
+Compared with the previous examination there is increased diffuse interstitialopacities with a linear consolidation in the right lower lung compatible withatelectasis. There is also a focal opacity in the left for lower lung andretrocardiac region with associated small pleural effusion better seen in thelateral view.  Calcified granulomas are redemonstrated more prominently inthe left apex. Moderate cardiomegaly is stable. Rightward deviation of thetrachea is also unchanged.  There is no pneumothorax.
+IMPRESSION: 
+Patchy opacities in the left lower lung and retrocardiac region may representleft lower lobe pneumonia on the background of interstitial pulmonary edema.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 93.
+GENDER: M.
+BODY TEMPERATURE FAHRENHEIT: 96.7.
+HEART RATE PER MINUTE: 85.0.
+RESPIRATORY RATE PER MINUTE: 19.0.
+OXYGEN SATURATION PERCENTAGE: 97.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 155.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 82.0.
+Pain 010: 82.0.
+Acuity 1highest priority  5lowest priority: 1.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": true, ""Palpitations"": true, ""Coughing up blood"": true, ""Fluid buildup in the lungs"": true, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": true, ""Cardiomegaly"": true, ""Increased cardiothoracic ratio"": true, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 150, ""Increased pericardial fluid protein levels (mg/dL)"": 3, ""Presence of pericardial fluid cells"": true, ""Radiographic images showing an increased cardiothoracic ratio"": true, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": true, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": true, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": true, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": true, ""COPD"": true, ""Chronic Obstructive Pulmonary Disease"": true, ""Medical History"": true, ""Cardiovascular Conditions"": true, ""Family History"": true, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": true, ""Pus"": false, ""Pulmonary Infiltrate"": true, ""Infection"": true, ""Inflammation"": true, ""Underlying Medical Conditions"": true, ""White Blood Cell Count (cells/\u03bcL)"": 8000, ""C-Reactive Protein (CRP) levels (mg/L)"": 5, ""Procalcitonin levels (ng/mL)"": 0.2, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 30, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": true, ""Complete Blood Count (CBC)"": true, ""Electrolyte Panel"": true, ""Breath Sounds and Crackles"": true, ""Cough"": true, ""Fever"": true, ""Difficulty breathing"": true, ""Wheezing"": true, ""Coughing up mucus"": true, ""Difficulty swallowing"": false, ""Age (years)"": 85, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 37.5, ""Respiratory Symptoms"": true, ""Coughing"": true, ""Pleuritic chest pain"": true, ""Respiratory failure"": true, ""Breathing Rate (breaths/min)"": 25, ""Previous Surgical History"": true, ""Respiratory Conditions"": true, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": true, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": true, ""Other Malignancies"": false, ""Previous surgeries"": true, ""Infections"": true, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": true, ""Asthma"": false, ""Pleural effusion"": true, ""Pneumoperitoneum"": false, ""Atelectasis"": true, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": true, ""Decreased lung expansion"": true, ""Pleural friction rub"": false, ""Pleural fluid analysis"": true, ""Blood tests"": true, ""Chest radiography"": true, ""Computed tomography (CT) scans"": true, ""Pulmonary function tests"": true, ""Heart failure"": true, ""Perforation of the intestine"": false, ""Surgical procedure"": true, ""Pleural effusion risk factors (1-5)"": 4, ""Pleural disease risk factors (1-10)"": 8}"
+5,466,P300R079710,b7dbc00e-7e1ffc1e-b1f50ffe-be9f7569-21da7c5d,14562290,38855090.0,59073850,train,False,M,80,2161,,21610520,21610520123933.81,123933.812,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14562290/s59073850/b7dbc00e-7e1ffc1e-b1f50ffe-be9f7569-21da7c5d.dcm,2654,2167,AP,0.0,4.0,4.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,0.0,97.6,82.0,24.0,98.0,105.0,62.0,7,2.0,SOB,80,True,True,False,False,False,False,True,False,False,False,False,True,False,False,150,3,False,True,20,False,15,False,False,False,False,False,False,False,True,True,True,False,False,False,False,False,True,False,True,False,False,False,8000,5,0.2,4,30,15,False,False,False,True,True,False,True,False,False,False,75,95,37.0,True,True,False,True,25,False,True,False,False,True,False,False,False,False,0.5,5,True,False,False,False,False,False,False,False,False,True,False,True,False,True,False,False,False,False,False,False,False,True,True,True,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+CHEST RADIOGRAPH PERFORMED ON 
+Comparison is made with a prior chest radiograph from .
+CLINICAL HISTORY:  Shortness of breath assess for acute intrathoracicprocess.
+FINDINGS:  Lung volumes are markedly low which limit the evaluation.  There isno focal consolidation large effusion or pneumothorax.  Heart size is topnormal.  Mediastinal contour is unremarkable.  There is mild prominence ofpulmonary vasculature.  Bony structures are intact.  No free air below theright hemidiaphragm.
+IMPRESSION:  Limited study without sefinite signs of pneumonia or overt CHF. Please refer to subsequent CTA chest for additional details.
+DIAGNOSED LESIONS: Consolidation Atelectasis.
+AGE: 80.
+GENDER: M.
+BODY TEMPERATURE FAHRENHEIT: 97.6.
+HEART RATE PER MINUTE: 82.0.
+RESPIRATORY RATE PER MINUTE: 24.0.
+OXYGEN SATURATION PERCENTAGE: 98.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 105.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 62.0.
+Pain 010: 62.0.
+Acuity 1highest priority  5lowest priority: 2.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": true, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": true, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 150, ""Increased pericardial fluid protein levels (mg/dL)"": 3, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": true, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": true, ""COPD"": true, ""Chronic Obstructive Pulmonary Disease"": true, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": true, ""Pus"": false, ""Pulmonary Infiltrate"": true, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 8000, ""C-Reactive Protein (CRP) levels (mg/L)"": 5, ""Procalcitonin levels (ng/mL)"": 0.2, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 30, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": true, ""Cough"": true, ""Fever"": false, ""Difficulty breathing"": true, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 75, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 37, ""Respiratory Symptoms"": true, ""Coughing"": true, ""Pleuritic chest pain"": false, ""Respiratory failure"": true, ""Breathing Rate (breaths/min)"": 25, ""Previous Surgical History"": false, ""Respiratory Conditions"": true, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": true, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": true, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": true, ""Asthma"": false, ""Pleural effusion"": true, ""Pneumoperitoneum"": false, ""Atelectasis"": true, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": true, ""Computed tomography (CT) scans"": true, ""Pulmonary function tests"": true, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+6,486,P300R046673,879bcb49-1e9850b5-66594f30-6d4ae3f1-73ac0fb8,14824046,32179350.0,54155128,train,False,F,32,2155,,21551107,21551107215158.203,215158.203,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14824046/s54155128/879bcb49-1e9850b5-66594f30-6d4ae3f1-73ac0fb8.dcm,2544,3056,PA,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,96.0,59.0,18.0,100.0,144.0,88.0,0,3.0,"Dyspnea, Neck pain",32,False,False,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,30,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+CHEST RADIOGRAPH PERFORMED ON 
+COMPARISON:  None.
+CLINICAL HISTORY:  Dyspnea question pneumonia.
+FINDINGS:  PA and lateral views of the chest were provided demonstrating nofocal consolidation effusion or pneumothorax.  The cardiomediastinalsilhouette is normal.  Imaged bony structures are intact.  No free air belowthe right hemidiaphragm.
+IMPRESSION:  No acute intrathoracic process.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 32.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 96.0.
+HEART RATE PER MINUTE: 59.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 144.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 88.0.
+Pain 010: 88.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Fatigue"": false, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 30, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+7,500,P300R579387,d4f0d97c-72567146-ee0487ff-a3d1cc6f-78099694,14939898,33234279.0,58625661,train,False,F,70,2194,,21990405,21990405115636.5,115636.5,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14939898/s58625661/d4f0d97c-72567146-ee0487ff-a3d1cc6f-78099694.dcm,2544,3056,PA,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,98.9,91.0,18.0,100.0,140.0,89.0,0,3.0,Chest pain,75,True,True,False,True,True,False,True,False,False,True,True,True,False,False,150,3,True,True,20,True,15,False,False,True,False,True,False,False,True,True,True,True,True,True,False,False,True,False,True,True,True,True,8000,5,0.2,4,30,15,True,True,True,True,True,True,True,True,True,False,70,95,37.0,True,True,True,True,20,True,True,False,False,True,False,False,False,False,0.5,5,True,False,True,True,False,False,False,False,False,True,False,True,False,True,False,False,True,True,False,True,True,True,True,True,True,False,True,4,6,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+EXAMINATION:Chest:  Frontal and lateral views
+INDICATION:  History: F with SOB sputum production   Eval for structuralprocess pneumonia
+TECHNIQUE:  Chest:  Frontal and Lateral
+COMPARISON:  
+FINDINGS: 
+Cardiac silhouette remains mildly enlarged. Mediastinal contours areunremarkable. There is left basilar atelectasis. Slight blunting of the leftcostophrenic angle on the frontal view is not substantiated on the lateralview and may be due to atelectasis. No large pleural effusion is seen. Thereis no pneumothorax. No focal consolidation is seen. Degenerative changes areseen along the spine.
+IMPRESSION: 
+Mild cardiomegaly without overt pulmonary edema. No focal consolidation tosuggest pneumonia.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette Pleural abnormality.
+AGE: 75.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.9.
+HEART RATE PER MINUTE: 91.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 100.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 140.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 89.0.
+Pain 010: 89.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": true, ""Palpitations"": true, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": true, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": true, ""Cardiomegaly"": true, ""Increased cardiothoracic ratio"": true, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 150, ""Increased pericardial fluid protein levels (mg/dL)"": 3, ""Presence of pericardial fluid cells"": true, ""Radiographic images showing an increased cardiothoracic ratio"": true, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": true, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": true, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": true, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": true, ""COPD"": true, ""Chronic Obstructive Pulmonary Disease"": true, ""Medical History"": true, ""Cardiovascular Conditions"": true, ""Family History"": true, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": true, ""Pus"": false, ""Pulmonary Infiltrate"": true, ""Infection"": true, ""Inflammation"": true, ""Underlying Medical Conditions"": true, ""White Blood Cell Count (cells/\u03bcL)"": 8000, ""C-Reactive Protein (CRP) levels (mg/L)"": 5, ""Procalcitonin levels (ng/mL)"": 0.2, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 30, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": true, ""Complete Blood Count (CBC)"": true, ""Electrolyte Panel"": true, ""Breath Sounds and Crackles"": true, ""Cough"": true, ""Fever"": true, ""Difficulty breathing"": true, ""Wheezing"": true, ""Coughing up mucus"": true, ""Difficulty swallowing"": false, ""Age (years)"": 70, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 37, ""Respiratory Symptoms"": true, ""Coughing"": true, ""Pleuritic chest pain"": true, ""Respiratory failure"": true, ""Breathing Rate (breaths/min)"": 20, ""Previous Surgical History"": true, ""Respiratory Conditions"": true, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": true, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": true, ""Other Malignancies"": false, ""Previous surgeries"": true, ""Infections"": true, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": true, ""Asthma"": false, ""Pleural effusion"": true, ""Pneumoperitoneum"": false, ""Atelectasis"": true, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": true, ""Decreased lung expansion"": true, ""Pleural friction rub"": false, ""Pleural fluid analysis"": true, ""Blood tests"": true, ""Chest radiography"": true, ""Computed tomography (CT) scans"": true, ""Pulmonary function tests"": true, ""Heart failure"": true, ""Perforation of the intestine"": false, ""Surgical procedure"": true, ""Pleural effusion risk factors (1-5)"": 4, ""Pleural disease risk factors (1-10)"": 6}"
+8,501,P300R176945,8277e901-0c7347a0-7b464919-a87e2841-150b2368,14946255,31321588.0,52935029,train,False,M,71,2134,2135-04-06,21340207,21340207163535.344,163535.343,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14946255/s52935029/8277e901-0c7347a0-7b464919-a87e2841-150b2368.dcm,3056,2544,AP,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,4.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,97.9,59.0,16.0,96.0,138.0,82.0,0,2.0,Hypoxia,71,True,True,False,True,True,False,True,False,False,True,True,True,False,False,150,3,True,True,20,True,15,False,False,True,False,True,False,False,True,True,True,True,True,True,False,False,True,False,True,True,True,True,8000,5,0.2,4,25,15,True,True,True,True,True,True,True,True,True,False,70,95,37.0,True,True,True,True,18,True,True,False,True,True,True,False,True,False,0.5,5,True,True,True,True,False,False,True,True,True,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True,True,False,True,4,8,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+INDICATION:   M with hypoxia prior to arrival   acute process
+TECHNIQUE:  AP and lateral views of the chest.
+COMPARISON:  Chest xray and chest CT from .
+FINDINGS: 
+Increased subpleural reticular markings throughout the lungs most extensiveon the left are again seen.  There is no superimposed consolidation oreffusion.  The cardiomediastinal silhouette is within normal limits.  No acuteosseous abnormalities.
+IMPRESSION: 
+Chronic changes in the lungs compatible with patient's pulmonary fibrosis.  Nodefinite superimposed acute process noting that one could easily be obscured.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette Pleural abnormality.
+AGE: 71.
+GENDER: M.
+BODY TEMPERATURE FAHRENHEIT: 97.9.
+HEART RATE PER MINUTE: 59.0.
+RESPIRATORY RATE PER MINUTE: 16.0.
+OXYGEN SATURATION PERCENTAGE: 96.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 138.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 82.0.
+Pain 010: 82.0.
+Acuity 1highest priority  5lowest priority: 2.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": true, ""Palpitations"": true, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": true, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": true, ""Cardiomegaly"": true, ""Increased cardiothoracic ratio"": true, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 150, ""Increased pericardial fluid protein levels (mg/dL)"": 3, ""Presence of pericardial fluid cells"": true, ""Radiographic images showing an increased cardiothoracic ratio"": true, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": true, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": true, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": true, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": true, ""COPD"": true, ""Chronic Obstructive Pulmonary Disease"": true, ""Medical History"": true, ""Cardiovascular Conditions"": true, ""Family History"": true, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": true, ""Pus"": false, ""Pulmonary Infiltrate"": true, ""Infection"": true, ""Inflammation"": true, ""Underlying Medical Conditions"": true, ""White Blood Cell Count (cells/\u03bcL)"": 8000, ""C-Reactive Protein (CRP) levels (mg/L)"": 5, ""Procalcitonin levels (ng/mL)"": 0.2, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": true, ""Complete Blood Count (CBC)"": true, ""Electrolyte Panel"": true, ""Breath Sounds and Crackles"": true, ""Cough"": true, ""Fever"": true, ""Difficulty breathing"": true, ""Wheezing"": true, ""Coughing up mucus"": true, ""Difficulty swallowing"": false, ""Age (years)"": 70, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 37, ""Respiratory Symptoms"": true, ""Coughing"": true, ""Pleuritic chest pain"": true, ""Respiratory failure"": true, ""Breathing Rate (breaths/min)"": 18, ""Previous Surgical History"": true, ""Respiratory Conditions"": true, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": true, ""Pleural Effusion"": true, ""Lung Cancer"": true, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": true, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": true, ""Other Malignancies"": true, ""Previous surgeries"": true, ""Infections"": true, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": true, ""Occupational exposure"": true, ""Environmental exposure"": true, ""Chronic respiratory conditions"": true, ""Asthma"": true, ""Pleural effusion"": true, ""Pneumoperitoneum"": false, ""Atelectasis"": true, ""Symptomatic pneumothorax"": true, ""Tension pneumothorax"": true, ""Weight loss"": true, ""Decreased lung expansion"": true, ""Pleural friction rub"": false, ""Pleural fluid analysis"": true, ""Blood tests"": true, ""Chest radiography"": true, ""Computed tomography (CT) scans"": true, ""Pulmonary function tests"": true, ""Heart failure"": true, ""Perforation of the intestine"": false, ""Surgical procedure"": true, ""Pleural effusion risk factors (1-5)"": 4, ""Pleural disease risk factors (1-10)"": 8}"
+9,502,P300R661133,7adb0882-1c8455df-282ad1dc-770f59f1-c82c9feb,14982245,33717863.0,53539422,val,False,F,68,2148,,21551112,21551112225619.8,225619.796,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p14/p14982245/s53539422/7adb0882-1c8455df-282ad1dc-770f59f1-c82c9feb.dcm,2706,2544,AP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,101.1,98.0,22.0,90.0,137.0,73.0,4,2.0,"Abd pain, Fever",75,True,True,False,False,False,False,False,False,False,False,False,False,False,False,50,2,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,8000,5,0.2,4,25,15,False,False,False,False,False,False,False,False,False,False,70,95,37.0,False,False,False,False,18,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+EXAMINATION:Chest:  Frontal and lateral views
+INDICATION:  History: F with fever   ro PNA
+TECHNIQUE:  Chest:  Frontal and Lateral
+COMPARISON:  
+FINDINGS: 
+Minimal basilar atelectasis is seen without focal consolidation.  Thebibasilar atelectasis has significantly decreased in the interval and hasessentially resolved.  There is no large pleural effusion or pneumothorax. There has been interval resolution in previously seen small bilateral pleuraleffusions.  The cardiac and mediastinal silhouettes are stable.
+IMPRESSION: 
+No acute cardiopulmonary process.
+DIAGNOSED LESIONS: Pleural abnormality.
+AGE: 75.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 101.1.
+HEART RATE PER MINUTE: 98.0.
+RESPIRATORY RATE PER MINUTE: 22.0.
+OXYGEN SATURATION PERCENTAGE: 90.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 137.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 73.0.
+Pain 010: 73.0.
+Acuity 1highest priority  5lowest priority: 2.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 50, ""Increased pericardial fluid protein levels (mg/dL)"": 2, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 8000, ""C-Reactive Protein (CRP) levels (mg/L)"": 5, ""Procalcitonin levels (ng/mL)"": 0.2, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 70, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 37, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 18, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"
+10,522,P300R538010,b6763002-79974fb0-a715b9a0-ba96f991-8cce2543,15134226,36336543.0,55078002,train,False,M,64,2161,2171-07-03,21670613,21670613162135.5,162135.5,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p15/p15134226/s55078002/b6763002-79974fb0-a715b9a0-ba96f991-8cce2543.dcm,3056,2544,AP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,0.0,96.1,110.0,18.0,99.0,85.0,54.0,0,2.0,HYPOTENSION,70,True,True,False,False,False,False,False,False,False,False,False,False,False,False,0,0,False,False,20,False,15,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,5000,0,0.0,4,25,15,False,False,False,False,False,False,False,False,False,False,70,95,36.5,False,False,False,False,15,False,False,False,False,False,False,False,False,False,0.5,5,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,3,5,"You are a clinical expert. With following extra knowledge in mind:
+
+**Summary of Lesions: Enlarged Cardiac Silhouette, Pulmonary Consolidation, Atelectasis, and Pleural Abnormality**
+
+**Enlarged Cardiac Silhouette:**
+
+*   Symptoms: shortness of breath, fatigue, swelling in the legs and feet, chest pain, palpitations, and coughing up blood
+*   Causes: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Clinical signs: pericardial effusion, cardiomegaly, increased cardiothoracic ratio, anterior mediastinal mass, and prominent epicardial fat pad
+*   Laboratory data: pericardial fluid analysis, radiographic images, echocardiographic images, and biopsy results
+*   Personal relevant history: history of pericardial effusion and cardiomegaly, smoking history, and family history of heart disease
+
+**Pulmonary Consolidation:**
+
+*   Symptoms: breath sounds and crackles, chest pain, fever, weakness, shortness of breath, and coughing up mucus or blood
+*   Causes: blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Clinical signs: breath sounds and crackles, blood from the bronchial tree and hemorrhage from the pulmonary artery, pulmonary edema, pus, and pulmonary infiltrate
+*   Laboratory data: elevated white blood cell count, elevated C-reactive protein (CRP) levels, and elevated procalcitonin levels
+*   Personal relevant history: smoking history, chronic obstructive pulmonary disease (COPD), and family history of respiratory conditions
+
+**Atelectasis:**
+
+*   Symptoms: shortness of breath, coughing, chest pain, fatigue, and weight loss
+*   Causes: pneumothorax, pleural effusion, lung cancer, and surfactant deficiency
+*   Clinical signs: lung collapse, increased cardiothoracic ratio, pleural effusion, and pneumothorax
+*   Laboratory data: chest radiography, computed tomography (CT) scans, and pulmonary function tests
+*   Personal relevant history: smoking history, age, previous surgical history, and respiratory conditions
+
+**Pleural Abnormality:**
+
+*   Symptoms: chest pain, shortness of breath, coughing, fatigue, and weight loss
+*   Causes: pleural effusion, pneumoperitoneum, atelectasis, tension pneumothorax, and symptomatic pneumothorax
+*   Clinical signs: pleural effusion, atelectasis, tension pneumothorax, and pneumoperitoneum
+*   Laboratory data: pleural fluid analysis, blood tests, chest radiography, CT scans, and pulmonary function tests
+*   Personal relevant history: smoking history, lung cancer or other malignancies, medical history, family history, and occupational and environmental history
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+
+## Report
+HISTORY:  Hypotension.
+TECHNIQUE:  Portable upright AP view of the chest.
+COMPARISON:  .
+FINDINGS:
+The patient is status post median sternotomy.  The heart size is normal.  Theaortic knob is calcified.  The mediastinal and hilar contours are otherwiseunremarkable.  There is no pulmonary edema pleural effusion or pneumothorax. Streaky retrocardiac opacity could reflect atelectasis but infection is notexcluded.  There are no acute osseous abnormalities.  No subdiaphragmatic freeair is seen.
+IMPRESSION:
+Streaky retrocardiac opacity may reflect atelectasis but infection is notexcluded.  No subdiaphragmatic free air.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 70.
+GENDER: M.
+BODY TEMPERATURE FAHRENHEIT: 96.1.
+HEART RATE PER MINUTE: 110.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 85.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 54.0.
+Pain 010: 54.0.
+Acuity 1highest priority  5lowest priority: 2.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Fatigue"": ""boolean"", ""Swelling in the legs and feet"": ""boolean"", ""Chest pain"": ""boolean"", ""Palpitations"": ""boolean"", ""Coughing up blood"": ""boolean"", ""Fluid buildup in the lungs"": ""boolean"", ""Confusion"": ""boolean"", ""Loss of appetite"": ""boolean"", ""Pericardial effusion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Increased cardiothoracic ratio"": ""boolean"", ""Anterior mediastinal mass"": ""boolean"", ""Prominent epicardial fat pad"": ""boolean"", ""Elevated pericardial fluid levels (mL)"": ""numerical"", ""Increased pericardial fluid protein levels (mg/dL)"": ""numerical"", ""Presence of pericardial fluid cells"": ""boolean"", ""Radiographic images showing an increased cardiothoracic ratio"": ""boolean"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""numerical"", ""Echocardiographic images showing an enlarged heart"": ""boolean"", ""Measurements of cardiac dimensions (cm)"": ""numerical"", ""Imaging studies showing a mass in the anterior mediastinum"": ""boolean"", ""Biopsy results showing the type of tumor or mass"": ""boolean"", ""History of pericardial effusion and cardiomegaly"": ""boolean"", ""History of anterior mediastinal mass and prominent epicardial fat pad"": ""boolean"", ""History of fluid accumulation"": ""boolean"", ""History of air accumulation"": ""boolean"", ""History of interstitial lung disease"": ""boolean"", ""Smoking History"": ""boolean"", ""COPD"": ""boolean"", ""Chronic Obstructive Pulmonary Disease"": ""boolean"", ""Medical History"": ""boolean"", ""Cardiovascular Conditions"": ""boolean"", ""Family History"": ""boolean"", ""Blood from Bronchial Tree"": ""boolean"", ""Hemorrhage from Pulmonary Artery"": ""boolean"", ""Pulmonary Edema"": ""boolean"", ""Pus"": ""boolean"", ""Pulmonary Infiltrate"": ""boolean"", ""Infection"": ""boolean"", ""Inflammation"": ""boolean"", ""Underlying Medical Conditions"": ""boolean"", ""White Blood Cell Count (cells/\u03bcL)"": ""numerical"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""numerical"", ""Procalcitonin levels (ng/mL)"": ""numerical"", ""Lung Volume (L)"": ""numerical"", ""Diffusing Capacity (mL/min/mmHg)"": ""numerical"", ""Gas Exchange (mL/min/mmHg)"": ""numerical"", ""Arterial Blood Gas (ABG) analysis"": ""boolean"", ""Complete Blood Count (CBC)"": ""boolean"", ""Electrolyte Panel"": ""boolean"", ""Breath Sounds and Crackles"": ""boolean"", ""Cough"": ""boolean"", ""Fever"": ""boolean"", ""Difficulty breathing"": ""boolean"", ""Wheezing"": ""boolean"", ""Coughing up mucus"": ""boolean"", ""Difficulty swallowing"": ""boolean"", ""Age (years)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical"", ""Body Temperature (\u00b0C)"": ""numerical"", ""Respiratory Symptoms"": ""boolean"", ""Coughing"": ""boolean"", ""Pleuritic chest pain"": ""boolean"", ""Respiratory failure"": ""boolean"", ""Breathing Rate (breaths/min)"": ""numerical"", ""Previous Surgical History"": ""boolean"", ""Respiratory Conditions"": ""boolean"", ""Infant Respiratory Distress Syndrome"": ""boolean"", ""Pneumothorax"": ""boolean"", ""Pleural Effusion"": ""boolean"", ""Lung Cancer"": ""boolean"", ""Pulmonary Tuberculosis"": ""boolean"", ""Postsurgical Atelectasis"": ""boolean"", ""Surfactant Deficiency"": ""boolean"", ""Cardiothoracic ratio"": ""numerical"", ""Lung expansion"": ""numerical"", ""Smoking history"": ""boolean"", ""Other Malignancies"": ""boolean"", ""Previous surgeries"": ""boolean"", ""Infections"": ""boolean"", ""Trauma"": ""boolean"", ""Rheumatoid arthritis"": ""boolean"", ""Asbestos exposure"": ""boolean"", ""Occupational exposure"": ""boolean"", ""Environmental exposure"": ""boolean"", ""Chronic respiratory conditions"": ""boolean"", ""Asthma"": ""boolean"", ""Pleural effusion"": ""boolean"", ""Pneumoperitoneum"": ""boolean"", ""Atelectasis"": ""boolean"", ""Symptomatic pneumothorax"": ""boolean"", ""Tension pneumothorax"": ""boolean"", ""Weight loss"": ""boolean"", ""Decreased lung expansion"": ""boolean"", ""Pleural friction rub"": ""boolean"", ""Pleural fluid analysis"": ""boolean"", ""Blood tests"": ""boolean"", ""Chest radiography"": ""boolean"", ""Computed tomography (CT) scans"": ""boolean"", ""Pulmonary function tests"": ""boolean"", ""Heart failure"": ""boolean"", ""Perforation of the intestine"": ""boolean"", ""Surgical procedure"": ""boolean"", ""Pleural effusion risk factors (1-5)"": ""numerical"", ""Pleural disease risk factors (1-10)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Elevated pericardial fluid levels (mL)"": ""0-200"", ""Increased pericardial fluid protein levels (mg/dL)"": ""0-5"", ""Measurements of cardiac diameter and thoracic diameter (cm)"": ""15-25"", ""Measurements of cardiac dimensions (cm)"": ""10-20"", ""White Blood Cell Count (cells/\u03bcL)"": ""4,000-11,000"", ""C-Reactive Protein (CRP) levels (mg/L)"": ""0-10"", ""Procalcitonin levels (ng/mL)"": ""0-0.5"", ""Lung Volume (L)"": ""3-6"", ""Diffusing Capacity (mL/min/mmHg)"": ""20-40"", ""Gas Exchange (mL/min/mmHg)"": ""10-20"", ""Age (years)"": ""18-65"", ""Oxygen levels (mmHg)"": ""75-100"", ""Body Temperature (\u00b0C)"": ""36-37"", ""Breathing Rate (breaths/min)"": ""12-20"", ""Cardiothoracic ratio"": ""0.45-0.55"", ""Lung expansion"": ""0-10"", ""Pleural effusion risk factors (1-5)"": ""1-5"", ""Pleural disease risk factors (1-10)"": ""1-10""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Fatigue"": true, ""Swelling in the legs and feet"": false, ""Chest pain"": false, ""Palpitations"": false, ""Coughing up blood"": false, ""Fluid buildup in the lungs"": false, ""Confusion"": false, ""Loss of appetite"": false, ""Pericardial effusion"": false, ""Cardiomegaly"": false, ""Increased cardiothoracic ratio"": false, ""Anterior mediastinal mass"": false, ""Prominent epicardial fat pad"": false, ""Elevated pericardial fluid levels (mL)"": 0, ""Increased pericardial fluid protein levels (mg/dL)"": 0, ""Presence of pericardial fluid cells"": false, ""Radiographic images showing an increased cardiothoracic ratio"": false, ""Measurements of cardiac diameter and thoracic diameter (cm)"": 20, ""Echocardiographic images showing an enlarged heart"": false, ""Measurements of cardiac dimensions (cm)"": 15, ""Imaging studies showing a mass in the anterior mediastinum"": false, ""Biopsy results showing the type of tumor or mass"": false, ""History of pericardial effusion and cardiomegaly"": false, ""History of anterior mediastinal mass and prominent epicardial fat pad"": false, ""History of fluid accumulation"": false, ""History of air accumulation"": false, ""History of interstitial lung disease"": false, ""Smoking History"": false, ""COPD"": false, ""Chronic Obstructive Pulmonary Disease"": false, ""Medical History"": false, ""Cardiovascular Conditions"": false, ""Family History"": false, ""Blood from Bronchial Tree"": false, ""Hemorrhage from Pulmonary Artery"": false, ""Pulmonary Edema"": false, ""Pus"": false, ""Pulmonary Infiltrate"": false, ""Infection"": false, ""Inflammation"": false, ""Underlying Medical Conditions"": false, ""White Blood Cell Count (cells/\u03bcL)"": 5000, ""C-Reactive Protein (CRP) levels (mg/L)"": 0, ""Procalcitonin levels (ng/mL)"": 0, ""Lung Volume (L)"": 4, ""Diffusing Capacity (mL/min/mmHg)"": 25, ""Gas Exchange (mL/min/mmHg)"": 15, ""Arterial Blood Gas (ABG) analysis"": false, ""Complete Blood Count (CBC)"": false, ""Electrolyte Panel"": false, ""Breath Sounds and Crackles"": false, ""Cough"": false, ""Fever"": false, ""Difficulty breathing"": false, ""Wheezing"": false, ""Coughing up mucus"": false, ""Difficulty swallowing"": false, ""Age (years)"": 70, ""Oxygen levels (mmHg)"": 95, ""Body Temperature (\u00b0C)"": 36.5, ""Respiratory Symptoms"": false, ""Coughing"": false, ""Pleuritic chest pain"": false, ""Respiratory failure"": false, ""Breathing Rate (breaths/min)"": 15, ""Previous Surgical History"": false, ""Respiratory Conditions"": false, ""Infant Respiratory Distress Syndrome"": false, ""Pneumothorax"": false, ""Pleural Effusion"": false, ""Lung Cancer"": false, ""Pulmonary Tuberculosis"": false, ""Postsurgical Atelectasis"": false, ""Surfactant Deficiency"": false, ""Cardiothoracic ratio"": 0.5, ""Lung expansion"": 5, ""Smoking history"": false, ""Other Malignancies"": false, ""Previous surgeries"": false, ""Infections"": false, ""Trauma"": false, ""Rheumatoid arthritis"": false, ""Asbestos exposure"": false, ""Occupational exposure"": false, ""Environmental exposure"": false, ""Chronic respiratory conditions"": false, ""Asthma"": false, ""Pleural effusion"": false, ""Pneumoperitoneum"": false, ""Atelectasis"": false, ""Symptomatic pneumothorax"": false, ""Tension pneumothorax"": false, ""Weight loss"": false, ""Decreased lung expansion"": false, ""Pleural friction rub"": false, ""Pleural fluid analysis"": false, ""Blood tests"": false, ""Chest radiography"": false, ""Computed tomography (CT) scans"": false, ""Pulmonary function tests"": false, ""Heart failure"": false, ""Perforation of the intestine"": false, ""Surgical procedure"": false, ""Pleural effusion risk factors (1-5)"": 3, ""Pleural disease risk factors (1-10)"": 5}"

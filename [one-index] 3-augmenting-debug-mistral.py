@@ -24,6 +24,7 @@ from tenacity import (
     wait_random_exponential,
 )
 
+from graphrag_for_all.generators.community_reports_extractor import clean_and_parse_json
 
 warnings.filterwarnings("ignore")
 
@@ -280,6 +281,7 @@ def get_prompt(report, keyword_json, range_json):
 - Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
 - For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
 - Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash (\") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
 
 ## Report
 {report}
@@ -315,7 +317,6 @@ def extract_json_string(text):
         raise ValueError("No valid JSON object found in the text.")
 
 
-
 def reverse_extract_json_string(text):
     """
     Extracts the last valid JSON object from the text, ensuring no unmatched curly braces are included.
@@ -333,8 +334,6 @@ def reverse_extract_json_string(text):
         # return json_str[1:-1]
     else:
         raise ValueError("No valid JSON object found in the text.")
-
-
 
 
 def load_json_with_latest_key(data):
@@ -462,7 +461,7 @@ def get_and_parse_json(
             print(f"Missing keywords {lose_keywords}")
 
             missing_keywords_map = {k: keywords_json[k] for k in lose_keywords}
-            missing_range_map = {k: range_json[k] for k in lose_keywords}
+            missing_range_map = {k: range_json[k] for k in lose_keywords if k in range_json}
 
             missing_query = (
                 system_message
@@ -524,10 +523,10 @@ def clean_json_response(json_res):
 
 
 if __name__ == "__main__":
-    with open("separated_combined_results", "rb") as f:
+    with open("separated_combined_results_mistral", "rb") as f:
         separated_combined_results = pickle.load(f)
     top_5_lesions = [
-        # "pulmonary edema",
+        "pulmonary edema",
         "enlarged cardiac silhouette",
         "pulmonary consolidation",
         "atelectasis",
@@ -535,26 +534,49 @@ if __name__ == "__main__":
     ]
     sample_df = pd.read_csv("./spreadsheets/reflacx_clinical.csv")
     searcher = Searcher(
-        input_dir="./combined_index_results/graphrag/index_graphrag_llama3v1_combined_top_1/",
+        input_dir="./combined_index_results/graphrag/index_graphrag_mistral_combined_top_1/",
         send_to=send_fn,
         community_level=1,
     )
+
     augmented = []
-    keywords_json = json.loads(
-        clean_json_response(separated_combined_results["refined_keyword"].output)
+    keywords_json = clean_and_parse_json(
+        separated_combined_results["refined_keyword"].output
     )
-    range_json = json.loads(
-        clean_json_response(
-            separated_combined_results["healthy_numerical_range_res"].output
-        )
+
+    range_json = clean_and_parse_json(
+        separated_combined_results["healthy_numerical_range_res"].output
     )
+
+    ## manually remove some special characters from the keywords' name.
+    # keywords_json["Body Temperature (degrees Celsius)"] = keywords_json[
+    #     "Body Temperature (°C)"
+    # ]
+    # del keywords_json["Body Temperature (°C)"]
+    # keywords_json["White Blood Cell Count (cells/mcL)"] = keywords_json[
+    #     "White Blood Cell Count (cells/μL)"
+    # ]
+    # del keywords_json["White Blood Cell Count (cells/μL)"]
+
+    # range_json["Body Temperature (degrees Celsius)"] = range_json[
+    #     "Body Temperature (°C)"
+    # ]
+    # del range_json["Body Temperature (°C)"]
+    # range_json["White Blood Cell Count (cells/mcL)"] = range_json[
+    #     "White Blood Cell Count (cells/μL)"
+    # ]
+    # del range_json["White Blood Cell Count (cells/μL)"]
     system_message = get_system_message(
         prior_knowledge=separated_combined_results["prior_knowledge"].output
     )
+    ########################################################################
+
+    error_idx_list = []
 
     for idx, row in tqdm(sample_df.iterrows()):
-        # if idx < 752:
-        #     continue
+
+        if idx < 673 :
+            continue
 
         print(f"Processing Index [{idx}]")
         report = get_report(row)
@@ -581,6 +603,24 @@ if __name__ == "__main__":
         #         ),
         #     },
         # ]
+        print(f"Getting and parsing Index [{idx}]")
+        print("Error list")
+        print(error_idx_list)
+
+        try:
+            aug_values = get_and_parse_json(
+                searcher=searcher,
+                query=query,
+                keywords_json=keywords_json,
+                send_fn=send_fn,
+                range_json=range_json,
+                system_message=system_message,
+            )
+        except Exception as e:
+            error_idx_list.append(idx)
+            print(f"Error processing index [{idx}]: {e}")
+            continue
+
         aug_values = get_and_parse_json(
             searcher=searcher,
             query=query,
@@ -597,6 +637,9 @@ if __name__ == "__main__":
                 "augmenting_output": json.dumps(aug_values),
             }
         )
+
         augmented.append(aug_instance)
         augmented_df = pd.DataFrame(augmented)
-        augmented_df.to_csv("combined-augmented.csv")
+        augmented_df.to_csv(f"augmented-mistral.csv")
+        print("Error list")
+        print(error_idx_list)

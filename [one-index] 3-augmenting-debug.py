@@ -32,6 +32,8 @@ set_hugging_face_token(secret.HUGGINGFACE_TOKEN)
 send_fn = get_send_fn(
     source="huggingface",
     model_name="meta-llama/Meta-Llama-3.1-8B-Instruct",  # ["meta-llama/Meta-Llama-3.1-8B-Instruct", "microsoft/Phi-3.5-mini-instruct", "google/gemma-2-2b-it", "meta-llama/Llama-3.2-1B-Instruct", "meta-llama/Llama-3.2-3B-Instruct"]
+    # ruslanmv/Medical-Llama3-8B
+    # mistralai/Mistral-7B-Instruct-v0.2
 )
 DEFAULT_LLM_ARGS = {
     "temperature": 0.0,
@@ -315,7 +317,6 @@ def extract_json_string(text):
         raise ValueError("No valid JSON object found in the text.")
 
 
-
 def reverse_extract_json_string(text):
     """
     Extracts the last valid JSON object from the text, ensuring no unmatched curly braces are included.
@@ -333,8 +334,6 @@ def reverse_extract_json_string(text):
         # return json_str[1:-1]
     else:
         raise ValueError("No valid JSON object found in the text.")
-
-
 
 
 def load_json_with_latest_key(data):
@@ -463,7 +462,6 @@ def get_and_parse_json(
 
             missing_keywords_map = {k: keywords_json[k] for k in lose_keywords}
             missing_range_map = {k: range_json[k] for k in lose_keywords}
-
             missing_query = (
                 system_message
                 + "\n\n"
@@ -552,10 +550,15 @@ if __name__ == "__main__":
         prior_knowledge=separated_combined_results["prior_knowledge"].output
     )
 
+    previous_file_path = None
     for idx, row in tqdm(sample_df.iterrows()):
-        # (414,447), (464,486)
-        if idx <= 431 and  idx <= 447 :
-            continue
+        # (445,447), (464,486)
+        # if idx not in [30, 31, 32, 33, 34, 414, 431, 445, 446, 447, 464]:
+        #     continue
+
+        # if idx <= 464 or idx >= 486 :
+        # # if idx <= 445 and  idx <= 447 :
+        #     continue
 
         print(f"Processing Index [{idx}]")
         report = get_report(row)
@@ -600,4 +603,11 @@ if __name__ == "__main__":
         )
         augmented.append(aug_instance)
         augmented_df = pd.DataFrame(augmented)
-        augmented_df.to_csv("combined-augmented.csv")
+
+        saved_path = f"medical_llama3_augmented_result_{idx}.csv"
+        augmented_df.to_csv(saved_path)
+
+        if previous_file_path is not None:
+            os.remove(previous_file_path)
+
+        previous_file_path = saved_path

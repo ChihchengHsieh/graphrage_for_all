@@ -39,22 +39,33 @@ def responses_to_keywords(
 
     prompt = f"""The subsequent paragraph are the information related to lesion, Please extract the clinical keywords from the following paragraph. The keywords should be those that can be represented as numerical or boolean values and stored as tabular data. And, don't extract the lesion itself as a keyword. (note: Please return the keyword with format of dictionary without additional text.)
 
-    #################################
-    Example:
-    #################################
-    - Lesion: Atelectasis
-    - Context: Atelectasis is more common in certain populations, including surgical patients, particularly those undergoing chest or abdominal procedures, due to factors like anesthesia, pain, and restricted breathing. Aging and chronic respiratory conditions like COPD and asthma increase the risk, while prolonged immobility, especially in bedridden individuals, further reduces lung expansion. Premature infants are also vulnerable due to underdeveloped lungs. Symptoms of atelectasis include shortness of breath, rapid shallow breathing, coughing, sharp chest pain, and low oxygen levels, which can lead to cyanosis. Fever may indicate an infection, and decreased breath sounds are often observed during physical examination.
-    ########
-    Output: 
-    {{"Surgical patients": "boolean","Chest or abdominal procedures": "boolean","Anesthesia": "boolean","Pain": "boolean","Restricted breathing": "boolean","Breathing Rate": "numerical","Age": "numerical","Chronic respiratory conditions": "boolean","COPD": "boolean","Asthma": "boolean","Prolonged immobility": "boolean","Bedridden": "boolean","Premature infants": "boolean","Shortness of breath": "boolean","Rapid shallow breathing": "boolean","Coughing": "boolean","Sharp chest pain": "boolean","Oxygen levels": "numerical","Cyanosis": "boolean","Fever": "boolean","Body Temperature": "numerical","Decreased breath sounds": "boolean"}}
 
-    #################################
-    Real Data:
-    #################################
-    - Lesion: {lesion}
-    - Context: {combined_response}
-    ########
-    Output:"""
+Please return only the keywords along with their corresponding data types. There is no need to include the values of the keywords.
+
+Below, I will provide an example, after which you will extract the keywords from the context in "Real Data".
+
+#################################
+Example:
+#################################
+- Lesion: Atelectasis
+- Context: 
+--- Start of context ---
+Atelectasis is more common in certain populations, including surgical patients, particularly those undergoing chest or abdominal procedures, due to factors like anesthesia, pain, and restricted breathing. Aging and chronic respiratory conditions like COPD and asthma increase the risk, while prolonged immobility, especially in bedridden individuals, further reduces lung expansion. Premature infants are also vulnerable due to underdeveloped lungs. Symptoms of atelectasis include shortness of breath, rapid shallow breathing, coughing, sharp chest pain, and low oxygen levels, which can lead to cyanosis. Fever may indicate an infection, and decreased breath sounds are often observed during physical examination.
+--- End of context ---
+########
+Output: 
+{{"Surgical patients": "boolean","Chest or abdominal procedures": "boolean","Anesthesia": "boolean","Pain": "boolean","Restricted breathing": "boolean","Breathing Rate": "numerical","Age": "numerical","Chronic respiratory conditions": "boolean","COPD": "boolean","Asthma": "boolean","Prolonged immobility": "boolean","Bedridden": "boolean","Premature infants": "boolean","Shortness of breath": "boolean","Rapid shallow breathing": "boolean","Coughing": "boolean","Sharp chest pain": "boolean","Oxygen levels": "numerical","Cyanosis": "boolean","Fever": "boolean","Body Temperature": "numerical","Decreased breath sounds": "boolean"}}
+
+#################################
+Real Data:
+#################################
+- Lesion: {lesion}
+- Context: 
+--- Start of context ---
+{combined_response}
+--- End of context ---
+########
+Output:"""
     res = send_fn(
         [
             {"role": "system", "content": "You are a helpful clinical expert."},

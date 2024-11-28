@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "index_graphrag_mistral_combined",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--name index_graphrag_mistral_combined --store_type graphrag --output_dir ./combined_index_results --doc_top_k 1 --source huggingface --model mistralai/Mistral-7B-Instruct-v0.2",
+        },
+        {
             "name": "index_graphrag_llama3v1_combined",
             "type": "debugpy",
             "request": "launch",

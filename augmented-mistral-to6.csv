@@ -1,0 +1,536 @@
+,Unnamed: 0,id,dicom_id,subject_id,stay_id,study_id,split,eye_tracking_data_discarded,gender,anchor_age,anchor_year,dod,StudyDate,StudyDateTime,StudyTime,in_eye_gaze,in_reflacx,image,image_size_x,image_size_y,ViewPosition,Airway wall thickening,Atelectasis,Consolidation,Enlarged cardiac silhouette,Fibrosis,Fracture,Groundglass opacity,Other,Pneumothorax,Pulmonary edema,Quality issue,Support devices,Wide mediastinum,Abnormal mediastinal contour,Acute fracture,Enlarged hilum,Hiatal hernia,High lung volume / emphysema,Interstitial lung disease,Lung nodule or mass,Pleural abnormality,Atelectasis_negbio,Cardiomegaly_negbio,Consolidation_negbio,Edema_negbio,Enlarged Cardiomediastinum_negbio,Fracture_negbio,Lung Lesion_negbio,Lung Opacity_negbio,No Finding_negbio,Pleural Effusion_negbio,Pleural Other_negbio,Pneumonia_negbio,Pneumothorax_negbio,Support Devices_negbio,Atelectasis_chexpert,Cardiomegaly_chexpert,Consolidation_chexpert,Edema_chexpert,Enlarged Cardiomediastinum_chexpert,Fracture_chexpert,Lung Lesion_chexpert,Lung Opacity_chexpert,No Finding_chexpert,Pleural Effusion_chexpert,Pleural Other_chexpert,Pneumonia_chexpert,Pneumothorax_chexpert,Support Devices_chexpert,temperature,heartrate,resprate,o2sat,sbp,dbp,pain,acuity,chiefcomplaint,age,Augmented_Shortness of breath,Augmented_Orthopnea,Augmented_Paroxysmal nocturnal dyspnea,Augmented_Crackles on auscultation,Augmented_Fever,Augmented_Tachycardia,Augmented_Peripheral edema,Augmented_Vascular congestion,Augmented_Cardiomegaly,Augmented_Fluid in interstitial spaces,Augmented_Bilateral infiltrates,Augmented_Pleural effusions,Augmented_Heart failure,Augmented_Lung diseases,Augmented_Kidney issues,Augmented_Heart conditions,Augmented_Cardiomegaly (size),Augmented_Heart failure markers,Augmented_BNP,Augmented_Troponin,Augmented_Age,Augmented_Smokers and the elderly,Augmented_Air in pleural space,Augmented_Collapse or deflation of alveoli in lungs,Augmented_Pneumonia,Augmented_Muscle weakness,Augmented_Accumulation of fluid or debris,Augmented_Lung tumors,Augmented_Pulmonary tuberculosis,Augmented_Pulmonary tuberculosis (bacterial infection),Augmented_Hypoventilation,Augmented_Atelectasis,Augmented_Obstructive sleep apnea,Augmented_Disruption of contact between pleurae,augmenting_query,augmenting_output
+0,0,P102R108387,34cedb74-d0996b40-6d218312-a9174bea-d48dc033,18111516,32067002.0,55032240,train,False,F,63,2145,2151-08-01,21510714,21510714135820.547,135820.546,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18111516/s55032240/34cedb74-d0996b40-6d218312-a9174bea-d48dc033.dcm,2544,3056,AP,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,98.1,90.0,18.0,99.0,184.0,75.0,13,3.0,Dyspnea,69,True,True,True,True,False,True,False,True,True,True,False,False,True,True,False,True,55.0,[true,True,True,69.0,True,False,False,False,False,False,False,False,False,False,False,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.1.
+HEART RATE PER MINUTE: 90.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 184.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 75.0.
+Pain 010: 75.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Orthopnea"": true, ""Paroxysmal nocturnal dyspnea"": true, ""Crackles on auscultation"": true, ""Fever"": false, ""Tachycardia"": true, ""Peripheral edema"": false, ""Vascular congestion"": true, ""Cardiomegaly"": true, ""Fluid in interstitial spaces"": true, ""Bilateral infiltrates"": false, ""Pleural effusions"": false, ""Heart failure"": true, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": true, ""Cardiomegaly (size)"": 55.0, ""Heart failure markers"": ""[true"", ""BNP"": true, ""Troponin"": true, ""Age"": 69.0, ""Smokers and the elderly"": true, ""Air in pleural space"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Pneumonia"": false, ""Muscle weakness"": false, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Pulmonary tuberculosis"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Hypoventilation"": false, ""Atelectasis"": false, ""Obstructive sleep apnea"": false, ""Disruption of contact between pleurae"": false}"
+1,1,P102R379837,34cedb74-d0996b40-6d218312-a9174bea-d48dc033,18111516,32067002.0,55032240,val,False,F,63,2145,2151-08-01,21510714,21510714135820.547,135820.546,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18111516/s55032240/34cedb74-d0996b40-6d218312-a9174bea-d48dc033.dcm,2544,3056,AP,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,98.1,90.0,18.0,99.0,184.0,75.0,13,3.0,Dyspnea,69,True,True,True,True,False,True,False,True,True,True,False,False,True,True,False,True,55.0,[true,True,True,69.0,True,False,False,False,False,False,False,False,False,False,False,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.1.
+HEART RATE PER MINUTE: 90.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 184.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 75.0.
+Pain 010: 75.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Orthopnea"": true, ""Paroxysmal nocturnal dyspnea"": true, ""Crackles on auscultation"": true, ""Fever"": false, ""Tachycardia"": true, ""Peripheral edema"": false, ""Vascular congestion"": true, ""Cardiomegaly"": true, ""Fluid in interstitial spaces"": true, ""Bilateral infiltrates"": false, ""Pleural effusions"": false, ""Heart failure"": true, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": true, ""Cardiomegaly (size)"": 55.0, ""Heart failure markers"": ""[true"", ""BNP"": true, ""Troponin"": true, ""Age"": 69.0, ""Smokers and the elderly"": true, ""Air in pleural space"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Pneumonia"": false, ""Muscle weakness"": false, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Pulmonary tuberculosis"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Hypoventilation"": false, ""Atelectasis"": false, ""Obstructive sleep apnea"": false, ""Disruption of contact between pleurae"": false}"
+2,2,P102R558314,34cedb74-d0996b40-6d218312-a9174bea-d48dc033,18111516,32067002.0,55032240,val,False,F,63,2145,2151-08-01,21510714,21510714135820.547,135820.546,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18111516/s55032240/34cedb74-d0996b40-6d218312-a9174bea-d48dc033.dcm,2544,3056,AP,4.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,98.1,90.0,18.0,99.0,184.0,75.0,13,3.0,Dyspnea,69,True,True,True,True,False,True,False,True,True,True,False,False,True,True,False,True,55.0,[true,True,True,69.0,True,False,False,False,False,False,False,False,False,False,False,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.1.
+HEART RATE PER MINUTE: 90.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 184.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 75.0.
+Pain 010: 75.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Orthopnea"": true, ""Paroxysmal nocturnal dyspnea"": true, ""Crackles on auscultation"": true, ""Fever"": false, ""Tachycardia"": true, ""Peripheral edema"": false, ""Vascular congestion"": true, ""Cardiomegaly"": true, ""Fluid in interstitial spaces"": true, ""Bilateral infiltrates"": false, ""Pleural effusions"": false, ""Heart failure"": true, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": true, ""Cardiomegaly (size)"": 55.0, ""Heart failure markers"": ""[true"", ""BNP"": true, ""Troponin"": true, ""Age"": 69.0, ""Smokers and the elderly"": true, ""Air in pleural space"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Pneumonia"": false, ""Muscle weakness"": false, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Pulmonary tuberculosis"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Hypoventilation"": false, ""Atelectasis"": false, ""Obstructive sleep apnea"": false, ""Disruption of contact between pleurae"": false}"
+3,3,P102R765317,34cedb74-d0996b40-6d218312-a9174bea-d48dc033,18111516,32067002.0,55032240,train,False,F,63,2145,2151-08-01,21510714,21510714135820.547,135820.546,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18111516/s55032240/34cedb74-d0996b40-6d218312-a9174bea-d48dc033.dcm,2544,3056,AP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,True,2.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,98.1,90.0,18.0,99.0,184.0,75.0,13,3.0,Dyspnea,69,False,False,False,False,False,True,False,True,True,True,False,False,False,True,False,False,55.0,False,False,False,69.0,True,False,False,False,False,False,False,False,False,False,False,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: No lesion found.
+AGE: 69.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.1.
+HEART RATE PER MINUTE: 90.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 184.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 75.0.
+Pain 010: 75.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Orthopnea"": false, ""Paroxysmal nocturnal dyspnea"": false, ""Crackles on auscultation"": false, ""Fever"": false, ""Tachycardia"": true, ""Peripheral edema"": false, ""Vascular congestion"": true, ""Cardiomegaly"": true, ""Fluid in interstitial spaces"": true, ""Bilateral infiltrates"": false, ""Pleural effusions"": false, ""Heart failure"": false, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": false, ""Cardiomegaly (size)"": 55.0, ""Heart failure markers"": false, ""BNP"": false, ""Troponin"": false, ""Age"": 69, ""Smokers and the elderly"": true, ""Air in pleural space"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Pneumonia"": false, ""Muscle weakness"": false, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Pulmonary tuberculosis"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Hypoventilation"": false, ""Atelectasis"": false, ""Obstructive sleep apnea"": false, ""Disruption of contact between pleurae"": false}"
+4,4,P102R915878,34cedb74-d0996b40-6d218312-a9174bea-d48dc033,18111516,32067002.0,55032240,train,False,F,63,2145,2151-08-01,21510714,21510714135820.547,135820.546,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18111516/s55032240/34cedb74-d0996b40-6d218312-a9174bea-d48dc033.dcm,2544,3056,AP,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0,0.0,0.0,False,True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0,0.0,1.0,98.1,90.0,18.0,99.0,184.0,75.0,13,3.0,Dyspnea,69,True,True,True,True,False,True,False,True,True,True,False,False,True,True,False,True,55.0,[true,True,True,69.0,True,False,False,False,False,False,False,False,False,False,False,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: F.
+BODY TEMPERATURE FAHRENHEIT: 98.1.
+HEART RATE PER MINUTE: 90.0.
+RESPIRATORY RATE PER MINUTE: 18.0.
+OXYGEN SATURATION PERCENTAGE: 99.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 184.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 75.0.
+Pain 010: 75.0.
+Acuity 1highest priority  5lowest priority: 3.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": true, ""Orthopnea"": true, ""Paroxysmal nocturnal dyspnea"": true, ""Crackles on auscultation"": true, ""Fever"": false, ""Tachycardia"": true, ""Peripheral edema"": false, ""Vascular congestion"": true, ""Cardiomegaly"": true, ""Fluid in interstitial spaces"": true, ""Bilateral infiltrates"": false, ""Pleural effusions"": false, ""Heart failure"": true, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": true, ""Cardiomegaly (size)"": 55.0, ""Heart failure markers"": ""[true"", ""BNP"": true, ""Troponin"": true, ""Age"": 69.0, ""Smokers and the elderly"": true, ""Air in pleural space"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Pneumonia"": false, ""Muscle weakness"": false, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Pulmonary tuberculosis"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Hypoventilation"": false, ""Atelectasis"": false, ""Obstructive sleep apnea"": false, ""Disruption of contact between pleurae"": false}"
+5,5,P116R051205,887ce638-036e6a6b-15d37e27-30515374-f78b68e9,18522520,35511308.0,59022382,train,False,M,69,2114,,21180616,21180616171111.39,171111.39,False,True,physionet.org/files/mimic-cxr/2.0.0/files/p18/p18522520/s59022382/887ce638-036e6a6b-15d37e27-30515374-f78b68e9.dcm,3056,2544,PA,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,False,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,98.43,74.0,20.0,95.0,183.0,79.0,0,2.0,Chest pain,73,False,False,False,False,False,False,False,False,0.45,False,False,False,False,True,False,True,0.45,False,False,False,73.0,True,False,False,False,False,False,False,False,False,False,True,False,False,"You are a clinical expert. With following extra knowledge in mind:
+
+ Pulmonary edema is a condition characterized by the accumulation of fluid in the lungs' interstitial spaces and alveoli, leading to impaired gas exchange. The diagnosis involves identifying its underlying etiology, which can be cardiogenic, non-cardiogenic, or high-altitude pulmonary edema. Cardiogenic pulmonary edema is caused by heart failure, while non-cardiogenic pulmonary edema is caused by various conditions such as sepsis, pneumonia, and ARDS. High-altitude pulmonary edema is caused by the accumulation of fluid in the alveolar spaces of the lungs due to the decrease in atmospheric pressure at high altitudes.
+
+The clinical features of cardiogenic pulmonary edema include dyspnea, orthopnea, paroxysmal nocturnal dyspnea, and crackles on auscultation. Chest radiographs may show characteristic findings such as vascular congestion, cardiomegaly, and fluid in the interstitial spaces. Echocardiography is a valuable diagnostic tool for assessing cardiac function and evaluating cardiogenic pulmonary edema.
+
+Non-cardiogenic pulmonary edema may present with fever, tachycardia, and peripheral edema. Chest radiographs may show bilateral infiltrates and pleural effusions. Pulmonary function tests, such as the measurement of total lung capacity and diffusing capacity, can help differentiate between cardiogenic and non-cardiogenic pulmonary edema.
+
+High-altitude pulmonary edema is characterized by dyspnea, cough, and chest tightness. Chest radiographs may show bilateral infiltrates and pleural effusions. Descent to lower altitudes and oxygen therapy are the primary treatments for high-altitude pulmonary edema.
+
+A patient's personal relevant history for the etiological diagnosis of pulmonary edema includes a history of heart failure, lung diseases, and kidney or heart issues. Diagnostic tools such as chest radiographs and echocardiograms are essential for identifying the presence of fluid in the lungs and assessing heart function.
+
+# Task you're going to perform
+
+You will be given a report regarding a patient, and a json object with for you to sepculate the values of each attribute. 
+You will return the speculated values according to the data type specified in the give JSON Object. You need to speculate the value, and null value is not acceptable.
+Please keep your responses concise, with a maximum length of 12000 tokens.
+Don't be unit (e.g., cm, L) in the value. Only numerical characters for numerical data types, and only true or false for boolean data types.
+
+Following is an example for you:
+
+## Report
+INDICATION:  Central venous line placement.
+TECHNIQUE:  Frontal chest radiograph.
+COMPARISON:  Chest radiograph 12:42 today.
+FINDINGS: 
+A right subclavian catheter has been placed in the interim. The catheterterminates at the confluence of the brachiocephalic vein and superior venacava and if indicated could be advanced 3.7 cm for termination within thelow SVC.
+There is no pleural effusion or pneumothorax. The cardiac silhouette remainsmildly enlarged. There is no focal airspace consolidation worrisome forpneumonia.
+High density material is again seen in the paritally imaged colon in the leftabdomen. Cholecystectomy clips are noted. There are carotid calcificationsleft greater than right.
+DIAGNOSED LESIONS: Enlarged cardiac silhouette.
+AGE: 69.
+GENDER: Female.
+
+## Data Type 
+{""Chest pain"": ""boolean"", ""Weight loss"": ""boolean"", ""History of COPD"": ""boolean"", ""Heartrate (beats per minute)"": ""numerical"", ""Oxygen levels (mmHg)"": ""numerical""}
+
+## Healthy Patient Feature Range
+{""Heartrate (beats per minute)"": ""60-100"", ""Oxygen levels (mmHg)"": ""75-100""}
+
+## Speculated Values
+{""Chest pain"": true, ""Weight loss"": false, ""History of COPD"": true, ""Heartrate (beats per minute)"": 90, ""Oxygen levels (mmHg)"": 99.0}
+
+
+Based on the following ""Report"", determine the potential values for the keywords listed in the 'Data Type' JSON object, which specifies the required keywords and their data types.
+
+## IMPORTANT
+- Return the results in JSON format, adhering to the data types defined in the 'Data Type' JSON object.
+- Make sure to include all keywords in the ""Data Type"" when returning speculated values, especially when both boolean and numerical keywords are required. For example, if the keywords include both ""Increased Cardiothoracic ratio"" and ""Cardiothoracic ratio,"" ensure that neither is missed.
+- Return actual values instead of data types.
+- Please keep your responses concise, with a maximum length of 12000 tokens.
+- If uncertain, speculate the value rather than stating that you cannot answer rather than stating 'unknown' or 'not mentioned,' Don't say ""I am sorry but I am unable to answer this question given the provided data."".
+- Avoid generating repetitive results.
+- Avoid returning repetitive keywords.
+- Ensure the output strictly adheres to the specified JSON format outlined in the system prompt. The JSON object for keywords must be included as a string (enclosed in double quotes) under the 'description' field within the 'points' object.
+- For numerical keywords, refer to the 'Healthy Patient Feature Range' JSON object for guidance. However, the values do not need to fall strictly within these ranges, as not all patients are healthy—just ensure the values are realistic.
+- Your response must a JSON object (Can be list or map/dictionary) without additional text.
+- Please ensure that any JSON output does not contain unescaped double quotes within strings. All double quotes within text fields should be escaped using a backslash ("") to maintain valid JSON format. Additionally, double-check that the JSON syntax is well-formed and adheres to proper formatting guidelines.
+
+## Report
+EXAMINATION:  CHEST PA AND LAT
+INDICATION:  History: M with chest pain
+TECHNIQUE:  Chest PA and lateral
+COMPARISON:  
+FINDINGS: 
+The patient is status post median sternotomy and CABG.  Cardiac mediastinaland hilar contours are unchanged with the heart size within normal limits.Minimal atherosclerotic calcifications are noted at the aortic knob. Pulmonaryvasculature is normal. Calcified granuloma is seen within the right apex. Lungs are clear. Pulmonary vasculature is normal. No pleural effusion orpneumothorax is present. Minimal degenerative changes are seen within thethoracic spine.
+IMPRESSION: 
+No acute cardiopulmonary abnormality.
+DIAGNOSED LESIONS: Atelectasis.
+AGE: 73.
+GENDER: M.
+BODY TEMPERATURE FAHRENHEIT: 98.43.
+HEART RATE PER MINUTE: 74.0.
+RESPIRATORY RATE PER MINUTE: 20.0.
+OXYGEN SATURATION PERCENTAGE: 95.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 183.0.
+SYSTOLIC BLOOD PRESSURE mmHg: 79.0.
+Pain 010: 79.0.
+Acuity 1highest priority  5lowest priority: 2.0.
+
+
+## Data Type 
+{""Shortness of breath"": ""boolean"", ""Orthopnea"": ""boolean"", ""Paroxysmal nocturnal dyspnea"": ""boolean"", ""Crackles on auscultation"": ""boolean"", ""Fever"": ""boolean"", ""Tachycardia"": ""boolean"", ""Peripheral edema"": ""boolean"", ""Vascular congestion"": ""boolean"", ""Cardiomegaly"": ""boolean"", ""Fluid in interstitial spaces"": ""boolean"", ""Bilateral infiltrates"": ""boolean"", ""Pleural effusions"": ""boolean"", ""Heart failure"": ""boolean"", ""Lung diseases"": ""boolean"", ""Kidney issues"": ""boolean"", ""Heart conditions"": ""boolean"", ""Cardiomegaly (size)"": ""numerical"", ""Heart failure markers"": ""boolean"", ""BNP"": ""boolean"", ""Troponin"": ""boolean"", ""Age"": ""numerical"", ""Smokers and the elderly"": ""boolean"", ""Pulmonary tuberculosis"": ""boolean"", ""Pneumonia"": ""boolean"", ""Atelectasis"": ""boolean"", ""Accumulation of fluid or debris"": ""boolean"", ""Lung tumors"": ""boolean"", ""Hypoventilation"": ""boolean"", ""Obstructive sleep apnea"": ""boolean"", ""Muscle weakness"": ""boolean"", ""Pulmonary tuberculosis (bacterial infection)"": ""boolean"", ""Collapse or deflation of alveoli in lungs"": ""boolean"", ""Air in pleural space"": ""boolean"", ""Disruption of contact between pleurae"": ""boolean""}
+
+## Healthy Patient Feature Range
+{""Cardiomegaly (size)"": ""> 50% of the cardiac silhouette in chest radiograph"", ""Age"": ""18-65""}
+
+
+!IMPORTANT: You must speculate the value. You can't say ""I am sorry but I am unable to answer this question given the provided data.""
+## Speculated Values 
+","{""Shortness of breath"": false, ""Orthopnea"": false, ""Paroxysmal nocturnal dyspnea"": false, ""Crackles on auscultation"": false, ""Fever"": false, ""Tachycardia"": false, ""Peripheral edema"": false, ""Vascular congestion"": false, ""Cardiomegaly"": 0.45, ""Heart failure"": false, ""Lung diseases"": true, ""Kidney issues"": false, ""Heart conditions"": true, ""Cardiomegaly (size)"": 0.45, ""Heart failure markers"": false, ""BNP"": false, ""Troponin"": false, ""Age"": 73, ""Smokers and the elderly"": true, ""Pulmonary tuberculosis"": false, ""Pneumonia"": false, ""Atelectasis"": true, ""Accumulation of fluid or debris"": false, ""Lung tumors"": false, ""Hypoventilation"": false, ""Obstructive sleep apnea"": false, ""Muscle weakness"": false, ""Pulmonary tuberculosis (bacterial infection)"": false, ""Collapse or deflation of alveoli in lungs"": false, ""Air in pleural space"": false, ""Disruption of contact between pleurae"": false, ""Pleural effusions"": false, ""Bilateral infiltrates"": false, ""Fluid in interstitial spaces"": false}"

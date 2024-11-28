@@ -27,7 +27,6 @@ def _create_array(column: pd.Series, delim: str) -> str:
     col: pd.DataFrame | pd.Series = column.dropna().apply(lambda x: _correct_type(x))
     return delim.join(col.astype(str))
 
-
 merge_strategies: dict[MergeStrategy, Callable] = {
     MergeStrategy.FirstOneWins: lambda values, **_kwargs: values.dropna().apply(
         lambda x: _correct_type(x)
