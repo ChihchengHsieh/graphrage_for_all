@@ -1,0 +1,45 @@
+Feature,Radiologist 1 Clinical Plausibility (Agreement),Radiologist 1 Clinical Relevance (Importance),Radiologist 1 Clinical Confidence (Certainty),Radiologist 2 Clinical Plausibility (Agreement),Radiologist 2 Clinical Relevance (Importance),Radiologist 2 Clinical Confidence (Certainty),XGBoost,RandomForest,Decision Tree,TabNet
+age,1,1,1,1,1,1,1,1,0,1
+anesthesia,2,2,2,1,2,2,0,0,0,1
+asymptomatic,2,3,2,1,3,2,1,1,1,0
+back pain,2,1,2,2,3,2,1,1,0,0
+bone fractures,1,3,2,1,3,2,0,0,0,1
+breathing difficulty,3,4,3,4,4,3,1,1,0,1
+chest Pain,3,4,3,3,3,3,0,0,0,1
+cough,4,2,3,4,4,3,0,0,0,1
+diastolic blood pressure (mmHg),1,2,1,1,1,1,0,1,0,1
+distant heart sounds,2,2,2,1,1,1,0,0,0,1
+dry cough,4,4,3,3,4,3,0,1,0,0
+dyspnea,4,4,4,4,4,4,1,1,0,0
+electrical alternans on ekg,1,1,1,1,1,1,0,0,0,1
+fever,4,4,4,4,4,4,1,0,0,0
+fluid around the heart,2,3,2,2,2,2,0,0,0,1
+fungal and mineral exposure,2,3,2,3,3,2,0,0,0,1
+hiatal hernia,2,3,2,2,2,2,0,0,0,1
+high bone density,1,1,1,1,1,1,0,0,0,1
+high heart beat intensity,2,3,2,2,3,2,0,1,0,1
+hypertensive crisis,1,1,1,1,2,1,0,0,0,1
+hypoxemia,3,4,4,3,4,4,1,1,0,1
+impaired gas exchange,3,4,4,3,4,4,0,1,0,1
+impaired left ventricular function,2,2,3,2,3,3,1,1,0,1
+increased jugular venous pressure,1,1,1,1,1,1,0,0,0,0
+interstitial lung disease,2,3,2,2,3,2,0,0,0,1
+leg swelling,1,1,1,2,2,1,0,0,0,1
+lung collapsed,3,3,3,3,3,3,0,0,1,1
+neck pain,1,1,1,2,2,1,0,0,0,1
+oxygen saturation (%),3,4,4,4,4,4,1,1,0,1
+pain in the shoulders,1,1,1,2,3,1,0,0,0,1
+palpitations,1,1,1,2,3,1,0,0,0,1
+pericardial effusion,2,2,1,1,2,1,0,0,0,1
+pleural effusion,3,4,3,3,3,3,0,1,0,0
+pneumonia,4,4,4,4,4,4,1,1,0,1
+pneumothorax,2,3,2,2,2,2,0,0,0,1
+pulsus paradoxus,1,1,1,1,1,1,0,0,0,1
+relief of pain by bending forward,1,1,1,1,1,1,1,0,0,0
+worsening of pain by inspiration,1,1,1,1,1,1,0,0,0,1
+shortness of breath,3,2,3,4,4,4,0,0,0,1
+spirometry (FVC),3,3,3,3,3,3,1,0,1,0
+sweating,3,3,2,3,4,2,0,0,0,1
+systolic blood pressure (mmHg),1,1,1,1,1,1,1,1,0,0
+weakness,3,2,2,3,4,2,0,0,0,0
+wheezing,3,2,2,3,3,2,0,0,0,1

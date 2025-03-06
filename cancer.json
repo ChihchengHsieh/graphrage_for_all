@@ -1,0 +1,566 @@
+{
+    "Articles": [
+        {
+            "Title": "Long-Term Performance of an Image-Based Short-Term Risk Model for Breast Cancer",
+            "Input": [
+                "Mammograms",
+                "Age",
+                "Lifestyle risk factors",
+                "Familial risk factors"
+            ],
+            "Task": [
+                "Breast cancer risk prediction"
+            ],
+            "Prediction outcome": [
+                "Diagnosis of breast cancer within 1-10 years",
+                "Symptomatic cancers within the first 3 years"
+            ],
+            "Evaluation Metrics": "Age-adjusted Area Under the Curve (aAUC)",
+            "Model Architecture": "AI-based model using mammographic features combined with Tyrer-Cuzick v8 model",
+            "Datasets": [
+                {
+                    "Name": "Karolinska Mammography Project for Risk Prediction of Breast Cancer (KARMA)",
+                    "Size": "8604 women, with 2028 incident breast cancers identified",
+                    "Cohort": "Initiated in 2010 in Sweden for women age 40-74 years",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not available",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study assesses the long-term performance of an AI-based, image-derived short-term risk model for breast cancer, comparing it to traditional risk models over a 10-year period."
+        },
+        {
+            "Title": "Machine learning-based lifetime breast cancer risk reclassification compared with the BOADICEA model: impact on screening recommendations",
+            "Input": [
+                "Family history",
+                "Genetic predisposition (BRCA1/BRCA2)",
+                "Demographic data",
+                "Clinical data"
+            ],
+            "Task": [
+                "Breast cancer risk prediction"
+            ],
+            "Prediction outcome": [
+                "Lifetime breast cancer risk classification",
+                "Mammography surveillance recommendations based on risk"
+            ],
+            "Evaluation Metrics": "Area Under the Receiver Operating Characteristic (AU-ROC)",
+            "Model Architecture": "Machine Learning algorithms including Markov Chain Monte Carlo Generalised Linear Mixed Model (MCMC GLMM), Adaptive Boosting (ADA), and Random Forest (RF)",
+            "Datasets": [
+                {
+                    "Name": "Geneva University Hospitals Oncogenetic Unit database",
+                    "Size": "112,587 individuals from 2481 families",
+                    "Cohort": "Swiss",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Yes (GitHub link provided)",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study compares ML algorithms against the BOADICEA model for predicting lifetime breast cancer risk, demonstrating the impact of ML-based reclassification on mammography screening recommendations."
+        },
+        {
+            "Title": "Prediction of lung adenocarcinoma prognosis and diagnosis with a novel model anchored in circadian clock-related genes",
+            "Input": [
+                "Clinical data",
+                "Gene expression data"
+            ],
+            "Task": [
+                "Lung adenocarcinoma prognosis",
+                "Lung adenocarcinoma diagnosis"
+            ],
+            "Prediction outcome": [
+                "Overall survival times prediction"
+            ],
+            "Evaluation Metrics": [
+                "Receiver Operating Characteristic (ROC) analysis",
+                "Accuracy",
+                "Area Under the Curve (AUC)"
+            ],
+            "Model Architecture": "Risk score model using Lasso regression and Cox proportional hazards model based on circadian clock-related genes",
+            "Datasets": [
+                {
+                    "Name": "TCGA-LUAD",
+                    "Size": "515 patients",
+                    "Cohort": "Patients with lung adenocarcinoma",
+                    "Publicly Available": "Yes"
+                },
+                {
+                    "Name": "GSE31210",
+                    "Size": "Not specified",
+                    "Cohort": "Patients with lung adenocarcinoma for external validation",
+                    "Publicly Available": "Yes"
+                },
+                {
+                    "Name": "GSE68465",
+                    "Size": "Not specified",
+                    "Cohort": "Patients with lung adenocarcinoma for external validation",
+                    "Publicly Available": "Yes"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study develops a risk score model for lung adenocarcinoma prognosis based on circadian clock-related genes, demonstrating high accuracy and potential for enhancing clinical decision-making."
+        },
+        {
+            "Title": "Identifying Risk Stratification Associated With a Cancer for Overall Survival by Deep Learning-Based CoxPH",
+            "Input": [
+                "Clinicopathological data"
+            ],
+            "Task": [
+                "Risk stratification for overall survival in cancer"
+            ],
+            "Prediction outcome": [
+                "Ten-year overall survival in breast cancer"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Curve (AUC)",
+                "Sensitivity",
+                "Specificity"
+            ],
+            "Model Architecture": "DeepCoxPH model combining deep learning with Cox proportional hazards model",
+            "Datasets": [
+                {
+                    "Name": "Taiwan Breast Cancer Consortium database",
+                    "Size": "458 patients after matching (229 cases, 229 controls)",
+                    "Cohort": "Patients diagnosed with breast cancer",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "No",
+            "Description": "This study introduces DeepCoxPH, a novel method combining deep learning with traditional CoxPH analysis to improve risk stratification for overall survival in breast cancer."
+        },
+        {
+            "Title": "Toward robust mammography-based models for breast cancer risk",
+            "Input": [
+                "Mammographic images"
+            ],
+            "Task": [
+                "Breast cancer risk prediction"
+            ],
+            "Prediction outcome": [
+                "Risk of developing breast cancer within 5 years"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Receiver Operating Characteristic Curve (AUC)",
+                "C-index"
+            ],
+            "Model Architecture": "Mirai model, a deep learning-based architecture integrating mammographic views with risk factor prediction and an additive-hazard layer",
+            "Datasets": [
+                {
+                    "Name": "Massachusetts General Hospital (MGH)",
+                    "Size": "76,811 examinations from patients",
+                    "Cohort": "Diverse population, including multiple racial and age groups",
+                    "Publicly Available": "No"
+                },
+                {
+                    "Name": "Karolinska University Hospital",
+                    "Size": "19,328 examinations",
+                    "Cohort": "Swedish women, various age groups",
+                    "Publicly Available": "No"
+                },
+                {
+                    "Name": "Chang Gung Memorial Hospital (CGMH)",
+                    "Size": "13,356 examinations",
+                    "Cohort": "Taiwanese women, various age groups",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Publicly available (GitHub link provided)",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study introduces the Mirai model, which predicts breast cancer risk across multiple populations and demonstrates superior performance over traditional and previous deep learning models."
+        },
+        {
+            "Title": "A Multi-scale CNN and Curriculum Learning Strategy for Mammogram Classification",
+            "Input": [
+                "Mammographic images"
+            ],
+            "Task": [
+                "Breast cancer classification"
+            ],
+            "Prediction outcome": [
+                "Diagnosis of breast cancer presence"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Receiver Operating Characteristic Curve (AUROC)"
+            ],
+            "Model Architecture": "Multi-scale Convolutional Neural Network (CNN) trained with a curriculum learning strategy, using patch-level classifiers as feature extractors for a full-image model",
+            "Datasets": [
+                {
+                    "Name": "Digital Database for Screening Mammography (DDSM)",
+                    "Size": "10,480 images from 2,620 cases",
+                    "Cohort": "Patients undergoing screening mammography",
+                    "Publicly Available": "Yes"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Not specified",
+            "Multimodal Learning": "No",
+            "Description": "This study presents a multi-scale CNN architecture combined with a curriculum learning strategy to improve the accuracy of mammogram classification."
+        },
+        {
+            "Title": "deepDR: a network-based deep learning approach to in silico drug repositioning",
+            "Input": [
+                "Drug-disease interactions",
+                "Drug-target interactions",
+                "Drug-side-effect associations",
+                "Drug-drug interactions",
+                "Chemical similarities",
+                "Therapeutic similarities",
+                "Drug-target sequence similarities",
+                "Gene Ontology (GO) annotations"
+            ],
+            "Task": [
+                "Drug repositioning"
+            ],
+            "Prediction outcome": [
+                "Identification of new drug uses"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Receiver Operating Characteristic Curve (AUROC)",
+                "Area Under the Precision-Recall Curve (AUPR)"
+            ],
+            "Model Architecture": "Multi-modal deep autoencoder (MDA) combined with a collective variational autoencoder (cVAE) for integrating and encoding drug information from multiple networks",
+            "Datasets": [
+                {
+                    "Name": "DrugBank, repoDB, ClinicalTrials.gov",
+                    "Size": "6677 clinically reported drug-disease pairs involving 1519 drugs and 1229 diseases",
+                    "Cohort": "Drugs and diseases from diverse clinical reports",
+                    "Publicly Available": "Yes"
+                }
+            ],
+            "Code Availability": "Yes (GitHub link provided)",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study presents deepDR, a network-based deep learning method for predicting new drug uses by integrating multiple types of drug-related networks."
+        },
+        {
+            "Title": "An integrative deep learning framework for classifying molecular subtypes of breast cancer",
+            "Input": [
+                "Copy number alteration data",
+                "Gene expression data"
+            ],
+            "Task": [
+                "Classification of molecular subtypes of breast cancer"
+            ],
+            "Prediction outcome": [
+                "Molecular subtype classification (e.g., Luminal A, Luminal B, HER-2 enriched, Basal-like)"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Receiver Operating Characteristic Curve (AUROC)",
+                "Accuracy"
+            ],
+            "Model Architecture": "Integrative Deep Neural Network that combines copy number alterations and gene expression data using concatenation layers",
+            "Datasets": [
+                {
+                    "Name": "METABRIC (Molecular Taxonomy of Breast Cancer International Consortium)",
+                    "Size": "1985 patients (discovery set: 991, validation set: 984)",
+                    "Cohort": "Clinically annotated primary breast cancer specimens from North American and European tumor banks",
+                    "Publicly Available": "Yes"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study proposes an integrative deep learning model for classifying molecular subtypes of breast cancer, enhancing predictive accuracy by combining genomic and transcriptomic data."
+        },
+        {
+            "Title": "Harnessing multimodal data integration to advance precision oncology",
+            "Input": [
+                "Molecular diagnostics",
+                "Radiological imaging",
+                "Histological imaging",
+                "Clinical data"
+            ],
+            "Task": [
+                "Advancement of precision oncology"
+            ],
+            "Prediction outcome": [
+                "Risk of relapse",
+                "Treatment failure"
+            ],
+            "Evaluation Metrics": [
+                "Not specified in provided text"
+            ],
+            "Model Architecture": "Artificial intelligence methods integrating multimodal data",
+            "Datasets": [
+                {
+                    "Name": "Not specified in provided text",
+                    "Size": "Not specified in provided text",
+                    "Cohort": "Patients undergoing cancer treatment",
+                    "Publicly Available": "Not specified in provided text"
+                }
+            ],
+            "Code Availability": "Not specified in provided text",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This paper discusses the potential of integrating multimodal data in precision oncology, focusing on overcoming data sparsity and the challenges of training AI with current medical datasets."
+        },
+        {
+            "Title": "Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer",
+            "Input": [
+                "Contrast-enhanced computed tomography (CE-CT)",
+                "Hematoxylin and eosin (H&E)-stained slides",
+                "Clinicogenomic data"
+            ],
+            "Task": [
+                "Risk stratification for high-grade serous ovarian cancer"
+            ],
+            "Prediction outcome": [
+                "Prognosis of overall survival",
+                "Time to recurrence"
+            ],
+            "Evaluation Metrics": [
+                "Concordance index (c-index)",
+                "Area Under the Receiver Operating Characteristic Curve (AUROC)"
+            ],
+            "Model Architecture": "Integrative machine learning model combining features from histopathology, radiology, and clinicogenomic data",
+            "Datasets": [
+                {
+                    "Name": "Memorial Sloan Kettering Cancer Center cohort",
+                    "Size": "444 patients",
+                    "Cohort": "Patients with primarily late-stage high-grade serous ovarian cancer",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study enhances risk stratification in ovarian cancer by integrating histopathological, radiological, and clinicogenomic data using advanced machine learning techniques."
+        },
+        {
+            "Title": "Deep learning-based multimodal spatial transcriptomics analysis for cancer",
+            "Input": [
+                "Genomic data",
+                "Proteomic data",
+                "Imaging data",
+                "Clinical data"
+            ],
+            "Task": [
+                "Cancer diagnostics",
+                "Treatment planning",
+                "Precision medicine"
+            ],
+            "Prediction outcome": [
+                "Identifying tumor heterogeneity",
+                "Optimizing radiotherapy",
+                "Integrating MRI data with genomic profiles for glioma grading",
+                "Combining proteomic and clinical data to uncover drug resistance mechanisms"
+            ],
+            "Evaluation Metrics": [
+                "Diagnostic accuracy",
+                "Personalized treatment planning",
+                "Prognostic modeling"
+            ],
+            "Model Architecture": "Convolutional Neural Networks (CNNs) for image classification, segmentation, and tumor volume analysis",
+            "Datasets": [
+                {
+                    "Name": "Not specified",
+                    "Size": "Not specified",
+                    "Cohort": "Cancer patients",
+                    "Publicly Available": "Not specified"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This chapter explores the integration of deep learning with multimodal spatial transcriptomics to advance cancer diagnostics, treatment planning, and precision medicine."
+        },
+        {
+            "Title": "Multimodal MRI Deep Learning for Predicting Central Lymph Node Metastasis in Papillary Thyroid Cancer",
+            "Input": [
+                "MRI images",
+                "Clinicopathological data"
+            ],
+            "Task": [
+                "Prediction of central lymph node metastasis in papillary thyroid cancer"
+            ],
+            "Prediction outcome": [
+                "Identifying patients at risk of central lymph node metastasis"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Curve (AUC)"
+            ],
+            "Model Architecture": "Attention mechanism-based multimodal classification network (AMMCNet) integrating MRI images and clinicopathological data",
+            "Datasets": [
+                {
+                    "Name": "Dataset from a hospital",
+                    "Size": "105 patients",
+                    "Cohort": "Patients diagnosed with papillary thyroid cancer",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study develops a deep learning model using multimodal MRI data and clinicopathological information to predict central lymph node metastasis in patients with papillary thyroid cancer."
+        },
+        {
+            "Title": "Non-invasive multimodal CT deep learning biomarker to predict pathological complete response of non-small cell lung cancer following neoadjuvant immunochemotherapy: a multicenter study",
+            "Input": [
+                "Non-contrast enhanced CT",
+                "Contrast enhanced CT"
+            ],
+            "Task": [
+                "Prediction of pathological complete response in non-small cell lung cancer"
+            ],
+            "Prediction outcome": [
+                "Pathological complete response following neoadjuvant immunochemotherapy"
+            ],
+            "Evaluation Metrics": [
+                "Area under the receiver operating characteristic curve (AUC)",
+                "Accuracy",
+                "Sensitivity",
+                "Specificity",
+                "Positive predictive value",
+                "Negative predictive value"
+            ],
+            "Model Architecture": "Multimodal deep learning models including LUNAI-uCT, LUNAI-eCT, and LUNAI-fCT for feature extraction from CT scans",
+            "Datasets": [
+                {
+                    "Name": "Multicenter clinical data",
+                    "Size": "225 patients",
+                    "Cohort": "Patients with NSCLC undergoing neoadjuvant immunochemotherapy",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study developed and validated a deep learning-based multimodal CT biomarker that non-invasively predicts pathological complete response in NSCLC patients undergoing neoadjuvant immunochemotherapy, using a multicenter dataset."
+        },
+        {
+            "Title": "Long-term cancer survival prediction using multimodal deep learning",
+            "Input": [
+                "Clinical data",
+                "Imaging data",
+                "Genomics data",
+                "Transcriptomics data",
+                "Epigenomics data",
+                "Tissue biopsy imaging data"
+            ],
+            "Task": [
+                "Long-term pan-cancer survival prediction"
+            ],
+            "Prediction outcome": [
+                "Conditional survival probabilities for follow-up time intervals spanning several decades"
+            ],
+            "Evaluation Metrics": [
+                "Time-dependent concordance index (Ctd)",
+                "Integrated Brier score (IBS)"
+            ],
+            "Model Architecture": "MultiSurv, a multimodal deep learning method with dedicated submodels for each data modality, a data fusion layer, and a prediction submodel for generating survival probabilities",
+            "Datasets": [
+                {
+                    "Name": "Data from 33 different cancer types",
+                    "Size": "Comprehensive dataset encompassing multiple data modalities",
+                    "Cohort": "Pan-cancer patients",
+                    "Publicly Available": "Yes, sourced from the National Cancer Institute’s Genomic Data Commons"
+                }
+            ],
+            "Code Availability": "Yes, available on GitHub",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study introduces MultiSurv, a multimodal deep learning approach for predicting long-term survival across multiple cancer types, capable of handling high-dimensional and missing data."
+        },
+        {
+            "Title": "A Machine Learning Model Based on PET/CT Radiomics and Clinical Characteristics Predicts Tumor Immune Profiles in Non-Small Cell Lung Cancer: A Retrospective Multicohort Study",
+            "Input": [
+                "PET/CT radiomics",
+                "Clinical characteristics"
+            ],
+            "Task": [
+                "Predicting tumor immune profiles in non-small cell lung cancer"
+            ],
+            "Prediction outcome": [
+                "CD8 expression in tumors"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Curve (AUC)",
+                "Sensitivity",
+                "Specificity"
+            ],
+            "Model Architecture": "Machine learning models integrating PET/CT radiomics and clinical data",
+            "Datasets": [
+                {
+                    "Name": "TCGA, Daping Hospital, TCIA",
+                    "Size": "1145 from TCGA, 221 from Daping Hospital, 39 from TCIA",
+                    "Cohort": "Non-small cell lung cancer patients",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study uses PET/CT radiomics combined with clinical data to predict immune profiles, particularly CD8 expression in non-small cell lung cancer, using a machine learning approach."
+        },
+        {
+            "Title": "Multimodal deep learning models for the prediction of pathologic response to neoadjuvant chemotherapy in breast cancer",
+            "Input": [
+                "Clinical information",
+                "T1-weighted subtraction images",
+                "T2-weighted images"
+            ],
+            "Task": [
+                "Prediction of pathologic response to neoadjuvant chemotherapy in breast cancer"
+            ],
+            "Prediction outcome": [
+                "Pathologic complete response (pCR)"
+            ],
+            "Evaluation Metrics": [
+                "Area under the curve (AUC)",
+                "Accuracy",
+                "Sensitivity",
+                "Specificity"
+            ],
+            "Model Architecture": "Deep learning model combining ResNet-50 with 3D CNNs for MR images and fully connected layers for clinical information",
+            "Datasets": [
+                {
+                    "Name": "Samsung Medical Center",
+                    "Size": "536 patients",
+                    "Cohort": "Patients with invasive breast cancer undergoing neoadjuvant chemotherapy",
+                    "Publicly Available": "No"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study developed a multimodal deep learning model that integrates MR images and clinical data to predict the pathologic response to neoadjuvant chemotherapy in breast cancer patients."
+        },
+        {
+            "Title": "In-context learning enables multimodal large language models to classify cancer pathology images",
+            "Input": [
+                "Cancer histopathology images"
+            ],
+            "Task": [
+                "Classification of tissue subtypes in colorectal cancer",
+                "Colon polyp subtyping",
+                "Breast tumor detection in lymph node sections"
+            ],
+            "Prediction outcome": [
+                "Classification of different cancer tissue types"
+            ],
+            "Evaluation Metrics": [
+                "Area Under the Receiver Operating Characteristic Curve (AUROC)"
+            ],
+            "Model Architecture": "Generative Pretrained Transformer 4 with Vision capabilities (GPT-4V) utilizing in-context learning",
+            "Datasets": [
+                {
+                    "Name": "Three cancer histopathology benchmarking datasets",
+                    "Size": "Not specified",
+                    "Cohort": "Colorectal cancer, colon polyps, breast tumor lymph node sections",
+                    "Publicly Available": "Not specified"
+                }
+            ],
+            "Code Availability": "Not specified",
+            "Progression Prediction Capability": "Yes",
+            "Multimodal Learning": "Yes",
+            "Description": "This study evaluates the use of GPT-4V in medical image analysis for classifying cancer pathology images using in-context learning, demonstrating potential to match or exceed specialized neural networks."
+        }
+    ]
+}

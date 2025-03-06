@@ -30,7 +30,9 @@ set_openai_api_key(secret.OPENAI_API_KEY)
 set_hugging_face_token(secret.HUGGINGFACE_TOKEN)
 send_fn = get_send_fn(
     source="huggingface",
-    model_name="ruslanmv/Medical-Llama3-8B",  # ["meta-llama/Meta-Llama-3.1-8B-Instruct", "microsoft/Phi-3.5-mini-instruct", "google/gemma-2-2b-it", "meta-llama/Llama-3.2-1B-Instruct", "meta-llama/Llama-3.2-3B-Instruct"]
+    model_name="ruslanmv/Medical-Llama3-8B",  
+    
+    # ["meta-llama/Meta-Llama-3.1-8B-Instruct", "microsoft/Phi-3.5-mini-instruct", "google/gemma-2-2b-it", "meta-llama/Llama-3.2-1B-Instruct", "meta-llama/Llama-3.2-3B-Instruct"]
     # ruslanmv/Medical-Llama3-8B
     # mistralai/Mistral-7B-Instruct-v0.2
 )
