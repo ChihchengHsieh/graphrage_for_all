@@ -1,0 +1,48 @@
+Feature,Radiologist 1 Clinical Plausibility (Agreement),Radiologist 1 Clinical Relevance (Importance),Radiologist 1 Clinical Confidence (Certainty),Radiologist 2 Clinical Plausibility (Agreement),Radiologist 2 Clinical Relevance (Importance),Radiologist 2 Clinical Confidence (Certainty),XGBoost,RandomForest,Decision Tree,TabNet
+abdominal liquid,2,3,3,2,3,3,0,0,0,0
+age,1,2,1,1,3,1,0,1,1,0
+anesthesia,2,2,2,2,2,2,1,0,1,0
+asymptomatic,3,3,2,3,4,2,0,1,0,0
+back pain,2,2,2,2,2,2,0,0,0,0
+breathing difficulty,3,4,3,3,4,3,1,1,1,0
+cardiac tamponade,1,3,2,1,2,2,0,0,0,0
+chronic obstructive pulmonary disease,3,3,3,2,3,2,0,0,0,0
+congestive heart failure,2,4,2,2,4,2,0,0,0,0
+coughing,3,4,2,3,4,2,0,0,1,0
+decreased alertness,2,3,2,2,3,2,0,0,1,0
+diastolic blood pressure (mmHg),1,1,1,1,1,1,1,1,0,0
+dimension of the jugular vein,1,1,1,1,1,1,0,0,0,0
+dry cough,3,3,2,3,4,2,1,0,0,0
+dyspnea,3,4,3,4,4,3,0,1,0,0
+electrical alternans on electrocardiogram,2,2,2,1,?,?,0,0,0,0
+fatigue,2,3,1,2,3,1,0,0,0,0
+fever,4,4,2,4,4,2,1,0,1,0
+fungal and mineral exposure,3,3,2,2,3,2,0,0,0,0
+gender,1,1,1,1,1,1,0,0,0,0
+heart rate,1,1,1,1,1,1,0,0,1,0
+hiatal hernia,3,3,1,3,3,2,1,0,1,0
+high heart beat intensity,1,1,1,1,1,1,0,0,0,0
+hypoxemia,4,4,3,3,3,3,0,1,0,0
+impaired gas exchange,4,4,3,3,3,3,1,1,0,0
+increased jugular venous pressure,1,1,1,1,1,1,0,0,0,0
+left precordial pleuritic chest pain,1,1,1,1,1,1,0,0,0,0
+low heart beat intensity,1,1,1,1,1,1,0,0,0,0
+lung collapsed,4,4,4,4,4,4,0,0,0,0
+neck pain,1,1,1,1,1,1,0,0,0,0
+oxygen saturation (%),4,4,3,3,4,3,1,1,1,0
+palpitations,2,1,1,1,1,1,0,0,0,0
+plaques,1,1,1,1,2,1,0,0,0,1
+pleural effusions,4,4,3,3,4,3,1,1,0,0
+pneumonia,4,4,4,3,4,4,1,0,0,1
+positional chest pain,1,1,1,1,1,1,0,0,1,0
+pulmonary tuberculosis,4,4,3,3,4,3,0,0,0,0
+pulsus paradoxus,1,1,1,1,1,1,0,0,0,0
+relief of pain by bending forward,1,1,1,1,1,1,1,0,0,0
+respiratory rate,3,3,3,3,3,3,1,0,1,0
+shortness of breath,4,4,3,3,4,3,0,0,1,0
+small volume linear shadows,4,4,4,4,4,4,0,0,1,0
+specific electrocardiogram changes,1,1,1,1,1,1,0,0,0,0
+spirometry,3,3,3,3,3,3,1,0,0,0
+systolic blood pressure (mmHg),1,1,1,1,1,1,1,1,1,0
+worsening of pain by inspiration,1,1,1,1,1,1,0,0,0,0
+worsening of pain by lying down,2,1,1,1,1,1,1,0,1,0

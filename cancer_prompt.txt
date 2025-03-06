@@ -1,0 +1,14 @@
+I am embarking on a multimodal cancer prediction project using deep learning, starting with a comprehensive literature review. As part of this review, I will organize key findings into a json object with following key-value pairs: 
+1. Title: The title of the research work. 
+2. Input (list): The types of input data used in the study (e.g., imaging, genomics, clinical data), with support for multiple modalities. 
+3. Task (list): The primary task addressed by the study (e.g., specific cancer prediction, progression analysis, or other predictive tasks). Example: "Brain cancer prediction."
+4. Prediction outcome (list): For example, if a task is to identify whether the patient having lung cancer now, you say “Lung Cancer Diagnosis”. And, if the task is about predicting whether the patient have 5 lung cancer in 5 years, then you can say “Having lung cancer in 5 years”. It may have multiple ranges for the future predictions, then you have to tell all the ranges.
+5. Evaluation Metrics: The performance metrics used to assess the model, such as AUROC, accuracy, precision, recall, and F1-score. 
+6. Model Architecture: The type of deep learning model or framework implemented (e.g., CNN, Transformer, multimodal fusion techniques, ensemble methods). Can include more information if necessary. 
+7. Datasets (list): Information about the datasets used, including their names, sizes, and whether they are publicly available. And, include the size of the dataset. Include the cohorts if possible. 
+8. Code Availability: Indicates whether the code or models are publicly accessible for replication (e.g., GitHub link or similar). Availability will be marked with a check or note. 
+9. Progression Prediction Capability: Specifies whether the model can predict the likelihood of future cancer development in patients. A checkmark will indicate "Yes."
+10. Multimodal Learning: Specify whether this work use multimodal learning (more than one input modalities).
+11. Description: Just a sentence describe or summarise the paper.
+
+Then, try to generate the json object for the given paper.  

@@ -512,7 +512,7 @@ if __name__ == "__main__":
     with open("separated_combined_results_mistral", "rb") as f:
         separated_combined_results = pickle.load(f)
     top_5_lesions = [
-        # "pulmonary edema",
+        "pulmonary edema",
         "enlarged cardiac silhouette",
         "pulmonary consolidation",
         "atelectasis",
