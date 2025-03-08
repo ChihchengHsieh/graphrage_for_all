@@ -511,6 +511,7 @@ def clean_json_response(json_res):
 if __name__ == "__main__":
     with open("separated_combined_results", "rb") as f:
         separated_combined_results = pickle.load(f)
+        
     top_5_lesions = [
         # "pulmonary edema",
         "enlarged cardiac silhouette",
